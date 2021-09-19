@@ -6,6 +6,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            // cmt
+            Console.WriteLine("hello");
+            Console.WriteLine("meo meo");
             while (true)
             {
                 Console.Beep(500, 500);
