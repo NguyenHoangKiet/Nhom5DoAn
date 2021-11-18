@@ -18,16 +18,22 @@
                 <StackPanel DockPanel.Dock="Right" Background="Transparent" Orientation="Horizontal">
 
                     <Button
-                        ToolTip="Follow me on Twitter">
+                        Command="{Binding minimizedwindowCommand}"
+                        CommandParameter="{Binding ElementName=ucControlBar}"
+                        ToolTip="Thu nhỏ">
                         <materialDesign:PackIcon Kind="WindowMinimize" />
                     </Button>
                     <Button
+                        Command="{Binding maximizedwindowCommand}"
+                        CommandParameter="{Binding ElementName=ucControlBar}"
                             ToolTip="Save">
                         <materialDesign:PackIcon
                                 Kind="WindowMaximize" />
                     </Button>
                     <Separator />
                     <Button 
+                        Command="{Binding closewindowCommand}"
+                        CommandParameter="{Binding ElementName=ucControlBar}"
                         Background="Red"
                         ToolTip="Follow me on Twitter">
                         <materialDesign:PackIcon Kind="WindowClose" />
