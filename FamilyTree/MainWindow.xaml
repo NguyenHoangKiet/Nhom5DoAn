@@ -4,9 +4,299 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamilyTree"
+        xmlns:uc ="clr-namespace:FamilyTree.Components"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="#FF673AB7"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="633.467" Width="1051.634">
+    <Grid
+        Background="#FF332DA8">
+        <DockPanel>
+            <!--detail-->
+            <Grid 
+                    DockPanel.Dock="Left"
+                    Margin="10,10,10,10">
+                <Border BorderBrush="Black" BorderThickness="1">
+
+                    <Grid Background="White" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34"></RowDefinition>
+                            <RowDefinition Height="199*"></RowDefinition>
+                            <RowDefinition Height="367*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" 
+                                  Background="Gray" Margin="0,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <TextBlock Text="Lee Tom" 
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"></TextBlock>
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <Button Background="Transparent"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        BorderThickness="0"
+                        >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                        </Style>
+                                    </Button.Style>
+                                    <materialDesign:PackIcon Kind="WindowClose" />
+                                </Button>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Margin="10,10.6,10.2,9.8" Grid.RowSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="190*"></ColumnDefinition>
+                                    <ColumnDefinition Width="182*"></ColumnDefinition>
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
+                    Grid.Column="0"
+                    AllowDrop="true"
+                    Fill="WhiteSmoke"
+                    RadiusX="30"
+                    RadiusY="10"
+                    StrokeDashArray="10"
+                    StrokeThickness="0"
+                    StrokeDashCap="Round"
+                    Stroke="Silver"
+                    Height="150"
+                    Width="150" Margin="20,25,20.4,25"
+                    >
+                                </Rectangle>
+                                <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
+                                    <StackPanel HorizontalAlignment="Left"
+                                VerticalAlignment="Center">
+                                        <TextBlock Text="Họ tên : Lee Tom" 
+                           Foreground="Black"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"></TextBlock>
+                                        <TextBlock Text="Ngày sinh : 15/1/1999" 
+                           Foreground="Black"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="AccountCacheOutline"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="Chi tiết :" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <Button
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                                        Xem/Sửa
+                                    </Button>
+
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="Image"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="Ảnh :" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <Button
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                                        Thêm
+                                    </Button>
+
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="PlusCircle"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="Thêm quan hệ :" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="18"
+                                   Width="150" Margin="0,2,0,0"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <ComboBox Width="115">
+                                        <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                      FontSize="16"
+                                      >
+                                            Cha
+                                        </ComboBoxItem>
+                                        <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                      FontSize="16"
+                                      >
+                                            Mẹ
+                                        </ComboBoxItem>
+                                        <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                      FontSize="16"
+                                      >
+                                            Con
+                                        </ComboBoxItem>
+                                    </ComboBox>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="ViewList"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="Gia đình :" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <Button
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                                        Xem
+                                    </Button>
+
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <!--main-->
+            <ScrollViewer >
+                <Grid
+                    DockPanel.Dock="Right"
+                     Margin="0,10">
+                    <Border BorderBrush="Black" BorderThickness="1" Background="Snow">
+                        <Grid>
+                            <materialDesign:PackIcon Kind="AccountCircle" Height="93" Width="105" Margin="80,43,0,0" />
+                            <Slider
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom"
+                                Value="100"
+                                Minimum="30"
+                                Maximum="800" 
+                                Width="200"
+                                Height="20"
+                                SmallChange="1"
+                                Style="{StaticResource MaterialDesignDiscreteSlider}"
+                                TickFrequency="{Binding DiscreteHorizontal.TickFrequency}"
+                                />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+        </DockPanel>
     </Grid>
 </Window>
