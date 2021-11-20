@@ -20,6 +20,7 @@ namespace FamilyTree.ViewModel
         public ICommand closewindowCommand { get; set; }
         public ICommand maximizedwindowCommand { get; set; }
         public ICommand minimizedwindowCommand { get; set; }
+        public ICommand dragwindowCommand { get; set; }
         public ControlBarViewModel()
         {
             closewindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
@@ -63,7 +64,19 @@ namespace FamilyTree.ViewModel
                     }
                 }
             });
-
+            dragwindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
+            {
+                FrameworkElement window = GetFrameworkElement(p);
+                var w = (Window)window;
+                if (w != null)
+                {
+                    if (w != null)
+                    {
+                        w.DragMove();
+                    }
+                    
+                }
+            });
         }
         FrameworkElement GetFrameworkElement(UserControl p)
         {
