@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:FamilyTree.UserControlForFamilyTree"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Name="ucControlBar"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <materialDesign:ColorZone
@@ -47,7 +48,7 @@
                     <TextBlock
                         VerticalAlignment="Center"
                         Margin="16 0 0 0"
-                        Text="Tiêu đề">
+                        Text="{Binding Tag, ElementName=ucControlBar}">
                     </TextBlock>
                 </StackPanel>
             </DockPanel>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FamilyTree.ViewModel;
 
 namespace FamilyTree.UserControlForFamilyTree
 {
@@ -20,9 +21,12 @@ namespace FamilyTree.UserControlForFamilyTree
     /// </summary>
     public partial class ControlBarUC : UserControl
     {
+        public ControlBarViewModel ViewModel { get; set; }
+
         public ControlBarUC()
         {
             InitializeComponent();
+            this.DataContext = ViewModel = new ControlBarViewModel();
         }
     }
 }
