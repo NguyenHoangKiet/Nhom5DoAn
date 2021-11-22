@@ -14,5 +14,4 @@ Bảng thành viên:
 |Hồng Trường Vinh  |20522157|
 ## Tính năng
 1. Tạo cây gia phả
-2. Xuất file excel
-3. Tìm kiếm thông tin thành viên
+2. Tìm kiếm thông tin thành viên
