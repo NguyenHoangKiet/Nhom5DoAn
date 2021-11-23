@@ -8,5 +8,8 @@ namespace FamilyTreeLibrary
 {
     public class App
     {
+        // luu o users/appdata/local/*FolderName*
+        public const string FolderName = "FamilyTree";
+        public const string SubFolderName = "CurrentFamily";
     }
 }
