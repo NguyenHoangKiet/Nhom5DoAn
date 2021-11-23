@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FamilyTree.ViewModel;
 
-namespace FamilyTree.UserControlForFamilyTree
+namespace FamilyTree.Components
 {
     /// <summary>
     /// Interaction logic for ControlBarUC.xaml
