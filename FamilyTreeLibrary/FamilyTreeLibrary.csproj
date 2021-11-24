@@ -52,6 +52,8 @@
     <Compile Include="App.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="ParentSet.cs" />
+    <Compile Include="People.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
