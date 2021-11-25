@@ -1,0 +1,253 @@
+﻿<Window x:Class="FamilyTree.Components.MoreDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FamilyTree.Components"
+        mc:Ignorable="d"
+        
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        ResizeMode="NoResize"
+        
+        Title="MoreDetail" Height="650" Width="400">
+    <Grid >
+        <!-- <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.lightgreen.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"
+              Background="DarkViolet"
+              ></Grid>
+
+
+        <Grid Grid.Row="1"
+              Background="LightBlue"
+              Margin="0"
+              >
+
+
+
+
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical"
+                        Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="190"
+                             Height="190"
+                             Fill="White"
+                             HorizontalAlignment="Left"
+                             >
+                        </Ellipse>
+                        <Button Width="130"
+                            FontSize="16"
+                            
+                            Content="Tải hình ảnh"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="20" ></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Tên của bạn : "  
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="150">
+                        </TextBlock>
+                        <TextBox materialDesign:HintAssist.Hint="Họ"
+                         Text="{Binding Name}"
+                         FontSize="20"
+                         Margin="0 0 0 0"/>
+                        <TextBox materialDesign:HintAssist.Hint="Tên đệm"
+                         Text="{Binding Name}"
+                         FontSize="20"
+                         Margin="20 0 0 0"/>
+                        <TextBox materialDesign:HintAssist.Hint="Tên"
+                         Text="{Binding Name}"
+                         FontSize="20"
+                         Margin="20 0 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Giới tính : "
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Width="150">
+                        </TextBlock>
+                        <ToggleButton
+                        
+                              Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
+                              ToolTip="MaterialDesignSwitchLightToggleButton"
+                              IsChecked="True" 
+                              x:Name="genderToggleButton"/>
+
+                        <TextBlock 
+                               FontSize="20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Width="150"
+                               Margin="10 0 0 0"
+                               >
+                            <TextBlock.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
+                                        Value = "true">
+                                            <Setter Property = "TextBlock.Text" Value = "Nam"/>
+
+                                        </DataTrigger>
+                                        <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
+                                        Value = "false">
+                                            <Setter Property = "TextBlock.Text" Value = "Nữ"/>
+
+                                        </DataTrigger>
+                                    </Style.Triggers>
+
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Ngày sinh : "
+                               FontSize="20"
+                              
+                               Margin="0 30 0 0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <DatePicker
+                            FontSize="20"
+                            Width="150"
+                            
+                            materialDesign:HintAssist.Hint="Chọn ngày"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Nơi sinh : "
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
+                         Text="{Binding Name}"
+                         FontSize="20"
+                         Margin="0 0 0 0"/>
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Số điện thoại : "
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <TextBox materialDesign:HintAssist.Hint="Điền số điện thoại"
+                         Text="{Binding Name}"
+                         FontSize="20"
+                         Margin="0 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Gmail : "
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <TextBox materialDesign:HintAssist.Hint="Điền gmail"
+                         Text="{Binding Name}"
+                         FontSize="20"
+                         Margin="0 0 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Đã mất : "
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <ToggleButton
+                             
+                              Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
+                              ToolTip="MaterialDesignSwitchLightToggleButton"
+                              IsChecked="False" 
+                              x:Name="deathToggleButton"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                            x:Name="DayofdeathStackPanel"
+                            >
+                        <TextBlock Text="Ngày mất : "
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <DatePicker
+                            FontSize="20"
+                            Width="150"
+                            materialDesign:HintAssist.Hint="Chọn ngày"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                        <StackPanel.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                             Value="True">
+                                        <Setter Property="StackPanel.Visibility" Value="Visible"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                             Value="False">
+                                        <Setter Property="StackPanel.Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                            x:Name="PlaceofdeathStackPanel">
+                        <TextBlock Text="Nơi mất : "
+                               FontSize="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
+                         Text="{Binding Name}"
+                         FontSize="20"
+                         Margin="0 0 0 0"/>
+                        <StackPanel.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                             Value="True">
+                                        <Setter Property="StackPanel.Visibility" Value="Visible"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                             Value="False">
+                                        <Setter Property="StackPanel.Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+</Window>
