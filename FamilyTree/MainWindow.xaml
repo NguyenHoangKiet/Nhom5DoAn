@@ -15,7 +15,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="#FF673AB7"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="750" Width="1200">
+        Title="MainWindow" Height="750" Width="1400">
     <Grid
         Background="#FF332DA8"
         >
@@ -26,9 +26,78 @@
 
         <!--ControlBar-->
         <Grid Grid.Row="0" Background="Black">
-            <uc:ControlBarUC Margin="0,0,0,-0.2" Tag="{Binding Title, ElementName=MainWindow}">
-                
-            </uc:ControlBarUC>
+            <Grid>
+                <materialDesign:ColorZone
+            Mode="PrimaryDark"
+            Padding="16"
+            CornerRadius="3"
+            materialDesign:ShadowAssist.ShadowDepth="Depth3"
+            Margin="2,2,1.6,0">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Right" Background="Transparent" Orientation="Horizontal">
+
+                            <Button
+                        Command="{Binding minimizedwindowCommand}"
+                        CommandParameter="{Binding ElementName=ucControlBar}"
+                        ToolTip="Thu nhỏ"   >
+                                <materialDesign:PackIcon Kind="WindowMinimize" />
+                            </Button>
+                            <Button
+                        Command="{Binding maximizedwindowCommand}"
+                        CommandParameter="{Binding ElementName=ucControlBar}"
+                            ToolTip="Save">
+                                <materialDesign:PackIcon
+                                Kind="WindowMaximize" />
+                            </Button>
+                            <Separator />
+                            <Button 
+                        Command="{Binding closewindowCommand}"
+                        CommandParameter="{Binding ElementName=ucControlBar}"
+                        Background="Red"
+                        ToolTip="Follow me on Twitter">
+                                <materialDesign:PackIcon Kind="WindowClose" />
+                            </Button>
+
+                        </StackPanel>
+                        <StackPanel DockPanel.Dock="Left"  Background="Transparent" Orientation="Horizontal" Height="34">
+                            <Menu
+                        IsMainMenu="True" >
+                                <MenuItem                          
+                            Icon="{materialDesign:PackIcon Kind=Menu}" Width="150" Height="35" Header="Menu" BorderThickness="1"
+                                    BorderBrush="#FF673AB7" Foreground="#DDFFFFFF" Padding="16,4" 
+                                    CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF673AB7">
+                                    
+                                    <MenuItem Header="New"
+                                              Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
+                                              InputGestureText="Ctrl+N" Foreground="#DD000000"/>
+                                    <MenuItem Header="Open"
+                                              Icon="{materialDesign:PackIcon Kind=FolderOpenOutline}"
+                                              InputGestureText="Ctrl+O" Foreground="#DD000000"/>
+                                   <MenuItem Header="Save"
+                                             Icon="{materialDesign:PackIcon Kind=ContentSave}"
+                                             InputGestureText="Ctrl+S" Foreground="#DD111111"/>
+
+                                    <MenuItem Header="Save As.."
+                                              InputGestureText="Ctrl+Shift+S" Foreground="#DD000000"/>
+                                    
+                                    <MenuItem Header=".gedcome"
+                                         
+                                              Foreground="#DD121010" />
+                                    <MenuItem Header="Exit"
+                                              InputGestureText="Ctrl+E"
+                                              Icon="{materialDesign:PackIcon Kind=ExitToApp}" Foreground="#DD121010" />
+                                </MenuItem>
+                                <Separator />
+                            </Menu>
+                            <TextBlock
+                        VerticalAlignment="Center"
+                        Margin="16 0 0 0"
+                        Text="{Binding Tag, ElementName=ucControlBar}">
+                            </TextBlock>
+                        </StackPanel>
+                    </DockPanel>
+                </materialDesign:ColorZone>
+            </Grid>
         </Grid>
         <DockPanel Grid.Row="1">
             <!--detail-->
@@ -37,7 +106,7 @@
                     Margin="10,10,7,10">
                 <Border BorderBrush="Black" BorderThickness="1">
 
-                    <Grid Background="White" >
+                    <Grid Background="White" Width="405"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="34"></RowDefinition>
                             <RowDefinition Height="199*"></RowDefinition>
@@ -112,18 +181,26 @@
                                 VerticalAlignment="Center">
                                         <TextBlock Text="Họ tên : Lee Tom" 
                            Foreground="Black"
-                           HorizontalAlignment="Center"
+                           HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium"
                            FontSize="20"></TextBlock>
                                         <TextBlock Text="Ngày sinh : 15/1/1999" 
                            Foreground="Black"
-                           HorizontalAlignment="Center"
+                           HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium"
                            FontSize="20"/>
+                                        <TextBlock Text="Nơi sinh : Đồng Tháp"
+                           Foreground="Black"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+
                                     </StackPanel>
                                 </Grid>
                             </Grid>
