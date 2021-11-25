@@ -1,13 +1,14 @@
-﻿<Window x:Class="FamilyTree.Components.MoreDetail"
+﻿<Window x:Class="FamilyTree.MoreDetail"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FamilyTree.Components"
-        mc:Ignorable="d"
+        xmlns:local="clr-namespace:FamilyTree"
         
+        
+        mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        ResizeMode="NoResize"
+         ResizeMode="NoResize"
         
         Title="MoreDetail" Height="650" Width="400">
     <Grid >
@@ -28,32 +29,32 @@
               Background="DarkViolet"
               ></Grid>
 
-
         <Grid Grid.Row="1"
               Background="LightBlue"
               Margin="0"
               >
-
-
-
-
             <ScrollViewer HorizontalScrollBarVisibility="Auto">
                 <StackPanel Orientation="Vertical"
                         Margin="10">
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse Width="190"
-                             Height="190"
-                             Fill="White"
-                             HorizontalAlignment="Left"
-                             >
-                        </Ellipse>
+                        <Border BorderThickness="2" 
+                                BorderBrush="Black"
+                               >
+                            <Image x:Name="imgPhoto"
+                               Stretch="Fill" Grid.Column="1" 
+                               Width="190"
+                               
+                               Height="170"/>
+                        </Border>
+
                         <Button Width="130"
                             FontSize="16"
-                            
+                            x:Name="buttonLoadImage"
                             Content="Tải hình ảnh"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Margin="20" ></Button>
+                            Margin="20" 
+                            Click="buttonLoadImage_Click"></Button>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Tên của bạn : "  
@@ -63,16 +64,20 @@
                                Width="150">
                         </TextBlock>
                         <TextBox materialDesign:HintAssist.Hint="Họ"
-                         Text="{Binding Name}"
+                    
+                         x:Name="textboxFirstName"
                          FontSize="20"
-                         Margin="0 0 0 0"/>
+                         Margin="0 0 0 0"
+                         TextChanged="textboxFirstName_TextChanged"/>
                         <TextBox materialDesign:HintAssist.Hint="Tên đệm"
-                         Text="{Binding Name}"
+                        TextChanged="textboxMiddleName_TextChanged"
                          FontSize="20"
+                          x:Name="textboxMiddleName"
                          Margin="20 0 0 0"/>
                         <TextBox materialDesign:HintAssist.Hint="Tên"
-                         Text="{Binding Name}"
+                         TextChanged="textboxLastName_TextChanged"
                          FontSize="20"
+                         x:Name="textboxLastName"
                          Margin="20 0 0 0"/>
                     </StackPanel>
 
@@ -84,11 +89,12 @@
                                Width="150">
                         </TextBlock>
                         <ToggleButton
-                        
+                              Click="genderToggleButton_Click"
                               Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
                               ToolTip="MaterialDesignSwitchLightToggleButton"
-                              IsChecked="True" 
-                              x:Name="genderToggleButton"/>
+                              
+                             
+                              x:Name="genderToggleButton"  />
 
                         <TextBlock 
                                FontSize="20"
@@ -100,13 +106,13 @@
                             <TextBlock.Style>
                                 <Style>
                                     <Style.Triggers>
-                                        <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
-                                        Value = "true">
+                                        <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path=IsChecked}" 
+                                        Value = "True">
                                             <Setter Property = "TextBlock.Text" Value = "Nam"/>
 
                                         </DataTrigger>
                                         <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
-                                        Value = "false">
+                                        Value = "False">
                                             <Setter Property = "TextBlock.Text" Value = "Nữ"/>
 
                                         </DataTrigger>
@@ -118,18 +124,32 @@
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Địa chỉ : "
+                               FontSize="20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               Width="150">
+                        </TextBlock>
+                        <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
+                        TextChanged="textboxAddress_TextChanged"
+                         x:Name="textboxAddress"
+                         FontSize="20"
+                         Margin="0 0 0 0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Ngày sinh : "
                                FontSize="20"
                               
-                               Margin="0 30 0 0"
+                         
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"
                                Width="150">
                         </TextBlock>
                         <DatePicker
+                            SelectedDateChanged="DatePickerofBirth_SelectedDateChanged"
                             FontSize="20"
                             Width="150"
-                            
+                            x:Name="DatePickerofBirth"
                             materialDesign:HintAssist.Hint="Chọn ngày"
                             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                     </StackPanel>
@@ -142,7 +162,8 @@
                                Width="150">
                         </TextBlock>
                         <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
-                         Text="{Binding Name}"
+                         x:Name="textboxPlaceofBirth"
+                         TextChanged="textboxPlaceofBirth_TextChanged" 
                          FontSize="20"
                          Margin="0 0 0 0"/>
                     </StackPanel>
@@ -156,9 +177,10 @@
                                Width="150">
                         </TextBlock>
                         <TextBox materialDesign:HintAssist.Hint="Điền số điện thoại"
-                         Text="{Binding Name}"
+                         TextChanged="textboxPhoneNum_TextChanged"
+                         x:Name="textboxPhoneNum"
                          FontSize="20"
-                         Margin="0 0 0 0"/>
+                         Margin="0 0 0 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Gmail : "
@@ -168,7 +190,8 @@
                                Width="150">
                         </TextBlock>
                         <TextBox materialDesign:HintAssist.Hint="Điền gmail"
-                         Text="{Binding Name}"
+                         TextChanged="textboxGmail_TextChanged"
+                         x:Name="textboxGmail"
                          FontSize="20"
                          Margin="0 0 0 0"/>
                     </StackPanel>
@@ -181,7 +204,7 @@
                                Width="150">
                         </TextBlock>
                         <ToggleButton
-                             
+                             Click="deathToggleButton_Click"
                               Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
                               ToolTip="MaterialDesignSwitchLightToggleButton"
                               IsChecked="False" 
@@ -198,7 +221,9 @@
                                Width="150">
                         </TextBlock>
                         <DatePicker
+                            SelectedDateChanged="DatePickerDeath_SelectedDateChanged"
                             FontSize="20"
+                            x:Name="DatePickerDeath"
                             Width="150"
                             materialDesign:HintAssist.Hint="Chọn ngày"
                             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
@@ -227,7 +252,8 @@
                                Width="150">
                         </TextBlock>
                         <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
-                         Text="{Binding Name}"
+                         x:Name="textboxPlaceofDeath"
+                         TextChanged="textboxPlaceofDeath_TextChanged"
                          FontSize="20"
                          Margin="0 0 0 0"/>
                         <StackPanel.Style>

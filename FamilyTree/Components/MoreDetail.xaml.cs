@@ -11,17 +11,236 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FamilyTreeLibrary;
+using System.IO;
+using Microsoft;
 
-namespace FamilyTree.Components
+namespace FamilyTree
 {
     /// <summary>
     /// Interaction logic for MoreDetail.xaml
     /// </summary>
     public partial class MoreDetail : Window
     {
+        public Person personobj { get; set; }
         public MoreDetail()
         {
             InitializeComponent();
+            personobj = new Person
+            {
+                FirstName = "Nguyễn",
+                MiddleName = "Hoàng",
+                LastName = "Kiệt",
+                Gender = Gender.Male,
+                BirthPlace = "Cao lãnh",
+                BirthDate = DateTime.Now,
+                IsLiving = false,
+                DeathPlace = "Cao lANH",
+                DeathDate = DateTime.Now,
+            };
+            personobj.Contact = new Contact();
+            personobj.Contact.Phone = "03220322";
+            personobj.Contact.Mail = "skill1sp2@gmail.com";
+
+            //this.DataContext = personobj;
+
+            #region Load property of person into UI
+
+            // Load Name
+            textboxFirstName.Text = personobj.FirstName;
+            textboxMiddleName.Text = personobj.MiddleName;
+            textboxLastName.Text = personobj.LastName;
+
+            // Load Gender
+            if (personobj.Gender == Gender.Male)
+            {
+                genderToggleButton.IsChecked = true;
+            }
+            else
+            {
+                genderToggleButton.IsChecked = false;
+            }
+            // Load birth place
+            textboxPlaceofBirth.Text = personobj.BirthPlace;
+            // Load birth date
+            DatePickerofBirth.Text = personobj.BirthDate.ToString();
+            // Load Contact
+            if (personobj.Contact != null)
+            {
+                if (personobj.Contact.Mail != null)
+                {
+                    textboxGmail.Text = personobj.Contact.Mail;
+                }
+                if (personobj.Contact.Phone != null)
+                {
+                    textboxPhoneNum.Text = personobj.Contact.Phone;
+                }
+                if (personobj.Contact.Address != null)
+                {
+                    textboxAddress.Text = personobj.Contact.Address.Address1;
+                }
+            }
+
+            // Load Death or not
+            if (personobj.IsLiving == true)
+            {
+                deathToggleButton.IsChecked = false;
+            }
+            else
+            {
+                deathToggleButton.IsChecked = true;
+            }
+            // Load Death place
+            textboxPlaceofDeath.Text = personobj.DeathPlace;
+            // Load Death date
+            DatePickerDeath.Text = personobj.BirthDate.ToString();
+
+            // Load Photo
+            if (personobj.Photos != null)
+            {
+                foreach (Photo image in personobj.Photos)
+                {
+                    imgPhoto.Source = new BitmapImage(new Uri(image.RelativePath));
+                }
+            }
+            #endregion
         }
+        #region Event update property of person
+
+        // Update Name
+        private void textboxFirstName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            personobj.FirstName = textboxFirstName.Text;
+        }
+        private void textboxMiddleName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            personobj.MiddleName = textboxMiddleName.Text;
+        }
+        private void textboxLastName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            personobj.LastName = textboxLastName.Text;
+        }
+
+        // Update gender
+        private void genderToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (personobj.Gender == Gender.Male)
+            {
+                personobj.Gender = Gender.Female;
+            }
+            else
+            {
+                personobj.Gender = Gender.Male;
+            }
+
+        }
+        // Update Address
+        private void textboxAddress_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (personobj.Contact == null)
+            {
+                personobj.Contact = new Contact();
+            }
+            if (personobj.Contact.Address == null)
+            {
+                personobj.Contact.Address = new Address();
+            }
+            personobj.Contact.Address.Address1 = textboxAddress.Text;
+        }
+        // Update day of birth
+        private void DatePickerofBirth_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var picker = sender as DatePicker;
+            DateTime? date = picker.SelectedDate;
+
+            if (date == null)
+            {
+                //
+            }
+            else
+            {
+                personobj.BirthDate = date;
+                // this.Title = date.Value.ToShortDateString();
+            }
+        }
+        // Update place of birth
+        private void textboxPlaceofBirth_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            personobj.BirthPlace = textboxPlaceofBirth.Text;
+        }
+        // Update Contact phone
+        private void textboxPhoneNum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (personobj.Contact == null)
+            {
+                personobj.Contact = new Contact();
+            }
+            personobj.Contact.Phone = textboxPhoneNum.Text;
+        }
+        // Update Contact mail
+        private void textboxGmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (personobj.Contact == null)
+            {
+                personobj.Contact = new Contact();
+            }
+            personobj.Contact.Mail = textboxGmail.Text;
+        }
+        // Update Death or not
+        private void deathToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            personobj.IsLiving = !personobj.IsLiving;
+        }
+        // Update day of death
+        private void DatePickerDeath_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var picker = sender as DatePicker;
+            DateTime? date = picker.SelectedDate;
+
+            if (date == null)
+            {
+                //this.Title = "No date";
+            }
+            else
+            {
+                personobj.DeathDate = date;
+                //this.Title = date.Value.ToShortDateString();
+            }
+        }
+        // Update place of death
+        private void textboxPlaceofDeath_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            personobj.DeathPlace = textboxPlaceofDeath.Text;
+        }
+
+        // Update Avatar
+        private void buttonLoadImage_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+            MessageBox.Show("Fisrt name = " + personobj.FirstName + "\n" +
+                            "Midde name = " + personobj.MiddleName + "\n" +
+                            "Last name = "  + personobj.LastName + "\n"  +
+                            "Gender = " + personobj.Gender.ToString() + "\n" +
+                            "Birth place = " + personobj.BirthPlace + "\n" +
+                            "Birth date = " + personobj.BirthDate.ToString() + "\n" +
+                            "Phone = " + personobj.Contact.Phone + "\n" +
+                            "Gmail = " + personobj.Contact.Mail + "\n" +
+                            "Is living = " + personobj.IsLiving.ToString() + "\n" +
+                            "Death date = " + personobj.DeathDate.ToString() + "\n" +
+                            "Death place = " + personobj.DeathPlace + "\n" 
+                );
+            */
+            Microsoft.Win32.OpenFileDialog op = new Microsoft.Win32.OpenFileDialog();
+            op.Title = "Select a picture";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
+            {
+                imgPhoto.Source = new BitmapImage(new Uri(op.FileName));
+                personobj.Photos.Add(new Photo(op.FileName));
+            }
+        }
+        #endregion
     }
 }
