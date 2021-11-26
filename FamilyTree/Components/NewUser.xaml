@@ -34,53 +34,36 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" >
+            <Grid Grid.Column="0" Margin="0,0,0,-0.4" RenderTransformOrigin="0.5,0.508" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
                 <Grid Height="160"
                       Width="150"
-                      Margin="0 0 0 0">
+                      Margin="0 0 0 0"
+                      Grid.Row="0">
                     <Image></Image>
                 </Grid>
-                <Grid Height="160"
+                <Grid Grid.Row="0">
+                    <Grid Height="160"
                       Width="150"
-                      Margin="0 0 0 0">
-                    <materialDesign:PackIcon
+                      Margin="0 0 0 0"
+                      >
+                        <materialDesign:PackIcon
                                     Kind="AccountCircle"
                                     Height="150"
                                     Width="150"
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center" />
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Grid Grid.Column="1"
-                  Margin="30 0 0 0">
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock VerticalAlignment="Bottom"
-                               FontSize="20">
-                        <Bold>Giới tính:</Bold>
-                    </TextBlock>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="78*"/>
-                        <ColumnDefinition Width="319*"/>
-                    </Grid.ColumnDefinitions>
-                    <RadioButton 
-                        Style="{StaticResource MaterialDesignRadioButton}"
-                        Content = "Nam"
-                        FontSize= "20">
-                    </RadioButton>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <RadioButton 
-                        Style="{StaticResource MaterialDesignRadioButton}"
-                        Content = "Nữ"
-                        FontSize= "20">
-                    </RadioButton>
+                <Grid Grid.Row="1" VerticalAlignment="Bottom"
+                      >
+                    <Button Content="Nhấn vào đây để thêm ảnh"
+                            Background="White"
+                            Foreground="Black"
+                            BorderBrush="White"></Button>
                 </Grid>
             </Grid>
         </Grid>
