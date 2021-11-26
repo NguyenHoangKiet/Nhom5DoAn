@@ -66,6 +66,38 @@
                             BorderBrush="White"></Button>
                 </Grid>
             </Grid>
+            <Grid Grid.Column="1"
+                  Margin="30 0 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock VerticalAlignment="Bottom"
+                               FontSize="20">
+                        <Bold>Giới tính:</Bold>
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="78*"/>
+                        <ColumnDefinition Width="319*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton 
+                        Style="{StaticResource MaterialDesignRadioButton}"
+                        Content = "Nam"
+                        FontSize= "20">
+                    </RadioButton>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <RadioButton 
+                        Style="{StaticResource MaterialDesignRadioButton}"
+                        Content = "Nữ"
+                        FontSize= "20">
+                    </RadioButton>
+                </Grid>
+            </Grid>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
