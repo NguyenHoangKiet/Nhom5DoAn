@@ -74,8 +74,8 @@
     <Compile Include="Components\ControlBarUC.xaml.cs">
       <DependentUpon>ControlBarUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\DetailUC.xaml.cs">
-      <DependentUpon>DetailUC.xaml</DependentUpon>
+    <Compile Include="Components\MoreDetail.xaml.cs">
+      <DependentUpon>MoreDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\ViewModel\ControlBarViewModel.cs" />
     <Compile Include="Components\WelcomeWindow.xaml.cs">
@@ -85,9 +85,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Components\DetailUC.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Components\MoreDetail.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Components\NewUser.xaml">
       <SubType>Designer</SubType>

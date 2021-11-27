@@ -77,7 +77,7 @@
                     ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="Tạo mới"
                     Margin="47,41,0,187" HorizontalAlignment="Left"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"  />
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="btnNew_Click"  />
                     <Button x:Name="btnOpen"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="90"

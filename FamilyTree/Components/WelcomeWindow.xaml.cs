@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FamilyTree
+namespace FamilyTree.Components
 {
     /// <summary>
     /// Interaction logic for WelcomeWindow.xaml
@@ -22,6 +22,12 @@ namespace FamilyTree
         public WelcomeWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnNew_Click(object sender, RoutedEventArgs e)
+        {
+            //App.LoadRecentFiles();
+            
         }
     }
 }
