@@ -34,21 +34,36 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" >
+            <Grid Grid.Column="0" Margin="0,0,0,-0.4" RenderTransformOrigin="0.5,0.508" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
                 <Grid Height="160"
                       Width="150"
-                      Margin="0 0 0 0">
+                      Margin="0 0 0 0"
+                      Grid.Row="0">
                     <Image></Image>
                 </Grid>
-                <Grid Height="160"
+                <Grid Grid.Row="0">
+                    <Grid Height="160"
                       Width="150"
-                      Margin="0 0 0 0">
-                    <materialDesign:PackIcon
+                      Margin="0 0 0 0"
+                      >
+                        <materialDesign:PackIcon
                                     Kind="AccountCircle"
                                     Height="150"
                                     Width="150"
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1" VerticalAlignment="Bottom"
+                      >
+                    <Button Content="Nhấn vào đây để thêm ảnh"
+                            Background="White"
+                            Foreground="Black"
+                            BorderBrush="White"></Button>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1"

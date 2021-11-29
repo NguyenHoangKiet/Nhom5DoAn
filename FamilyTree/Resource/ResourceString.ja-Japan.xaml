@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:FamilyTree.Resource">
+
+    <!--source Japanese-->
+    
+    <!--<ImageBrush  x:Key="btnLoginImgIdle" ImageSource="/Images/VN/bt_login.png"/>
+    <ImageBrush  x:Key="btnLoginImgHover" ImageSource="/Images/VN/bt_login_1.png"/>
+    <ImageBrush x:Key="btnLoginImgClick" ImageSource="/Images/VN/bt_login_2.png"/>-->
+
+    <!--WelcomWindow-->
+    <system:String x:Key="greeting">いらっしゃいませ</system:String>
+    <system:String x:Key="btnNew">新しく追加する</system:String>
+    <system:String x:Key="btnOpen">開ける</system:String>
+    <system:String x:Key="btnImport">デバイスからもっと</system:String>
+    <system:String x:Key="btnOldestOpen">最近</system:String>
+
+    <!--New user Window-->
+    <system:String x:Key="tagNewUser">新しいメンバーを追加する</system:String>
+    <system:String x:Key="rdoMale">男</system:String>
+    <system:String x:Key="rdoFemale">女性</system:String>
+    <system:String x:Key="btnCancel">キャンセル</system:String>
+    <system:String x:Key="btnAdd">追加</system:String>
+    <system:String x:Key="Sex">性別：</system:String>
+    <system:String x:Key="firstName">名前 :</system:String>
+    <system:String x:Key="lastName">苗字 :</system:String>
+    <system:String x:Key="placeOfBirth">出生地:</system:String>
+    <system:String x:Key="Birthday">生年月日:</system:String>
+
+    <system:String x:Key="language">Japanese</system:String> <!--日本-->
+</ResourceDictionary>

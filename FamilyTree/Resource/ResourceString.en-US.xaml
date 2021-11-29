@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:FamilyTree.Resource"
+    
+    <!--English-->
+
+    <!--<ImageBrush x:Key="btnLoginImgIdle" ImageSource="/Images/UK/bt_login.png"/>
+    <ImageBrush x:Key="btnLoginImgHover" ImageSource="/Images/UK/bt_login_1.png"/>
+    <ImageBrush x:Key="btnLoginImgClick" ImageSource="/Images/UK/bt_login_2.png"/>-->
+
+    <!--WelcomeWindow-->
+    <system:String x:Key="greeting">Welcome</system:String>
+    <system:String x:Key="btnNew">New</system:String>
+    <system:String x:Key="btnOpen">Open</system:String>
+    <system:String x:Key="btnImport">Import</system:String>
+    <system:String x:Key="btnOldestOpen">Oldest Open</system:String>
+    <system:String x:Key="ok">OK</system:String>
+
+    <!--newUserWindow-->
+    <system:String x:Key="tagNewUser">New Indivial</system:String>
+    <system:String x:Key="rdoMale">Male</system:String>
+    <system:String x:Key="rdoFemale">Female</system:String>
+    <system:String x:Key="btnCancel">Cancel</system:String>
+    <system:String x:Key="btnAdd">Add</system:String>
+    <system:String x:Key="Sex">Sex:</system:String>
+    <system:String x:Key="firstName">First name:</system:String>
+    <system:String x:Key="lastName">Last name:</system:String>
+    <system:String x:Key="placeOfBirth">Place of birth:</system:String>
+    <system:String x:Key="Birthday">Birthday:</system:String>
+
+    <system:String x:Key="language">English</system:String>
+</ResourceDictionary>
