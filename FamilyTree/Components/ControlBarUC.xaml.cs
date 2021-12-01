@@ -22,8 +22,6 @@ namespace FamilyTree.Components
     /// </summary>
     public partial class ControlBarUC : UserControl, INotifyPropertyChanged
     {
-        public ControlBarViewModel ViewModel { get; set; }
-
         UserDataContext userDataContext;
         public static int curentlang = 0;// 0 là TV , 1 là TA 
 
@@ -31,7 +29,7 @@ namespace FamilyTree.Components
         public ControlBarUC()
         {
             InitializeComponent();
-            this.DataContext = ViewModel = new ControlBarViewModel();
+            this.DataContext = userDataContext = new UserDataContext();
         }
 
         public class UserDataContext
@@ -88,7 +86,7 @@ namespace FamilyTree.Components
             {
                 LanguageManager.SetLanguageDictionary(ELanguage.VietNamese);
             }
-            curentlang = combo1.SelectedIndex;
+            curentlang = combo.SelectedIndex;
             this.InitializeComponent();
         }
     }

@@ -19,13 +19,17 @@
     <Grid
         Background="#FF332DA8"
         >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="1269*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
         <!--ControlBar-->
-        <Grid Grid.Row="0" Background="Black">
+        <Grid Grid.Row="0" Background="Black" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.2">
             <Grid>
                 <materialDesign:ColorZone
             Mode="PrimaryDark"
@@ -66,20 +70,20 @@
                             Icon="{materialDesign:PackIcon Kind=Menu}" Width="150" Height="35" Header="Menu" BorderThickness="1"
                                     BorderBrush="#FF673AB7" Foreground="#DDFFFFFF" Padding="16,4" 
                                     CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF673AB7">
-                                    
+
                                     <MenuItem Header="New"
                                               Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
                                               InputGestureText="Ctrl+N" Foreground="#DD000000"/>
                                     <MenuItem Header="Open"
                                               Icon="{materialDesign:PackIcon Kind=FolderOpenOutline}"
                                               InputGestureText="Ctrl+O" Foreground="#DD000000"/>
-                                   <MenuItem Header="Save"
+                                    <MenuItem Header="Save"
                                              Icon="{materialDesign:PackIcon Kind=ContentSave}"
                                              InputGestureText="Ctrl+S" Foreground="#DD111111"/>
 
                                     <MenuItem Header="Save As.."
                                               InputGestureText="Ctrl+Shift+S" Foreground="#DD000000"/>
-                                    
+
                                     <MenuItem Header=".gedcome"
                                          
                                               Foreground="#DD121010" />
@@ -99,7 +103,7 @@
                 </materialDesign:ColorZone>
             </Grid>
         </Grid>
-        <DockPanel Grid.Row="1">
+        <DockPanel Grid.ColumnSpan="2" Margin="0,67,-0.4,-0.2" Grid.RowSpan="2">
             <!--detail-->
             <Grid 
                     DockPanel.Dock="Left"

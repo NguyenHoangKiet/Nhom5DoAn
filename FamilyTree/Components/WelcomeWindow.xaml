@@ -20,7 +20,8 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         Name="WelcomeWindow"
-        Title="Welcome" Height="450" Width="800">
+        Title="{DynamicResource greeting}" Height="644.4" Width="1064">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -58,7 +59,6 @@
                        Width="200"
                        HorizontalAlignment="Left"
                        Margin="10,0,0,0">
-                Welcome
                 </TextBlock>
             </Grid>
 
@@ -70,35 +70,31 @@
                     <ColumnDefinition ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" 
-                  Background="CornflowerBlue"   RenderTransformOrigin="0.497,0.509" Margin="0,0,466.6,-0.4" Grid.ColumnSpan="2">
+                  Background="CornflowerBlue"   RenderTransformOrigin="0.497,0.509" Margin="0,0,414.6,-1.2" Grid.ColumnSpan="2">
                     <Button x:Name="btnNew"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="90"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Tạo mới"
-                    Margin="47,41,0,187" HorizontalAlignment="Left"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="btnNew_Click"  />
+                    Content="{DynamicResource btnNew}"
+                    Margin="47,34,22,221.6"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="NewPerson"  />
                     <Button x:Name="btnOpen"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="90"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Mở"
-                    Margin="47,107,0,121" HorizontalAlignment="Left"
+                    Content="{DynamicResource btnOpen}"
+                    Margin="47,94,22,161.6"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"/>
                     <Button x:Name="btnImport"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="90"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Nhập"
-                    Margin="47,171,0,57" HorizontalAlignment="Left"
+                    ToolTip="Resource name: nhập từ thiết bị nhé"
+                    Content="{DynamicResource btnImport}"
+                    Margin="47,154,22,101.6"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" />
                     <Button x:Name="btnOldestOpen"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="90"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Được mở gần đây"
-                    Margin="47,245,0,10.6" HorizontalAlignment="Left"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" />
+                    Content="{DynamicResource btnOldestOpen}"
+                    Margin="47,218,22,38.4"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"/>
                 </Grid>
 
 
