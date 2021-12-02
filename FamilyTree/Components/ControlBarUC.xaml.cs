@@ -23,7 +23,7 @@ namespace FamilyTree.Components
     public partial class ControlBarUC : UserControl, INotifyPropertyChanged
     {
         UserDataContext userDataContext;
-        public static int curentlang = 0;// 0 là TV , 1 là TA 
+        public static int curentlang = 1;// 0 là TV , 1 là TA 
 
 
         public ControlBarUC()

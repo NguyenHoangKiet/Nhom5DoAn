@@ -14,7 +14,7 @@
     <system:String x:Key="btnNew">New</system:String>
     <system:String x:Key="btnOpen">Open</system:String>
     <system:String x:Key="btnImport">Import</system:String>
-    <system:String x:Key="btnOldestOpen">Oldest Open</system:String>
+    <system:String x:Key="btnOldestOpen">Recent</system:String>
     <system:String x:Key="ok">OK</system:String>
 
     <!--newUserWindow-->
@@ -28,6 +28,27 @@
     <system:String x:Key="lastName">Last name:</system:String>
     <system:String x:Key="placeOfBirth">Place of birth:</system:String>
     <system:String x:Key="Birthday">Birthday:</system:String>
+    <system:String x:Key="getPicture">Get picture</system:String>
+
+    <!--MoreDetail-->
+    <system:String x:Key="yourName">Your name</system:String>
+    <system:String x:Key="midName">Mid Name</system:String>
+    <system:String x:Key="address">Address</system:String>
+    <system:String x:Key="enterAddress">Enter</system:String>
+    <system:String x:Key="choose">Choose day</system:String>
+    <system:String x:Key="numberphone">Numberphone</system:String>
+    <system:String x:Key="enterNumberphone">Enter</system:String>
+    <system:String x:Key="gmail">Gmail</system:String>
+    <system:String x:Key="enterGmail">Enter</system:String>
+    <system:String x:Key="isDead">Is Dead</system:String>
+    
+    <!--MainWindow-->
+    <system:String x:Key="setup">Setup</system:String>
+    <system:String x:Key="view">View</system:String>
+    <system:String x:Key="detail">Detail</system:String>
+    <system:String x:Key="picture">Picture</system:String>
+    <system:String x:Key="addRelationship">Add new relationships</system:String>
+    <system:String x:Key="family">Family</system:String>
 
     <system:String x:Key="language">English</system:String>
 </ResourceDictionary>

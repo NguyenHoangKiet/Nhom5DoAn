@@ -27,6 +27,27 @@
     <system:String x:Key="lastName">Họ :</system:String>
     <system:String x:Key="placeOfBirth">Nơi sinh:</system:String>
     <system:String x:Key="Birthday">Ngày sinh:</system:String>
+    <system:String x:Key="getPicture">Nhấn vào đây để thêm ảnh</system:String>
+
+    <!--MoreDetail-->
+    <system:String x:Key="yourName">Tên của bạn</system:String>
+    <system:String x:Key="midName">Tên đệm</system:String>
+    <system:String x:Key="address">Địa chỉ</system:String>
+    <system:String x:Key="enterAddress">Điền địa chỉ</system:String>
+    <system:String x:Key="chose">Chọn ngày</system:String>
+    <system:String x:Key="numberphone">Số điện thoại</system:String>
+    <system:String x:Key="enterNumberphone">Điền số điện thoại</system:String>
+    <system:String x:Key="gmail">Gmail</system:String>
+    <system:String x:Key="enterGmail">Điền gmail</system:String>
+    <system:String x:Key="isDead">Đã mất</system:String>
+    
+    <!--MainWindow-->
+    <system:String x:Key="set">Xem/Sửa</system:String>
+    <system:String x:Key="view">Xem</system:String>
+    <system:String x:Key="detail">Chi tiết</system:String>
+    <system:String x:Key="picture">Ảnh</system:String>
+    <system:String x:Key="addRelationship">Thêm mối quan hệ</system:String>
+    <system:String x:Key="family">Gia đình</system:String>
 
     <system:String x:Key="language">Tiếng Việt</system:String>
 </ResourceDictionary>

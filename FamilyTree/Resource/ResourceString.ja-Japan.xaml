@@ -27,6 +27,28 @@
     <system:String x:Key="lastName">苗字 :</system:String>
     <system:String x:Key="placeOfBirth">出生地:</system:String>
     <system:String x:Key="Birthday">生年月日:</system:String>
+    <system:String x:Key="getPicture">写真を撮る</system:String>
+
+    <!--MoreDetail-->
+    <system:String x:Key="yourName">あなたの名前</system:String>
+    <system:String x:Key="midName">名前</system:String>
+    <system:String x:Key="address">住所</system:String>
+    <system:String x:Key="enterAddress">入力</system:String>
+    <system:String x:Key="chose">入力</system:String>
+    <system:String x:Key="numberphone">電話番号</system:String>
+    <system:String x:Key="enterNumberphone">入力</system:String>
+    <system:String x:Key="gmail">Gmail</system:String>
+    <system:String x:Key="enterGmail">入力</system:String>
+    <system:String x:Key="isDead">死</system:String>
+
+    <!--MainWindow-->
+    <system:String x:Key="set">設定</system:String>
+    <system:String x:Key="view">意見</system:String>
+    <system:String x:Key="detail">詳細</system:String>
+    <system:String x:Key="picture">写真</system:String>
+    <system:String x:Key="addRelationship">新しい関係を追加する</system:String>
+    <system:String x:Key="family">家族</system:String>
+
 
     <system:String x:Key="language">Japanese</system:String> <!--日本-->
 </ResourceDictionary>
