@@ -24,10 +24,12 @@ namespace FamilyTree.Components
             InitializeComponent();
         }
 
-        private void btnNew_Click(object sender, RoutedEventArgs e)
+        private void NewUser_Click(object sender, RoutedEventArgs e)
         {
-            //App.LoadRecentFiles();
-            
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            NewUser newUser = new NewUser();
+            newUser.ShowDialog();
         }
     }
 }

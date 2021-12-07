@@ -76,7 +76,7 @@
                     ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="{DynamicResource btnNew}"
                     Margin="47,34,22,221.6"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="NewPerson"  />
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="NewUser_Click"  />
                     <Button x:Name="btnOpen"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     ToolTip="Resource name: MaterialDesignRaisedButton"

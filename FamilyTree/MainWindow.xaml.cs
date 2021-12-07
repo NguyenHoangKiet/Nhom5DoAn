@@ -23,6 +23,7 @@ namespace FamilyTree
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
