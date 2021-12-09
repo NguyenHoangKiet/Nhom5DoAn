@@ -49,6 +49,10 @@
     <system:String x:Key="picture">Picture</system:String>
     <system:String x:Key="addRelationship">Add new relationships</system:String>
     <system:String x:Key="family">Family</system:String>
+    <system:String x:Key="save">Save</system:String>
+    <system:String x:Key="saveAs">Save as</system:String>
+    <system:String x:Key="exit">Exit</system:String>
+
 
     <system:String x:Key="language">English</system:String>
 </ResourceDictionary>

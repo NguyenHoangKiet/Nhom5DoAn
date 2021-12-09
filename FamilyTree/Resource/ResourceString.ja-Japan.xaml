@@ -48,6 +48,10 @@
     <system:String x:Key="picture">写真</system:String>
     <system:String x:Key="addRelationship">新しい関係を追加する</system:String>
     <system:String x:Key="family">家族</system:String>
+    <system:String x:Key="save">保存する</system:String>
+    <system:String x:Key="saveAs">名前を付けて保存</system:String>
+    <system:String x:Key="exit">出口</system:String>
+
 
 
     <system:String x:Key="language">Japanese</system:String> <!--日本-->
