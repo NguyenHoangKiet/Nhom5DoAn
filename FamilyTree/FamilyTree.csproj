@@ -77,6 +77,9 @@
     <Compile Include="Components\MoreDetail.xaml.cs">
       <DependentUpon>MoreDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\Tree\TreeViewer.xaml.cs">
+      <DependentUpon>TreeViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\ViewModel\ControlBarViewModel.cs" />
     <Compile Include="Components\WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
@@ -90,6 +93,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Components\NewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Tree\TreeViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
