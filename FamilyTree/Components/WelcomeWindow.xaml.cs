@@ -26,10 +26,16 @@ namespace FamilyTree.Components
 
         private void NewUser_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            this.Hide();
+
             NewUser newUser = new NewUser();
             newUser.ShowDialog();
+
+            if (newUser.IsClosed)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
         }
     }
 }
