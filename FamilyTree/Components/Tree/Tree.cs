@@ -294,7 +294,7 @@ namespace FamilyTree.Components.Tree
                     connector.Node.Visibility = Visibility.Hidden;
             }
 
-                
+
             InvalidateVisual();
             InvalidateArrange();
             InvalidateMeasure();
@@ -302,7 +302,7 @@ namespace FamilyTree.Components.Tree
             animationTimer.Interval = App.GetAnimationDuration(Const.AnimationPauseDuration);
             animationTimer.Tick += new EventHandler(OnAnimationTimer);
             animationTimer.IsEnabled = true;
-           
+
             OnTreePopulated();
         }
 
@@ -434,7 +434,7 @@ namespace FamilyTree.Components.Tree
             InvalidateVisual();
         }
 
-      
+
         private void OnNodeClick(object sender, RoutedEventArgs e)
         {
             Node node = sender as Node;

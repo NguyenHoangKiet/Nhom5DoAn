@@ -117,7 +117,7 @@ namespace FamilyTree.Components.Tree
             return list;
         }
 
-        public static List<Person> GetChildren(DiagramRow row)
+        public static List<Person> GetChildren(Row row)
         {
             List<Person> list = new List<Person>();
 
@@ -167,7 +167,7 @@ namespace FamilyTree.Components.Tree
         }
         private Node CreateNode(Person person, NodeType type, bool clickEvent)
         {
-            Node node = new DiagramNode();
+            Node node = new Node();
             node.Person = person;
             node.Type = type;
             if (clickEvent)
@@ -412,7 +412,7 @@ namespace FamilyTree.Components.Tree
             displayYear = DateTime.Now.Year;
         }
 
-        public Node GetDiagramNode(Person person)
+        public Node GetNode(Person person)
         {
             if (person == null)
                 return null;
