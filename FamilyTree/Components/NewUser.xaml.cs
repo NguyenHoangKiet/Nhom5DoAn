@@ -44,11 +44,11 @@ namespace FamilyTree.Components
         {
             Gender gender;
 
-            if(rdoMale.IsChecked == true)
+            if(radiobtnMale.IsChecked == true)
             {
                 gender = Gender.Male;
             }
-            else if(rdoFemale.IsChecked == true)
+            else if(radiobtnFemale.IsChecked == true)
             {
                 gender = Gender.Female;
             }
@@ -57,11 +57,11 @@ namespace FamilyTree.Components
                 gender = Gender.unknown;
             }
 
-            Person newPerson = new Person(tbFirstName == null ? tbFirstName.Text : null, tbLastName == null ? tbLastName.Text : null, gender);
+            Person newPerson = new Person(tbFirstname == null ? tbFirstname.Text : null, tbLastName == null ? tbLastName.Text : null, gender);
 
-            if(dpBirthDay.SelectedDate != null)
+            if(tbBirthDay.SelectedDate != null)
             {
-                newPerson.BirthDate = dpBirthDay.SelectedDate;
+                newPerson.BirthDate = tbBirthDay.SelectedDate;
             }
 
             if (tbPlaceOfBirth.Text != null)

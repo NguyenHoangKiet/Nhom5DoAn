@@ -34,7 +34,9 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Margin="0,0,0,-0.4" RenderTransformOrigin="0.5,0.508" >
+            <Grid Grid.Column="0" 
+                  Margin="0,0,0,-0.4" 
+                  RenderTransformOrigin="0.5,0.508" >
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -57,15 +59,16 @@
                                     Width="150"
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center" />
+
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Bottom"
                       >
-                    <Button x:Name="btnGetPhoto"
-                            Content="Nhấn vào đây để thêm ảnh"
+                    <Button Content="Nhấn vào đây để thêm ảnh"
                             Background="White"
                             Foreground="Black"
-                            BorderBrush="White" Click="btnGetPhoto_Click"></Button>
+                            BorderBrush="White"
+                            Click="btnGetPhoto_Click"></Button>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1"
@@ -73,33 +76,46 @@
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBlock VerticalAlignment="Bottom"
-                               FontSize="20">
-                        <Bold>Giới tính:</Bold>
+                               FontSize="20"
+                               >
+                        <TextBlock.Inlines>
+                            <Run FontWeight="Bold" 
+                                 FontSize="20" 
+                                 Text="{DynamicResource Sex}"/>
+                        </TextBlock.Inlines>
                     </TextBlock>
                 </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="78*"/>
-                        <ColumnDefinition Width="319*"/>
-                    </Grid.ColumnDefinitions>
-                    <RadioButton 
-                        x:Name="rdoMale"
+                <Grid Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" HorizontalAlignment="Left">
+                        <RadioButton
+                        x:Name="radiobtnMale"
                         Style="{StaticResource MaterialDesignRadioButton}"
-                        Content = "Nam"
-                        FontSize= "20">
-                    </RadioButton>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <RadioButton 
-                        x:Name="rdoFemale"
+                        Content = "{DynamicResource rdoMale}"
+                        FontSize= "20" Grid.ColumnSpan="4"
+                            RenderTransformOrigin="0.379,0.64" 
+                            HorizontalAlignment="Left" 
+                            Width="77">
+
+                        </RadioButton>
+                    </Grid>
+                    <Grid Grid.Row="1" HorizontalAlignment="Left">
+                        <RadioButton 
+                        x:Name="radiobtnFemale"
                         Style="{StaticResource MaterialDesignRadioButton}"
-                        Content = "Nữ"
-                        FontSize= "20">
-                    </RadioButton>
+                        Content = "{DynamicResource rdoFemale}"
+                        FontSize= "20"  
+                        HorizontalAlignment="Left" 
+                        Width="115" RenderTransformOrigin="0.5,0.5">
+                        </RadioButton>
+                    </Grid>
+
                 </Grid>
             </Grid>
         </Grid>
@@ -109,18 +125,18 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0"
-                  Margin="35">
+                  Margin="35 50">
                 <TextBox 
-                    x:Name="tbLastName"
-                    materialDesign:HintAssist.Hint="Họ:"
+                    x:Name="tbFirstname"
+                    materialDesign:HintAssist.Hint="{DynamicResource lastName}"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </Grid>
             <Grid Grid.Column="1"
-                  Margin="35">
+                  Margin="35 50">
                 <TextBox 
-                    x:Name="tbFirstName"
-                    materialDesign:HintAssist.Hint="Tên:"
+                    x:Name="tbLastName"
+                    materialDesign:HintAssist.Hint="{DynamicResource firstName}"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </Grid>
@@ -131,18 +147,21 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0"
-                  Margin="35">
+                  Margin="35,35,35,35.2">
                 <DatePicker 
-                    x:Name="dpBirthDay"
-                    materialDesign:HintAssist.Hint="Ngày sinh:"
+                    x:Name="tbBirthDay"
+                    materialDesign:HintAssist.Hint="{DynamicResource Birthday}"
                     FontSize="25"
-                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                    Height="120" 
+                    Margin="1,-26,0,25"
+                    VerticalAlignment="Bottom" />
             </Grid>
             <Grid Grid.Column="1"
                   Margin="35 35 35 61">
                 <TextBox 
                     x:Name="tbPlaceOfBirth"
-                    materialDesign:HintAssist.Hint="Nơi sinh:"
+                    materialDesign:HintAssist.Hint="{DynamicResource placeOfBirth}"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </Grid>
@@ -157,7 +176,8 @@
                         Width="200"
                         ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
                         Content="Thêm"
-                        FontSize="15" Click="addNewUser_Click">
+                        FontSize="15"
+                        Click="addNewUser_Click">
                 </Button>
             </Grid>
             <Grid Grid.Column="1">
@@ -165,7 +185,8 @@
                         Width="200"
                         ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
                         Content="Hủy"
-                        FontSize="15">
+                        FontSize="15"
+                        Click="Cancel_Click">
                 </Button>
             </Grid>
         </Grid>
