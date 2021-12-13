@@ -43,7 +43,7 @@
                       Width="150"
                       Margin="0 0 0 0"
                       Grid.Row="0">
-                    <Image></Image>
+                    <Image x:Name="photoBox"></Image>
                 </Grid>
                 <Grid Grid.Row="0">
                     <Grid Height="160"
@@ -51,6 +51,7 @@
                       Margin="0 0 0 0"
                       >
                         <materialDesign:PackIcon
+                                    x:Name="icon"
                                     Kind="AccountCircle"
                                     Height="150"
                                     Width="150"
@@ -60,10 +61,11 @@
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Bottom"
                       >
-                    <Button Content="Nhấn vào đây để thêm ảnh"
+                    <Button x:Name="btnGetPhoto"
+                            Content="Nhấn vào đây để thêm ảnh"
                             Background="White"
                             Foreground="Black"
-                            BorderBrush="White"></Button>
+                            BorderBrush="White" Click="btnGetPhoto_Click"></Button>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1"
@@ -85,6 +87,7 @@
                         <ColumnDefinition Width="319*"/>
                     </Grid.ColumnDefinitions>
                     <RadioButton 
+                        x:Name="rdoMale"
                         Style="{StaticResource MaterialDesignRadioButton}"
                         Content = "Nam"
                         FontSize= "20">
@@ -92,6 +95,7 @@
                 </Grid>
                 <Grid Grid.Row="2">
                     <RadioButton 
+                        x:Name="rdoFemale"
                         Style="{StaticResource MaterialDesignRadioButton}"
                         Content = "Nữ"
                         FontSize= "20">
@@ -107,6 +111,7 @@
             <Grid Grid.Column="0"
                   Margin="35">
                 <TextBox 
+                    x:Name="tbLastName"
                     materialDesign:HintAssist.Hint="Họ:"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
@@ -114,6 +119,7 @@
             <Grid Grid.Column="1"
                   Margin="35">
                 <TextBox 
+                    x:Name="tbFirstName"
                     materialDesign:HintAssist.Hint="Tên:"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
@@ -127,7 +133,7 @@
             <Grid Grid.Column="0"
                   Margin="35">
                 <DatePicker 
-                    
+                    x:Name="dpBirthDay"
                     materialDesign:HintAssist.Hint="Ngày sinh:"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
@@ -135,6 +141,7 @@
             <Grid Grid.Column="1"
                   Margin="35 35 35 61">
                 <TextBox 
+                    x:Name="tbPlaceOfBirth"
                     materialDesign:HintAssist.Hint="Nơi sinh:"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
@@ -150,7 +157,7 @@
                         Width="200"
                         ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
                         Content="Thêm"
-                        FontSize="15">
+                        FontSize="15" Click="addNewUser_Click">
                 </Button>
             </Grid>
             <Grid Grid.Column="1">

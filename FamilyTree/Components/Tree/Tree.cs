@@ -11,7 +11,7 @@ using System.Windows.Threading;
 namespace FamilyTree.Components.Tree
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses")]
-    class Tree : FrameworkElement
+    public class Tree : FrameworkElement
     {
         #region fields
 
