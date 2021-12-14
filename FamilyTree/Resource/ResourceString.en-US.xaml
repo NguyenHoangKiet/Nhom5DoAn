@@ -27,7 +27,7 @@
     <system:String x:Key="firstName">First name:</system:String>
     <system:String x:Key="lastName">Last name:</system:String>
     <system:String x:Key="placeOfBirth">Place of birth:</system:String>
-    <system:String x:Key="Birthday">Birthday:</system:String>
+    <system:String x:Key="Birthday">Date of Birth:</system:String>
     <system:String x:Key="getPicture">Get picture</system:String>
 
     <!--MoreDetail-->
@@ -55,4 +55,13 @@
 
 
     <system:String x:Key="language">English</system:String>
+    <!--FamilyData-->
+    <system:String x:Key="memberList">MEMBER LIST</system:String>
+    <system:String x:Key="tblSearch">Enter the information</system:String>
+    <system:String x:Key="tblPrivateInfo">Personal Information</system:String>
+    <system:String x:Key="tblName">Name</system:String>
+    <system:String x:Key="tblDeadDate">Date of death</system:String>
+    <system:String x:Key="btnExport">Export</system:String>
+    <system:String x:Key="tblDateofBirth">Date of Birth</system:String>
+    <system:String x:Key="tblplaceOfBirth">Place of birth</system:String>
 </ResourceDictionary>

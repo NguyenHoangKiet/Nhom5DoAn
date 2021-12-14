@@ -1,0 +1,187 @@
+﻿<Window x:Class="FamilyTree.Components.FamilyData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:FamilyTree.Components"
+        xmlns:local="clr-namespace:FamilyTree.Components"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="FamilyData" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:ControlBarUC></uc:ControlBarUC>
+        </Grid>
+        <Grid Grid.Row="1">
+            <materialDesign:ColorZone Mode="PrimaryLight">
+                <TextBlock Text="{DynamicResource memberList}"
+                       HorizontalAlignment="Center"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       ></TextBlock>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="2">
+            <TextBlock Text="{DynamicResource tblSearch}"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left"></TextBlock>
+            <materialDesign:ColorZone
+                Mode="Light"
+                Padding="16">
+                <DockPanel>
+                    <StackPanel
+                        Orientation="Horizontal"
+                        materialDesign:RippleAssist.IsCentered="True">
+                        <materialDesign:ColorZone
+                            Mode="Standard"
+                            Padding="8 4 8 4"
+                            CornerRadius="2"
+                            Panel.ZIndex="1"
+                            Margin="16 0 0 0"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="Auto" />
+                                    <ColumnDefinition
+                                        Width="*" />
+                                    <ColumnDefinition
+                                        Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Button
+                                    Style="{DynamicResource MaterialDesignToolButton}" Grid.RowSpan="2">
+                                    <materialDesign:PackIcon
+                                        Kind="Magnify"
+                                        Opacity=".56" />
+                                </Button>
+                                <TextBox
+                                    Grid.Column="1"
+                                    Margin="8,4,0,4"
+                                    materialDesign:HintAssist.Hint="{DynamicResource tblSearch}"
+                                    materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                    BorderThickness="0"
+                                    MinWidth="200"
+                                    VerticalAlignment="Center" Grid.RowSpan="2" />
+                            </Grid>
+                        </materialDesign:ColorZone>
+                        <Button
+                            Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                            Margin="8 0 0 0"
+                            Panel.ZIndex="0">
+                            <materialDesign:PackIcon
+                                Kind="Send" />
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <ListView HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Width="auto">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="{DynamicResource tblName}"
+                                            ></GridViewColumn>
+                            <GridViewColumn Header="{DynamicResource Birthday}"
+                                            ></GridViewColumn>
+                            <GridViewColumn Header="{DynamicResource placeOfBirth}"
+                                            ></GridViewColumn>
+                            <GridViewColumn Header="{DynamicResource tblDeadDate}"
+                                            ></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock
+                        Text="{DynamicResource tblPrivateInfo}"
+                        FontSize="25"
+                        HorizontalAlignment="Center"
+                        FontWeight="Bold"
+                        Margin="0,0,0,0">
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <TextBox
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="{DynamicResource tblName}"
+                        FontSize="20"
+                        Text=""
+                        Margin="0 0 0 0"
+                        VerticalAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <TextBox
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="{DynamicResource tblDateofBirth}"
+                        FontSize="20"
+                        Text=""
+                        Margin="0 0 0 0"
+                        VerticalAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <TextBox
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="{DynamicResource tblplaceOfBirth}"
+                        FontSize="20"
+                        Text=""
+                        Margin="0 0 0 0"
+                        VerticalAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="4">
+                    <TextBox
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="{DynamicResource tblDeadDate}"
+                        FontSize="20"
+                        Text=""
+                        Margin="0 0 0 0"
+                        VerticalAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Button
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        Width="150"
+                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                        Content="{DynamicResource btnExport}">
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
