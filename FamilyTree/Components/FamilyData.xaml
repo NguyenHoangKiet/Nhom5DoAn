@@ -18,64 +18,68 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Title="FamilyData" Height="800" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <uc:ControlBarUC></uc:ControlBarUC>
-        </Grid>
-        <Grid Grid.Row="1">
-            <materialDesign:ColorZone Mode="PrimaryLight">
-                <TextBlock Text="{DynamicResource memberList}"
+    <Border BorderBrush="Black" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <uc:ControlBarUC></uc:ControlBarUC>
+            </Grid>
+            <Grid Grid.Row="1">
+                <materialDesign:ColorZone Mode="PrimaryLight">
+                    <TextBlock Text="{DynamicResource memberList}"
                        HorizontalAlignment="Center"
                        FontSize="28"
                        FontWeight="Bold"
                        ></TextBlock>
-            </materialDesign:ColorZone>
-        </Grid>
-        <Grid Grid.Row="2">
-            <TextBlock Text="{DynamicResource tblSearch}"
+                </materialDesign:ColorZone>
+            </Grid>
+            <Grid Grid.Row="2">
+                <TextBlock Text="{DynamicResource tblSearch}"
                        FontSize="20"
                        FontWeight="Bold"
                        HorizontalAlignment="Left"></TextBlock>
-            <materialDesign:ColorZone
+                <materialDesign:ColorZone
                 Mode="Light"
                 Padding="16">
-                <DockPanel>
-                    <StackPanel
+                    <DockPanel>
+                        <StackPanel
                         Orientation="Horizontal"
                         materialDesign:RippleAssist.IsCentered="True">
-                        <materialDesign:ColorZone
+                            <materialDesign:ColorZone
                             Mode="Standard"
                             Padding="8 4 8 4"
                             CornerRadius="2"
                             Panel.ZIndex="1"
                             Margin="16 0 0 0"
                             materialDesign:ShadowAssist.ShadowDepth="Depth1">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="3*"/>
-                                    <RowDefinition Height="5*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="5*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition
                                         Width="Auto" />
-                                    <ColumnDefinition
+                                        <ColumnDefinition
                                         Width="*" />
-                                    <ColumnDefinition
+                                        <ColumnDefinition
                                         Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Button
+                                    </Grid.ColumnDefinitions>
+                                    <Button
                                     Style="{DynamicResource MaterialDesignToolButton}" Grid.RowSpan="2">
-                                    <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
+                                        MouseDoubleClick="PackIcon_MouseDoubleClick"
                                         Kind="Magnify"
                                         Opacity=".56" />
-                                </Button>
-                                <TextBox
+                                    </Button>
+                                    <TextBox
+                                    TextChanged="txtFilter_TextChanged"
+                                    x:Name="txtFilter"
                                     Grid.Column="1"
                                     Margin="8,4,0,4"
                                     materialDesign:HintAssist.Hint="{DynamicResource tblSearch}"
@@ -83,105 +87,42 @@
                                     BorderThickness="0"
                                     MinWidth="200"
                                     VerticalAlignment="Center" Grid.RowSpan="2" />
-                            </Grid>
-                        </materialDesign:ColorZone>
-                        <Button
-                            Style="{DynamicResource MaterialDesignToolForegroundButton}"
-                            Margin="8 0 0 0"
-                            Panel.ZIndex="0">
-                            <materialDesign:PackIcon
-                                Kind="Send" />
-                        </Button>
-                    </StackPanel>
-                </DockPanel>
-            </materialDesign:ColorZone>
-        </Grid>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
+                                </Grid>
+                            </materialDesign:ColorZone>
+                        </StackPanel>
+                    </DockPanel>
+                </materialDesign:ColorZone>
+            </Grid>
+            <Grid Grid.Row="3">
                 <ListView HorizontalAlignment="Left"
-                          VerticalAlignment="Top"
-                          Width="auto">
+                      VerticalAlignment="Top"
+                    x:Name="listviewMember">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="{DynamicResource tblName}"
+                            <GridViewColumn     Width="200"
+                                            Header="{DynamicResource tblName}"
+                                            DisplayMemberBinding="{Binding FullName}"
                                             ></GridViewColumn>
-                            <GridViewColumn Header="{DynamicResource Birthday}"
+                            <GridViewColumn     Width="150"
+                                            Header="{DynamicResource tblGender}"
+                                            DisplayMemberBinding="{Binding Gender}"
                                             ></GridViewColumn>
-                            <GridViewColumn Header="{DynamicResource placeOfBirth}"
+                            <GridViewColumn     Width="150"
+                                            Header="{DynamicResource tblDateofBirth}"
+                                            DisplayMemberBinding="{Binding BirthDate}"
                                             ></GridViewColumn>
-                            <GridViewColumn Header="{DynamicResource tblDeadDate}"
+                            <GridViewColumn     Width="150"
+                                            Header="{DynamicResource tblplaceOfBirth}"
+                                            DisplayMemberBinding="{Binding BirthPlace}"
+                                            ></GridViewColumn>
+                            <GridViewColumn     Width="150"
+                                            Header="{DynamicResource tblDeadDate}"
+                                            DisplayMemberBinding="{Binding DeadDate}"
                                             ></GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
             </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock
-                        Text="{DynamicResource tblPrivateInfo}"
-                        FontSize="25"
-                        HorizontalAlignment="Center"
-                        FontWeight="Bold"
-                        Margin="0,0,0,0">
-                    </TextBlock>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <TextBox
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        materialDesign:HintAssist.Hint="{DynamicResource tblName}"
-                        FontSize="20"
-                        Text=""
-                        Margin="0 0 0 0"
-                        VerticalAlignment="Center" />
-                </Grid>
-                <Grid Grid.Row="2">
-                    <TextBox
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        materialDesign:HintAssist.Hint="{DynamicResource tblDateofBirth}"
-                        FontSize="20"
-                        Text=""
-                        Margin="0 0 0 0"
-                        VerticalAlignment="Center" />
-                </Grid>
-                <Grid Grid.Row="3">
-                    <TextBox
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        materialDesign:HintAssist.Hint="{DynamicResource tblplaceOfBirth}"
-                        FontSize="20"
-                        Text=""
-                        Margin="0 0 0 0"
-                        VerticalAlignment="Center" />
-                </Grid>
-                <Grid Grid.Row="4">
-                    <TextBox
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        materialDesign:HintAssist.Hint="{DynamicResource tblDeadDate}"
-                        FontSize="20"
-                        Text=""
-                        Margin="0 0 0 0"
-                        VerticalAlignment="Center" />
-                </Grid>
-                <Grid Grid.Row="5">
-                    <Button
-                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                        Width="150"
-                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
-                        Content="{DynamicResource btnExport}">
-                    </Button>
-                </Grid>
-            </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </Window>

@@ -63,4 +63,6 @@
     <system:String x:Key="btnExport">Xuất thông tin</system:String>
     <system:String x:Key="tblDateofBirth">Ngày sinh</system:String>
     <system:String x:Key="tblplaceOfBirth">Nơi sinh</system:String>
+    <system:String x:Key="tblGender">Giới tính</system:String>
+    
 </ResourceDictionary>

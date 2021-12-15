@@ -6,8 +6,7 @@
         xmlns:uc="clr-namespace:FamilyTree.Components"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:FamilyTree.Components"
-        mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -18,7 +17,7 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Title="NewUser" Height="810.8" Width="771.2">
+        Title="NewUser" Height="700" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -40,13 +39,13 @@
                   RenderTransformOrigin="0.5,0.508" >
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Height="160"
                       Width="150"
                       Margin="0 0 0 0"
                       Grid.Row="0">
-                    <Image x:Name="photoBox"></Image>
+                    <Image x:Name="photoBox" Margin="0,0,0,30"></Image>
                 </Grid>
                 <Grid Grid.Row="0">
                     <Grid Height="160"
@@ -56,20 +55,21 @@
                         <materialDesign:PackIcon
                                     x:Name="icon"
                                     Kind="AccountCircle"
-                                    Height="150"
+                                    Height="125"
                                     Width="150"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Center" />
+                                    HorizontalAlignment="Center" Margin="0,5,0,30" />
 
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Bottom"
                       >
-                    <Button Content="{DynamicResource getPicture}"
+                    <Button Margin="50,0,50,0"
+                            Click="btnGetPhoto_Click"
+                            Content="{DynamicResource btnImport}"
                             Background="White"
                             Foreground="Black"
-                            BorderBrush="White"
-                            Click="btnGetPhoto_Click"></Button>
+                            BorderBrush="White"></Button>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1"
@@ -90,12 +90,8 @@
                     </TextBlock>
                 </Grid>
                 <Grid Grid.Row="1" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" HorizontalAlignment="Left">
-                        <RadioButton
+                    <RadioButton 
+                        VerticalAlignment="Top"
                         x:Name="radiobtnMale"
                         Style="{StaticResource MaterialDesignRadioButton}"
                         Content = "{DynamicResource rdoMale}"
@@ -104,19 +100,16 @@
                             HorizontalAlignment="Left" 
                             Width="77">
 
-                        </RadioButton>
-                    </Grid>
-                    <Grid Grid.Row="1" HorizontalAlignment="Left">
-                        <RadioButton 
+                    </RadioButton>
+                    <RadioButton 
+                            VerticalAlignment="Center"
                         x:Name="radiobtnFemale"
                         Style="{StaticResource MaterialDesignRadioButton}"
                         Content = "{DynamicResource rdoFemale}"
                         FontSize= "20"  
                         HorizontalAlignment="Left" 
                         Width="115" RenderTransformOrigin="0.5,0.5">
-                        </RadioButton>
-                    </Grid>
-
+                    </RadioButton>
                 </Grid>
             </Grid>
         </Grid>
@@ -139,7 +132,7 @@
                     x:Name="tbLastName"
                     materialDesign:HintAssist.Hint="{DynamicResource firstName}"
                     FontSize="25"
-                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0.6,0.4" />
             </Grid>
         </Grid>
         <Grid Grid.Row="3">
@@ -154,8 +147,8 @@
                     materialDesign:HintAssist.Hint="{DynamicResource Birthday}"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
-                    Height="120" 
-                    Margin="1,-26,0,25"
+                    Height="67" 
+                    Margin="1,0,0.4,25.2"
                     VerticalAlignment="Bottom" />
             </Grid>
             <Grid Grid.Column="1"
@@ -176,7 +169,7 @@
                 <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200"
                         ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
-                        Content="{DynamicResource btnAdd}"
+                        Content="Thêm"
                         FontSize="15"
                         Click="addNewUser_Click">
                 </Button>
@@ -184,10 +177,10 @@
             <Grid Grid.Column="1">
                 <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200"
+                        Click="Cancel_Click"
                         ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
-                        Content="{DynamicResource btnCancel}"
-                        FontSize="15"
-                        Click="Cancel_Click">
+                        Content="Hủy"
+                        FontSize="15">
                 </Button>
             </Grid>
         </Grid>
