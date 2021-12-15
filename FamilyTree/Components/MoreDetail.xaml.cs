@@ -18,7 +18,7 @@ using Microsoft;
 namespace FamilyTree
 {
     /// <summary>
-    /// Interaction logic for MoreDetail.xaml
+    /// Interaction logic for MoDetail.xaml
     /// </summary>
     public partial class MoreDetail : Window
     {

@@ -34,5 +34,10 @@ namespace FamilyTree.Components
             NewUser newUser = new NewUser();
             newUser.ShowDialog();
         }
+
+        private void ControlBarUC_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
