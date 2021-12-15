@@ -8,9 +8,8 @@
         
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-         ResizeMode="NoResize"
         
-        Title="MoreDetail" Height="650" Width="400">
+        Title="MoreDetail" Height="650" Width="405">
     <Grid >
         <!-- <Grid.Resources>
             <ResourceDictionary>
