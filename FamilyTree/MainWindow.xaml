@@ -15,7 +15,6 @@
      TextOptions.TextRenderingMode="Auto"
      Background="#FF673AB7"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        mc:Ignorable="d"
         Title="MainWindow" Height="633.467" Width="1051.634">
     <Grid
         Background="#FF332DA8"
@@ -85,7 +84,7 @@
 
                         <MenuItem x:Name="Menu_I1" Header="Tạo mới"
                                               Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
-                                              InputGestureText="Ctrl+N" Foreground="#DD000000" Click="MenuItem_Click"/>
+                                              InputGestureText="Ctrl+N" Foreground="#DD000000"/>
                         <MenuItem x:Name="Menu_I2" Header="Mở"
                                               Icon="{materialDesign:PackIcon Kind=FolderOpenOutline}"
                                               InputGestureText="Ctrl+O" Foreground="#DD000000"/>
@@ -94,7 +93,7 @@
                                              InputGestureText="Ctrl+S" Foreground="#DD111111"/>
 
                         <MenuItem x:Name="Menu_I4" Header="Lưu mới"
-                                              InputGestureText="Ctrl+Shift+S" Foreground="#DD000000" Click="Menu_I4_Click"/>
+                                              InputGestureText="Ctrl+Shift+S" Foreground="#DD000000" />
 
                         <MenuItem x:Name="Menu_I5" Header=".gedcome"
                                          
