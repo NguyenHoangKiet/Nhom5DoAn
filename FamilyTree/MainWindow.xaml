@@ -8,26 +8,31 @@
 
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-     TextElement.FontWeight="Regular"
-     TextElement.FontSize="13"
-     TextOptions.TextFormattingMode="Ideal"
-     TextOptions.TextRenderingMode="Auto"
-     Background="#FF673AB7"
-     FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="633.467" Width="1051.634">
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FF673AB7"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="750" Width="1400">
     <Grid
         Background="#FF332DA8"
         >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="1269*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition
-                Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
         <!--ControlBar-->
-<<<<<<< HEAD
         <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,645.4" Grid.RowSpan="2">
 
             <Grid.RowDefinitions>
@@ -42,15 +47,10 @@
 
             <Grid Grid.Row="1">
                 <materialDesign:ColorZone
-=======
-        <Grid Grid.Row="0" Background="Black">
-            <materialDesign:ColorZone
->>>>>>> ecdf7cbb2ebd9b8e9254fcbf43dd3a2d32198a6b
             Mode="PrimaryDark"
-            Padding="16"
+            Padding="5"
             CornerRadius="3"
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
-<<<<<<< HEAD
             Margin="4,0,0,-14.6" Height="53">
                     <Menu
                         IsMainMenu="True" Margin="0,0,0,11.2" HorizontalAlignment="Left" Width="150" >
@@ -60,108 +60,48 @@
                                     CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF673AB7">
 
                             <MenuItem Header="New"
-=======
-            Margin="2">
-                <DockPanel>
-                    <StackPanel DockPanel.Dock="Right" Background="Transparent" Orientation="Horizontal">
-
-                        <Button
-                        Command="{Binding minimizedwindowCommand}"
-                        CommandParameter="{Binding ElementName=ucControlBar}"
-                        ToolTip="Thu nhỏ">
-                            <materialDesign:PackIcon Kind="WindowMinimize" />
-                        </Button>
-                        <Button
-                        Command="{Binding maximizedwindowCommand}"
-                        CommandParameter="{Binding ElementName=ucControlBar}"
-                            ToolTip="Save">
-                            <materialDesign:PackIcon
-                                Kind="WindowMaximize" />
-                        </Button>
-                        <Separator />
-                        <Button 
-                        Command="{Binding closewindowCommand}"
-                        CommandParameter="{Binding ElementName=ucControlBar}"
-                        Background="Red"
-                        ToolTip="Follow me on Twitter">
-                            <materialDesign:PackIcon Kind="WindowClose" />
-                        </Button>
-
-                    </StackPanel>
-                    <StackPanel
-                    Orientation="Horizontal">
-                        <ToggleButton
-                        Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
-                        <TextBlock
-                        VerticalAlignment="Center"
-                        Margin="16 0 0 0"
-                        Text="{Binding Tag, ElementName=ucControlBar}">
-                        </TextBlock>
-                    </StackPanel>
-                </DockPanel>
-            </materialDesign:ColorZone>
-        </Grid>
-        <Grid Grid.Row="1">
-            <StackPanel DockPanel.Dock="Left"  Orientation="Horizontal" Height="25" Background="#FF4B4DA2">
-                <Menu
-                        IsMainMenu="True" >
-                    <MenuItem                          
-                            Icon="{materialDesign:PackIcon Kind=Menu}" Width="165" Height="25" Header="Tệp tin" BorderThickness="1"
-                                    Foreground="#DDFFFFFF" Padding="16,4" 
-                                    CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF4B4DA2" >
-
-                        <MenuItem x:Name="Menu_I1" Header="Tạo mới"
->>>>>>> ecdf7cbb2ebd9b8e9254fcbf43dd3a2d32198a6b
                                               Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
                                               InputGestureText="Ctrl+N" Foreground="#DD000000"/>
-                        <MenuItem x:Name="Menu_I2" Header="Mở"
+                            <MenuItem Header="Open"
                                               Icon="{materialDesign:PackIcon Kind=FolderOpenOutline}"
                                               InputGestureText="Ctrl+O" Foreground="#DD000000"/>
-                        <MenuItem x:Name="Menu_I3" Header="Lưu"
+                            <MenuItem Header="Save"
                                              Icon="{materialDesign:PackIcon Kind=ContentSave}"
                                              InputGestureText="Ctrl+S" Foreground="#DD111111"/>
 
-                        <MenuItem x:Name="Menu_I4" Header="Lưu mới"
-                                              InputGestureText="Ctrl+Shift+S" Foreground="#DD000000" />
+                            <MenuItem Header="Save As.."
+                                              InputGestureText="Ctrl+Shift+S" Foreground="#DD000000"/>
 
-                        <MenuItem x:Name="Menu_I5" Header=".gedcome"
+                            <MenuItem Header=".gedcome"
                                          
                                               Foreground="#DD121010" />
-                        <MenuItem x:Name="Menu_I6" Header="Thoát"
+                            <MenuItem Header="Exit"
                                               InputGestureText="Ctrl+E"
                                               Icon="{materialDesign:PackIcon Kind=ExitToApp}" Foreground="#DD121010" />
-                    </MenuItem>
-                    <Separator />
-                </Menu>
-                <TextBlock
-                        VerticalAlignment="Center"
-                        Margin="16 0 0 0"
-                        Text="{Binding Tag, ElementName=ucControlBar}">
-                </TextBlock>
-            </StackPanel>
+                        </MenuItem>
+                        <Separator />
+                    </Menu>
+                </materialDesign:ColorZone>
+            </Grid>
         </Grid>
-<<<<<<< HEAD
         <DockPanel Grid.ColumnSpan="2" Margin="0,105,0,0.4" Grid.Row="1">
             <!--detail-->
             <!--<Grid 
                     DockPanel.Dock="Left"
                     Margin="10,10,7,10">
                 <Border BorderBrush="Black" BorderThickness="1">
-
                     <Grid Background="White" Width="405" Margin="0.2,79.2,-0.4,0"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="34"></RowDefinition>
                             <RowDefinition Height="199*"></RowDefinition>
                             <RowDefinition Height="367*"/>
                         </Grid.RowDefinitions>
-
                         <Grid Grid.Row="0" 
                                   Background="Gray" Margin="0,0,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-
                             <Grid Grid.Column="0">
                                 <TextBlock Text="Lee Tom" 
                            Foreground="White"
@@ -171,7 +111,6 @@
                            FontWeight="Medium"
                            FontSize="20"></TextBlock>
                             </Grid>
-
                             <Grid Grid.Column="1">
                                 <Button Background="Transparent"
                         HorizontalAlignment="Right"
@@ -188,7 +127,6 @@
                                 </Button>
                             </Grid>
                         </Grid>
-
                         <Grid Grid.Row="1" Margin="10,10.6,10.2,9.8" Grid.RowSpan="2">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="200"></RowDefinition>
@@ -197,7 +135,6 @@
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
-
                             <Grid Grid.Row="0" Margin="0,10,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="190*"></ColumnDefinition>
@@ -242,17 +179,14 @@
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium"
                            FontSize="20"/>
-
                                     </StackPanel>
                                 </Grid>
                             </Grid>
-
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-
                                 <Grid Grid.Column="0" HorizontalAlignment="Left"
                       VerticalAlignment="Center">
                                     <StackPanel Orientation="Horizontal" >
@@ -279,16 +213,13 @@
                                         Content="{DynamicResource set}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
                                     </Button>
-
                                 </Grid>
                             </Grid>
-
                             <Grid Grid.Row="2">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-
                                 <Grid Grid.Column="0" HorizontalAlignment="Left"
                       VerticalAlignment="Center">
                                     <StackPanel Orientation="Horizontal" >
@@ -314,7 +245,6 @@
                              Width="115" Content="{DynamicResource btnAdd}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
                                     </Button>
-
                                 </Grid>
                             </Grid>
                             <Grid Grid.Row="3">
@@ -322,7 +252,6 @@
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-
                                 <Grid Grid.Column="0" HorizontalAlignment="Left"
                       VerticalAlignment="Center">
                                     <StackPanel Orientation="Horizontal" >
@@ -362,13 +291,11 @@
                                     </ComboBox>
                                 </Grid>
                             </Grid>
-
                             <Grid Grid.Row="4">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-
                                 <Grid Grid.Column="0" HorizontalAlignment="Left"
                       VerticalAlignment="Center">
                                     <StackPanel Orientation="Horizontal" >
@@ -395,33 +322,17 @@
                                         Content="{DynamicResource view}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
                                     </Button>
-
                                 </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
                 </Border>
             </Grid>-->
-=======
-        <DockPanel Grid.Row="2">
-            <Grid 
-                    DockPanel.Dock="Left"
-                    Margin="10,10,7,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="83*"/>
-                    <ColumnDefinition Width="323*"/>
-                </Grid.ColumnDefinitions>
-                <!--detail-->
-                
-                <!--Detail-->
-            </Grid>
->>>>>>> ecdf7cbb2ebd9b8e9254fcbf43dd3a2d32198a6b
             <!--main-->
             <!--<ScrollViewer Margin="0,75,0,-0.2" Width="1453" >
                 <Grid
                     DockPanel.Dock="Right"
                      Margin="0,10,0,10">
-<<<<<<< HEAD
                     <Border BorderBrush="Black" BorderThickness="1" Background="Snow" >
                         <Grid Margin="0.2,0.2,0.4,-26.8" >
                             <materialDesign:PackIcon Kind="AccountCircle" Height="93" Width="105" Margin="80,43,0,0" />
@@ -441,13 +352,6 @@
                                 />
                         </Grid>
                     </Border>
-=======
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="439*"/>
-                        <ColumnDefinition Width="515*"/>
-                    </Grid.ColumnDefinitions>
-                    <Border x:Name="richTextBox1" BorderBrush="Black" BorderThickness="1" Background="Snow" Grid.ColumnSpan="2" Margin="0,0,-0.4,-0.4"/>
->>>>>>> ecdf7cbb2ebd9b8e9254fcbf43dd3a2d32198a6b
                 </Grid>
             </ScrollViewer>-->
         </DockPanel>
