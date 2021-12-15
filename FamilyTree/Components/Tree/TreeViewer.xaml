@@ -111,7 +111,6 @@
     </UserControl.Resources>
 
     <Grid>
-        <!--;assembly=FamilyTree.Components.Tree-->
         <ScrollViewer x:Name="ScrollViewer" Style="{StaticResource ScrollViewerStyle}">
             <Grid x:Name="Grid">
                 <tree:Tree x:Name="tree"></tree:Tree>

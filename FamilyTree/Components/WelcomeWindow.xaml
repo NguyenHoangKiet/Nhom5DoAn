@@ -16,11 +16,8 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Topmost="True"
         WindowStartupLocation="CenterScreen"
-        Name="WelcomeWindow"
         Title="{DynamicResource greeting}" Height="644.4" Width="1064">
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>

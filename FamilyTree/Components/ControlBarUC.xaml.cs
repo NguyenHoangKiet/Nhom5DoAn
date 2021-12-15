@@ -23,7 +23,7 @@ namespace FamilyTree.Components
     public partial class ControlBarUC : UserControl, INotifyPropertyChanged
     {
         UserDataContext userDataContext;
-        public static int curentlang = 1;// 0 là TV , 1 là TA 
+        public static int curentlang = 0;// 0 là TV , 1 là TA 
 
 
         public ControlBarUC()
@@ -36,14 +36,21 @@ namespace FamilyTree.Components
         {
             public List<string> listLanguage { get; set; }
             public ControlBarViewModel ViewModel { get; set; }
-
             public int CurrentLanguagee { get; set; }
+            public ICommand closewindowCommand { get; set; }
+            public ICommand maximizedwindowCommand { get; set; }
+            public ICommand minimizedwindowCommand { get; set; }
+            public ICommand dragwindowCommand { get; set; }
 
             public UserDataContext()
             {
                 ViewModel = new ControlBarViewModel();
                 listLanguage = new List<string>() { "Tiếng Việt", "English", "Japanese" };
                 CurrentLanguagee = curentlang;
+                dragwindowCommand = ViewModel.dragwindowCommand;
+                minimizedwindowCommand = ViewModel.minimizedwindowCommand;
+                maximizedwindowCommand = ViewModel.maximizedwindowCommand;
+                closewindowCommand=ViewModel.closewindowCommand;
             }
         }
 

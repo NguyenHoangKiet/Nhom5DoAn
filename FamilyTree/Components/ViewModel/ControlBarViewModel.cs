@@ -32,7 +32,7 @@ namespace FamilyTree.ViewModel
                 {
                     try
                     {
-                        var mainWD = (MainWindow)w;
+                        var mainWD = (MainWindow)window;
                         if (mainWD != null) Application.Current.Shutdown();
                     }
                     catch

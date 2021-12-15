@@ -1,4 +1,5 @@
-﻿using FamilyTreeLibrary;
+﻿using FamilyTree.Components;
+using FamilyTreeLibrary;
 using System;
 using System.Collections.Specialized;
 using System.Drawing;
@@ -43,18 +44,21 @@ namespace FamilyTree
 
             Properties.Settings appSettings = FamilyTree.Properties.Settings.Default;
 
-            if (!string.IsNullOrEmpty(appSettings.Skin))
-            {
-                try
-                {
-                    ResourceDictionary resourceDictionary = new ResourceDictionary();
-                    resourceDictionary.MergedDictionaries.Add(LoadComponent(new Uri(appSettings.Skin, UriKind.Relative)) as ResourceDictionary);
-                    Current.Resources = resourceDictionary;
-                }
-                catch
-                {
-                }
-            }
+            //if (!string.IsNullOrEmpty(appSettings.Skin))
+            //{
+            //    try
+            //    {
+            //        ResourceDictionary resourceDictionary = new ResourceDictionary();
+            //        resourceDictionary.MergedDictionaries.Add(LoadComponent(new Uri(appSettings.Skin, UriKind.Relative)) as ResourceDictionary);
+            //        Current.Resources = resourceDictionary;
+            //    }
+            //    catch
+            //    {
+            //    }
+            //}
+
+            WelcomeWindow w = new WelcomeWindow();
+            w.Show();
 
             base.OnStartup(e);
         }

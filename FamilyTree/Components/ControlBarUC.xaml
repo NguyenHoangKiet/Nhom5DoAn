@@ -10,11 +10,15 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" d:DesignWidth="800">
             <i:Interaction.Triggers>
-            <i:EventTrigger EventName="MouseMove">
+            <i:EventTrigger EventName="MouseLeftButtonDown">
             <i:InvokeCommandAction Command="{Binding dragwindowCommand}"
                                     CommandParameter="{Binding ElementName=ucControlBar}"/>
             </i:EventTrigger>
             </i:Interaction.Triggers>
+
+            <UserControl.Resources>
+                <ResourceDictionary Source="/Resource/ResourceString.vi-VN.xaml" />
+            </UserControl.Resources>
     <Grid>
         <materialDesign:ColorZone
             Mode="PrimaryDark"
