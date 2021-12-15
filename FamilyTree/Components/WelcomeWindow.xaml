@@ -25,8 +25,8 @@
         </Grid.RowDefinitions>
 
         <!--ControlBar-->
-        <Grid Grid.Row="0" Background="Black">
-            <uc:ControlBarUC Margin="0,0,0,-0.2" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>
+        <Grid Grid.Row="0" Background="#673AB7">
+            <uc:ControlBarUC Margin="0,0,0,0" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>
         </Grid>
 
         <!--MainWindow-->
@@ -92,6 +92,7 @@
                     Margin="47,218,22,38.4"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"/>
                 </Grid>
+                <Image Grid.Column="1" HorizontalAlignment="Left" Height="505" Margin="148.8,0,0,0" VerticalAlignment="Top" Width="848" Grid.ColumnSpan="2" Source="Picture1.jpg" Stretch="Fill"/>
 
 
             </Grid>

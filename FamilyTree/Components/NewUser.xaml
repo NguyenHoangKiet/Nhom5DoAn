@@ -15,7 +15,6 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Topmost="True"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -66,7 +65,7 @@
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Bottom"
                       >
-                    <Button Content="Nhấn vào đây để thêm ảnh"
+                    <Button Content="{DynamicResource getPicture}"
                             Background="White"
                             Foreground="Black"
                             BorderBrush="White"

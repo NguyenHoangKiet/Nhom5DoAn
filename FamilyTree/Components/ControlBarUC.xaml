@@ -25,7 +25,7 @@
             Padding="16"
             CornerRadius="3"
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
-            Margin="2">
+            Margin="2,2,2,0" Height="63">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" Background="Transparent" Orientation="Horizontal">
 

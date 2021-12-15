@@ -33,7 +33,7 @@
         </Grid.RowDefinitions>
 
         <!--ControlBar-->
-        <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.2">
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,645.4" Grid.RowSpan="2">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
@@ -42,7 +42,7 @@
 
             <!--ControlBar-->
             <Grid Grid.Row="0">
-                <uc:ControlBarUC Margin="0,0,0,-0.2" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>
+                <uc:ControlBarUC Margin="0,0,0,0" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>
             </Grid>
 
             <Grid Grid.Row="1">
@@ -51,11 +51,11 @@
             Padding="5"
             CornerRadius="3"
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
-            Margin="4,2,-200,0" Height="30" HorizontalAlignment="Left" Width="1596">
+            Margin="4,0,0,-14.6" Height="53">
                     <Menu
-                        IsMainMenu="True" Margin="0,0,1438.4,0.8" >
+                        IsMainMenu="True" Margin="0,0,0,11.2" HorizontalAlignment="Left" Width="150" >
                         <MenuItem                          
-                            Icon="{materialDesign:PackIcon Kind=Menu}" Width="149" Height="21" Header="Menu" BorderThickness="1"
+                            Icon="{materialDesign:PackIcon Kind=Menu}" Width="150" Height="32" Header="Menu" BorderThickness="1"
                                     BorderBrush="#FF673AB7" Foreground="#DDFFFFFF" Padding="0" 
                                     CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF673AB7">
 
@@ -84,14 +84,14 @@
                 </materialDesign:ColorZone>
             </Grid>
         </Grid>
-        <DockPanel Grid.ColumnSpan="2" Margin="0,10.4,0,-0.6" Grid.Row="1">
+        <DockPanel Grid.ColumnSpan="2" Margin="0,105,0,0.4" Grid.Row="1">
             <!--detail-->
-            <Grid 
+            <!--<Grid 
                     DockPanel.Dock="Left"
                     Margin="10,10,7,10">
                 <Border BorderBrush="Black" BorderThickness="1">
 
-                    <Grid Background="White" Width="405" Margin="0.2,-18.8,-0.4,0.4"  >
+                    <Grid Background="White" Width="405" Margin="0.2,79.2,-0.4,0"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="34"></RowDefinition>
                             <RowDefinition Height="199*"></RowDefinition>
@@ -202,7 +202,7 @@
                                         <materialDesign:PackIcon Kind="AccountCacheOutline"
                                                      Height="20"
                                                      Width="20"/>
-                                        <TextBlock Text="Chi tiết :" 
+                                        <TextBlock Text="{DynamicResource detail}" 
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -219,8 +219,8 @@
                                     <Button
                             Style="{StaticResource MaterialDesignRaisedButton}"
                              Width="115"
+                                        Content="{DynamicResource set}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
-                                        Xem/Sửa
                                     </Button>
 
                                 </Grid>
@@ -238,7 +238,7 @@
                                         <materialDesign:PackIcon Kind="Image"
                                                      Height="20"
                                                      Width="20"/>
-                                        <TextBlock Text="Ảnh :" 
+                                        <TextBlock Text="{DynamicResource picture}"
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -254,9 +254,8 @@
                       VerticalAlignment="Center">
                                     <Button
                             Style="{StaticResource MaterialDesignRaisedButton}"
-                             Width="115"
+                             Width="115" Content="{DynamicResource btnAdd}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
-                                        Thêm
                                     </Button>
 
                                 </Grid>
@@ -273,7 +272,7 @@
                                         <materialDesign:PackIcon Kind="PlusCircle"
                                                      Height="20"
                                                      Width="20"/>
-                                        <TextBlock Text="Thêm quan hệ :" 
+                                        <TextBlock Text="{DynamicResource addRelationship}" 
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -319,7 +318,7 @@
                                         <materialDesign:PackIcon Kind="ViewList"
                                                      Height="20"
                                                      Width="20"/>
-                                        <TextBlock Text="Gia đình :" 
+                                        <TextBlock Text="{DynamicResource family}" 
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -336,8 +335,8 @@
                                     <Button
                             Style="{StaticResource MaterialDesignRaisedButton}"
                              Width="115"
+                                        Content="{DynamicResource view}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
-                                        Xem
                                     </Button>
 
                                 </Grid>
@@ -345,14 +344,14 @@
                         </Grid>
                     </Grid>
                 </Border>
-            </Grid>
+            </Grid>-->
             <!--main-->
-            <ScrollViewer >
+            <!--<ScrollViewer Margin="0,75,0,-0.2" Width="1453" >
                 <Grid
                     DockPanel.Dock="Right"
                      Margin="0,10,0,10">
-                    <Border BorderBrush="Black" BorderThickness="1" Background="Snow" Margin="0,-19,0,0.2">
-                        <Grid>
+                    <Border BorderBrush="Black" BorderThickness="1" Background="Snow" >
+                        <Grid Margin="0.2,0.2,0.4,-26.8" >
                             <materialDesign:PackIcon Kind="AccountCircle" Height="93" Width="105" Margin="80,43,0,0" />
                             <Slider
                                 Orientation="Vertical"
@@ -371,7 +370,7 @@
                         </Grid>
                     </Border>
                 </Grid>
-            </ScrollViewer>
+            </ScrollViewer>-->
         </DockPanel>
     </Grid>
 </Window>

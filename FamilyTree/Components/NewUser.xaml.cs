@@ -49,9 +49,9 @@ namespace FamilyTree.Components
                 gender = Gender.unknown;
             }
 
-            Person newPerson = new Person(tbFirstname == null ? tbFirstname.Text : null, tbLastName == null ? tbLastName.Text : null, gender);
+            Person newPerson = new Person(tbFirstname.Text != null ? tbFirstname.Text : null, tbLastName.Text != null ? tbLastName.Text : null, gender);
 
-            if(tbBirthDay.SelectedDate != null)
+            if (tbBirthDay.SelectedDate != null)
             {
                 newPerson.BirthDate = tbBirthDay.SelectedDate;
             }
@@ -64,13 +64,16 @@ namespace FamilyTree.Components
 
             try
             {
-                Photo photo = new Photo(photoBox.Source.ToString());
-
-                photo.IsAvatar = true;
-
-                if (photo != null)
+                if (photoBox.Source != null)
                 {
-                    newPerson.Photos.Add(photo);
+                    Photo photo = new Photo(photoBox.Source.ToString());
+
+                    photo.IsAvatar = true;
+
+                    if (photo != null)
+                    {
+                        newPerson.Photos.Add(photo);
+                    }
                 }
             }
             catch
@@ -79,6 +82,8 @@ namespace FamilyTree.Components
             }
 
             FamilyTree.App.Family.Add(newPerson);
+            //System.Windows.MessageBox.Show(newPerson.Gender.ToString());
+            this.Close();
         }
 
         private void btnGetPhoto_Click(object sender, RoutedEventArgs e)

@@ -43,7 +43,7 @@
     <system:String x:Key="isDead">Is Dead</system:String>
     
     <!--MainWindow-->
-    <system:String x:Key="setup">Setup</system:String>
+    <system:String x:Key="set">Setup</system:String>
     <system:String x:Key="view">View</system:String>
     <system:String x:Key="detail">Detail</system:String>
     <system:String x:Key="picture">Picture</system:String>

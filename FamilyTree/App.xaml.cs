@@ -42,7 +42,7 @@ namespace FamilyTree
 
             LoadRecentFiles();
 
-            Properties.Settings appSettings = FamilyTree.Properties.Settings.Default;
+            //Properties.Settings appSettings = FamilyTree.Properties.Settings.Default;
 
             //if (!string.IsNullOrEmpty(appSettings.Skin))
             //{

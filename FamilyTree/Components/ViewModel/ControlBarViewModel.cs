@@ -122,15 +122,15 @@ namespace FamilyTree.ViewModel
                 var w = (Window)window;
                 if (w != null)
                 {
-                    try
-                    {
-                        var newUser = (NewUser)w;
-                        if (newUser != null) return;
-                    }
-                    catch
-                    {
+                    //try
+                    //{
+                    //    var newUser = (NewUser)w;
+                    //    if (newUser != null) return;
+                    //}
+                    //catch
+                    //{
 
-                    }
+                    //}
 
                     w.DragMove();
                 }
