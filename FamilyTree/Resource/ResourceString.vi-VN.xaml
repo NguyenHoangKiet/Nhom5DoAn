@@ -23,8 +23,8 @@
     <system:String x:Key="btnCancel">Hủy bỏ</system:String>
     <system:String x:Key="btnAdd">Thêm</system:String>
     <system:String x:Key="Sex">Giới tính:</system:String>
-    <system:String x:Key="firstName">Tên :</system:String>
-    <system:String x:Key="lastName">Họ :</system:String>
+    <system:String x:Key="firstName">Tên:</system:String>
+    <system:String x:Key="lastName">Họ:</system:String>
     <system:String x:Key="placeOfBirth">Nơi sinh:</system:String>
     <system:String x:Key="Birthday">Ngày sinh:</system:String>
     <system:String x:Key="getPicture">Nhấn vào đây để thêm ảnh</system:String>
@@ -53,4 +53,14 @@
     <system:String x:Key="exit">Thoát</system:String>
 
     <system:String x:Key="language">Tiếng Việt</system:String>
+
+    <!--FamilyData-->
+    <system:String x:Key="memberList">DANH SÁCH THÀNH VIÊN</system:String>
+    <system:String x:Key="tblSearch">Nhập thông tin tìm kiếm</system:String>
+    <system:String x:Key="tblPrivateInfo">THÔNG TIN CÁ NHÂN</system:String>
+    <system:String x:Key="tblName">Họ tên</system:String>
+    <system:String x:Key="tblDeadDate">Ngày mất</system:String>
+    <system:String x:Key="btnExport">Xuất thông tin</system:String>
+    <system:String x:Key="tblDateofBirth">Ngày sinh</system:String>
+    <system:String x:Key="tblplaceOfBirth">Nơi sinh</system:String>
 </ResourceDictionary>

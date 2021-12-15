@@ -177,7 +177,7 @@
                 <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200"
                         ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
-                        Content="Thêm"
+                        Content="{DynamicResource btnAdd}"
                         FontSize="15"
                         Click="addNewUser_Click">
                 </Button>
@@ -186,7 +186,7 @@
                 <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200"
                         ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
-                        Content="Hủy"
+                        Content="{DynamicResource btnCancel}"
                         FontSize="15"
                         Click="Cancel_Click">
                 </Button>
