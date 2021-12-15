@@ -32,14 +32,6 @@ namespace FamilyTree.Components
             this.Close();
         }
 
-        public bool IsClosed { get; private set; }
-
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            IsClosed = true;
-        }
-
         private void addNewUser_Click(object sender, RoutedEventArgs e)
         {
             Gender gender;
@@ -86,8 +78,7 @@ namespace FamilyTree.Components
 
             }
 
-            App.Family.Add(newPerson);
-            
+            FamilyTree.App.Family.Add(newPerson);
         }
 
         private void btnGetPhoto_Click(object sender, RoutedEventArgs e)

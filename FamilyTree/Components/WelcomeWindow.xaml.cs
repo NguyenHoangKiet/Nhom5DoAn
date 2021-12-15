@@ -28,14 +28,11 @@ namespace FamilyTree.Components
         {
             this.Hide();
 
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+
             NewUser newUser = new NewUser();
             newUser.ShowDialog();
-
-            if (newUser.IsClosed)
-            {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-            }
         }
     }
 }

@@ -15,9 +15,11 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        Topmost="True"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Title="NewUser" Height="800" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="NewUser" Height="810.8" Width="771.2">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>

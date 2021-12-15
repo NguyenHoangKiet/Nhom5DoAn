@@ -15,6 +15,10 @@
         TextOptions.TextRenderingMode="Auto"
         Background="#FF673AB7"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="750" Width="1400">
     <Grid
         Background="#FF332DA8"

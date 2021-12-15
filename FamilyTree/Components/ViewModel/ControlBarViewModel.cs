@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FamilyTree.Components;
 
 namespace FamilyTree.ViewModel
 {
@@ -29,6 +30,26 @@ namespace FamilyTree.ViewModel
                 var w = (Window)window;
                 if (w != null)
                 {
+                    try
+                    {
+                        var mainWD = (MainWindow)w;
+                        if (mainWD != null) Application.Current.Shutdown();
+                    }
+                    catch
+                    {
+
+                    }
+
+                    try
+                    {
+                        var welcomeWD = (WelcomeWindow)w;
+                        if (welcomeWD != null) Application.Current.Shutdown();
+                    }
+                    catch
+                    {
+
+                    }
+
                     w.Close();
                 }
             });
@@ -36,8 +57,29 @@ namespace FamilyTree.ViewModel
             {
                 FrameworkElement window = GetFrameworkElement(p);
                 var w = (Window)window;
+
                 if (w != null)
                 {
+                    try
+                    {
+                        var userWD = (NewUser)w;
+                        if (userWD != null) return;
+                    }
+                    catch
+                    {
+
+                    }
+
+                    try
+                    {
+                        var welcomeWD = (WelcomeWindow)w;
+                        if (welcomeWD != null) return;
+                    }
+                    catch
+                    {
+
+                    }
+
                     if (w.WindowState != WindowState.Maximized)
                     {
                         w.WindowState = WindowState.Maximized;
@@ -54,6 +96,16 @@ namespace FamilyTree.ViewModel
                 var w = (Window)window;
                 if (w != null)
                 {
+                    try
+                    {
+                        var userWD = (NewUser)w;
+                        if (userWD != null) return;
+                    }
+                    catch
+                    {
+
+                    }
+
                     if (w.WindowState != WindowState.Minimized)
                     {
                         w.WindowState = WindowState.Minimized;
@@ -70,11 +122,17 @@ namespace FamilyTree.ViewModel
                 var w = (Window)window;
                 if (w != null)
                 {
-                    if (w != null)
+                    try
                     {
-                        w.DragMove();
+                        var newUser = (NewUser)w;
+                        if (newUser != null) return;
                     }
-                    
+                    catch
+                    {
+
+                    }
+
+                    w.DragMove();
                 }
             });
         }

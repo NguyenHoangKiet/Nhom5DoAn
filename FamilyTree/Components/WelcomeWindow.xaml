@@ -5,10 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamilyTree.Components"
         mc:Ignorable="d"
-        
-         WindowStartupLocation="CenterScreen"
         xmlns:uc="clr-namespace:FamilyTree.Components"
-        
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -19,6 +16,8 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStyle="None"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
         Name="WelcomeWindow"
         Title="{DynamicResource greeting}" Height="644.4" Width="1064">
     
