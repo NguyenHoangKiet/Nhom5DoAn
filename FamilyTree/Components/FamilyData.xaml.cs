@@ -1,6 +1,7 @@
 ﻿using FamilyTreeLibrary;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,12 @@ namespace FamilyTree.Components
 
         private void txtFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
+            CollectionViewSource.GetDefaultView(listviewMember.ItemsSource).Refresh();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listviewMember.ItemsSource);
+            view.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Ascending));
             CollectionViewSource.GetDefaultView(listviewMember.ItemsSource).Refresh();
         }
     }

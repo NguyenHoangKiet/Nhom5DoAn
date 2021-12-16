@@ -65,4 +65,5 @@
     <system:String x:Key="tblDateofBirth">生年月日</system:String>
     <system:String x:Key="tblplaceOfBirth">出生地</system:String>
     <system:String x:Key="tblGender">性別：</system:String>
+    <system:String x:Key="btnSortByName">名前順</system:String>
 </ResourceDictionary>

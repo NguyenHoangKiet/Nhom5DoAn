@@ -64,5 +64,6 @@
     <system:String x:Key="tblDateofBirth">Ngày sinh</system:String>
     <system:String x:Key="tblplaceOfBirth">Nơi sinh</system:String>
     <system:String x:Key="tblGender">Giới tính</system:String>
+    <system:String x:Key="btnSortByName">Sắp xếp theo tên</system:String>
     
 </ResourceDictionary>

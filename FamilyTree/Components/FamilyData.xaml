@@ -18,27 +18,31 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Title="FamilyData" Height="800" Width="800">
-    <Border BorderBrush="Black" BorderThickness="2">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <uc:ControlBarUC></uc:ControlBarUC>
-            </Grid>
-            <Grid Grid.Row="1">
-                <materialDesign:ColorZone Mode="PrimaryLight">
-                    <TextBlock Text="{DynamicResource memberList}"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:ControlBarUC></uc:ControlBarUC>
+        </Grid>
+        <Grid Grid.Row="1">
+            <materialDesign:ColorZone Mode="PrimaryLight">
+                <TextBlock Text="{DynamicResource memberList}"
                        HorizontalAlignment="Center"
                        FontSize="28"
                        FontWeight="Bold"
                        ></TextBlock>
-                </materialDesign:ColorZone>
-            </Grid>
-            <Grid Grid.Row="2">
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
                 <TextBlock Text="{DynamicResource tblSearch}"
                        FontSize="20"
                        FontWeight="Bold"
@@ -93,36 +97,87 @@
                     </DockPanel>
                 </materialDesign:ColorZone>
             </Grid>
-            <Grid Grid.Row="3">
-                <ListView HorizontalAlignment="Left"
+            <Grid Grid.Column="1" HorizontalAlignment="Right">
+                <Button
+                    Background="AliceBlue"
+                    Click="Button_Click"
+                    Margin="0,20,0,-20"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    Height="25"
+                    Width="200"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                    Content="Sắp xếp theo tên">
+
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--<DataGrid x:Name="dtgMember" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="200" Header="{DynamicResource tblName}" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Width="100" Header="{DynamicResource tblGender}" Binding="{Binding Gender}"/>
+                    <DataGridTextColumn Width="150" Header="{DynamicResource Birthday}" Binding="{Binding BirthDate, ConverterCulture='fr-FR', StringFormat={}{0:d}}"/>
+                    <DataGridTextColumn Width="200" Header="{DynamicResource placeOfBirth}" Binding="{Binding BirthPlace}"/>
+                    <DataGridTextColumn Width="150" Header="{DynamicResource tblDeathDate}" Binding="{Binding DeadDate, ConverterCulture='fr-FR', StringFormat={}{0:d}}"/>
+                </DataGrid.Columns>
+            </DataGrid>-->
+            <ListView Background="AliceBlue"
+                      HorizontalAlignment="Left"
                       VerticalAlignment="Top"
-                    x:Name="listviewMember">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn     Width="200"
+                      x:Name="listviewMember" Grid.ColumnSpan="2">
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="FontFamily" Value="Arial"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                    </Style>
+                </ListView.Resources>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Foreground" Value="#787f82" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn     
+                                            Width="150"
                                             Header="{DynamicResource tblName}"
-                                            DisplayMemberBinding="{Binding FullName}"
+                                            DisplayMemberBinding="{Binding Name}"
                                             ></GridViewColumn>
-                            <GridViewColumn     Width="150"
+                            <GridViewColumn     
+                                            Width="150"
                                             Header="{DynamicResource tblGender}"
                                             DisplayMemberBinding="{Binding Gender}"
                                             ></GridViewColumn>
-                            <GridViewColumn     Width="150"
+                            <GridViewColumn    
+                                            Width="150"
                                             Header="{DynamicResource tblDateofBirth}"
-                                            DisplayMemberBinding="{Binding BirthDate}"
+                                            DisplayMemberBinding="{Binding BirthDate, ConverterCulture='fr-FR', StringFormat={}{0:d}}"
                                             ></GridViewColumn>
-                            <GridViewColumn     Width="150"
+                            <GridViewColumn    
+                                            Width="200"
                                             Header="{DynamicResource tblplaceOfBirth}"
                                             DisplayMemberBinding="{Binding BirthPlace}"
                                             ></GridViewColumn>
-                            <GridViewColumn     Width="150"
+                            <GridViewColumn     
+                                            Width="150"
                                             Header="{DynamicResource tblDeadDate}"
-                                            DisplayMemberBinding="{Binding DeadDate}"
+                                            DisplayMemberBinding="{Binding DeadDate, ConverterCulture='fr-FR', StringFormat={}{0:d}}"
                                             ></GridViewColumn>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-            </Grid>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
         </Grid>
-    </Border>
+    </Grid>
 </Window>
