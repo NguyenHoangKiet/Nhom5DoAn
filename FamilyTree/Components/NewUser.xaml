@@ -16,6 +16,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStyle="None"
+        Topmost="True"
         WindowStartupLocation="CenterScreen"
         Title="NewUser" Height="700" Width="500">
     <Grid>

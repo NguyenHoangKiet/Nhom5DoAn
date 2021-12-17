@@ -51,6 +51,8 @@
     <system:String x:Key="save">保存する</system:String>
     <system:String x:Key="saveAs">名前を付けて保存</system:String>
     <system:String x:Key="exit">出口</system:String>
+    <system:String x:Key="menu">メニュー</system:String>
+    <system:String x:Key="exportGedcom">gedcomファイルをエクスポートする</system:String>
 
 
 
@@ -66,4 +68,9 @@
     <system:String x:Key="tblplaceOfBirth">出生地</system:String>
     <system:String x:Key="tblGender">性別：</system:String>
     <system:String x:Key="btnSortByName">名前順</system:String>
+
+    <!--Relationship-->
+    <system:String x:Key="father">父親</system:String>
+    <system:String x:Key="mother">母親</system:String>
+    <system:String x:Key="child">子</system:String>
 </ResourceDictionary>

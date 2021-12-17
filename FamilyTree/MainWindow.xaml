@@ -56,27 +56,24 @@
                         <Menu
                         IsMainMenu="True" Margin="0,0,0,11.2" HorizontalAlignment="Left" Width="150" >
                             <MenuItem                          
-                            Icon="{materialDesign:PackIcon Kind=Menu}" Width="150" Height="32" Header="Menu" BorderThickness="1"
+                            Icon="{materialDesign:PackIcon Kind=Menu}" Width="163" Height="32" Header="{DynamicResource menu}" BorderThickness="1"
                                     BorderBrush="#FF673AB7" Foreground="#DDFFFFFF" Padding="0" 
                                     CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF673AB7">
 
-                                <MenuItem Header="New"
+                                <MenuItem Header="{DynamicResource btnAdd}"
                                               Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
                                               InputGestureText="Ctrl+N" Foreground="#DD000000"/>
-                                <MenuItem Header="Open"
+                                <MenuItem Header="{DynamicResource btnOpen}"
                                               Icon="{materialDesign:PackIcon Kind=FolderOpenOutline}"
                                               InputGestureText="Ctrl+O" Foreground="#DD000000"/>
-                                <MenuItem Header="Save"
+                                <MenuItem Header="{DynamicResource save}"
                                              Icon="{materialDesign:PackIcon Kind=ContentSave}"
                                              InputGestureText="Ctrl+S" Foreground="#DD111111"/>
-
-                                <MenuItem Header="Save As.."
+                                <MenuItem Header="{DynamicResource saveAs}"
                                               InputGestureText="Ctrl+Shift+S" Foreground="#DD000000"/>
-
-                                <MenuItem Header=".gedcome"
-                                         
+                                <MenuItem Header="{DynamicResource exportGedcom}"
                                               Foreground="#DD121010" />
-                                <MenuItem Header="Exit"
+                                <MenuItem Header="{DynamicResource exit}"
                                               InputGestureText="Ctrl+E"
                                               Icon="{materialDesign:PackIcon Kind=ExitToApp}" Foreground="#DD121010" />
                             </MenuItem>
@@ -99,13 +96,15 @@
                 </materialDesign:ColorZone>
             </Grid>
         </Grid>
+        <Grid>
+            
+        </Grid>
         <DockPanel Grid.ColumnSpan="2" Margin="0,105,0,0.4" Grid.Row="1">
-            <!--detail-->
-            <!--<Grid 
+            <Grid 
                     DockPanel.Dock="Left"
-                    Margin="10,10,7,10">
-                <Border BorderBrush="Black" BorderThickness="1">
-                    <Grid Background="White" Width="405" Margin="0.2,79.2,-0.4,0"  >
+                    Margin="10,13,7,9.8">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0.2,-0.2">
+                    <Grid Background="White" Width="405" Margin="-0.8,0.2,0.6,-1"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="34"></RowDefinition>
                             <RowDefinition Height="199*"></RowDefinition>
@@ -281,7 +280,7 @@
                                    FontWeight="Medium"
                                    FontSize="16"
                                    Height="18"
-                                   Width="150" Margin="0,2,0,0"></TextBlock>
+                                   Width="170" Margin="0,2,0,0"></TextBlock>
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Column="1"
@@ -289,19 +288,19 @@
                       VerticalAlignment="Center">
                                     <ComboBox Width="115">
                                         <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource father}"
                                       FontSize="16"
                                       >
-                                            Cha
                                         </ComboBoxItem>
                                         <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource mother}"
                                       FontSize="16"
                                       >
-                                            Mẹ
                                         </ComboBoxItem>
                                         <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource child}"
                                       FontSize="16"
                                       >
-                                            Con
                                         </ComboBoxItem>
                                     </ComboBox>
                                 </Grid>
@@ -342,13 +341,11 @@
                         </Grid>
                     </Grid>
                 </Border>
-            </Grid>-->
-            <!--main-->
-            <!--<ScrollViewer Margin="0,75,0,-0.2" Width="1453" >
+            </Grid>
+            <ScrollViewer Margin="0,5,0,-0.2" Width="1153" >
                 <Grid
-                    DockPanel.Dock="Right"
                      Margin="0,10,0,10">
-                    <Border BorderBrush="Black" BorderThickness="1" Background="Snow" >
+                    <Border BorderBrush="Black" BorderThickness="1" Background="Snow" Margin="0,0,-0.4,-0.2" >
                         <Grid Margin="0.2,0.2,0.4,-26.8" >
                             <materialDesign:PackIcon Kind="AccountCircle" Height="93" Width="105" Margin="80,43,0,0" />
                             <Slider
@@ -360,7 +357,7 @@
                                 Maximum="800" 
                                 Width="20"
                                 Height="200"
-                                Margin="0,0,0,15"
+                                Margin="0,0,0,31.2"
                                 SmallChange="1"
                                 Style="{StaticResource MaterialDesignDiscreteSlider}"
                                 TickFrequency="{Binding DiscreteHorizontal.TickFrequency}"
@@ -368,7 +365,7 @@
                         </Grid>
                     </Border>
                 </Grid>
-            </ScrollViewer>-->
+            </ScrollViewer>
         </DockPanel>
     </Grid>
 </Window>

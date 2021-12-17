@@ -52,6 +52,8 @@
     <system:String x:Key="save">Save</system:String>
     <system:String x:Key="saveAs">Save as</system:String>
     <system:String x:Key="exit">Exit</system:String>
+    <system:String x:Key="menu">Menu</system:String>
+    <system:String x:Key="exportGedcom">Export gedcom file</system:String>
 
 
     <system:String x:Key="language">English</system:String>
@@ -66,4 +68,9 @@
     <system:String x:Key="tblplaceOfBirth">Place of birth</system:String>
     <system:String x:Key="tblGender">Sex:</system:String>
     <system:String x:Key="btnSortByName">Sort by Name</system:String>
+
+    <!--Relationship-->
+    <system:String x:Key="father">Father</system:String>
+    <system:String x:Key="mother">Mother</system:String>
+    <system:String x:Key="child">Child</system:String>
 </ResourceDictionary>

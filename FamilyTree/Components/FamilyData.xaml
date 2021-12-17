@@ -106,7 +106,7 @@
                     Height="25"
                     Width="200"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                    Content="Sắp xếp theo tên">
+                    Content="{DynamicResource btnSortByName}">
 
                 </Button>
             </Grid>

@@ -254,7 +254,7 @@
                                VerticalAlignment="Bottom"
                                Width="150">
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource address}"
                          x:Name="textboxPlaceofDeath"
                          TextChanged="textboxPlaceofDeath_TextChanged"
                          FontSize="20"
@@ -396,7 +396,7 @@
                                     <materialDesign:PackIcon Kind="AccountCacheOutline"
                                                      Height="20"
                                                      Width="20"/>
-                                    <TextBlock Text="Chi tiết :" 
+                                    <TextBlock Text="{DynamicResource detail}" 
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -413,8 +413,8 @@
                                 <Button x:Name="bnt_view_edit"
                             Style="{StaticResource MaterialDesignRaisedButton}"
                              Width="115"
+                                        Content="{DynamicResource set}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
-                                    Xem/Sửa
                                 </Button>
 
                             </Grid>
@@ -432,7 +432,7 @@
                                     <materialDesign:PackIcon Kind="Image"
                                                      Height="20"
                                                      Width="20"/>
-                                    <TextBlock Text="Ảnh :" 
+                                    <TextBlock Text="{DynamicResource picture}" 
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -449,8 +449,8 @@
                                 <Button x:Name="bnt_add"
                             Style="{StaticResource MaterialDesignRaisedButton}"
                              Width="115"
+                                        Content="{DynamicResource btnAdd}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
-                                    Thêm
                                 </Button>
 
                             </Grid>
@@ -467,7 +467,7 @@
                                     <materialDesign:PackIcon Kind="PlusCircle"
                                                      Height="20"
                                                      Width="20"/>
-                                    <TextBlock Text="Thêm quan hệ :" 
+                                    <TextBlock Text="{DynamicResource addRelationship}" 
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -483,19 +483,19 @@
                       VerticalAlignment="Center">
                                 <ComboBox Width="115">
                                     <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource father}"
                                       FontSize="16"
                                       >
-                                        Cha
                                     </ComboBoxItem>
                                     <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource mother}"
                                       FontSize="16"
                                       >
-                                        Mẹ
                                     </ComboBoxItem>
                                     <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource child}"
                                       FontSize="16"
                                       >
-                                        Con
                                     </ComboBoxItem>
                                 </ComboBox>
                             </Grid>
@@ -513,7 +513,7 @@
                                     <materialDesign:PackIcon Kind="ViewList"
                                                      Height="20"
                                                      Width="20"/>
-                                    <TextBlock Text="Gia đình :" 
+                                    <TextBlock Text="{DynamicResource family}"  
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
@@ -530,8 +530,8 @@
                                 <Button x:Name="bnt_view_listfamily"
                             Style="{StaticResource MaterialDesignRaisedButton}"
                              Width="115"
+                                        Content="{DynamicResource view}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
-                                    Xem
                                 </Button>
 
                             </Grid>

@@ -51,6 +51,8 @@
     <system:String x:Key="save">Lưu</system:String>
     <system:String x:Key="saveAs">Lưu file mới</system:String>
     <system:String x:Key="exit">Thoát</system:String>
+    <system:String x:Key="menu">Tùy chọn</system:String>
+    <system:String x:Key="exportGedcom">Xuất tệp gedcom</system:String>
 
     <system:String x:Key="language">Tiếng Việt</system:String>
 
@@ -65,5 +67,10 @@
     <system:String x:Key="tblplaceOfBirth">Nơi sinh</system:String>
     <system:String x:Key="tblGender">Giới tính</system:String>
     <system:String x:Key="btnSortByName">Sắp xếp theo tên</system:String>
+    
+    <!--Relationship-->
+    <system:String x:Key="father">Cha</system:String>
+    <system:String x:Key="mother">Mẹ</system:String>
+    <system:String x:Key="child">Con</system:String>
     
 </ResourceDictionary>
