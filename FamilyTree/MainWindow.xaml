@@ -52,35 +52,50 @@
             CornerRadius="3"
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
             Margin="4,0,0,-14.6" Height="53">
-                    <Menu
+                    <StackPanel DockPanel.Dock="Left"  Orientation="Horizontal">
+                        <Menu
                         IsMainMenu="True" Margin="0,0,0,11.2" HorizontalAlignment="Left" Width="150" >
-                        <MenuItem                          
+                            <MenuItem                          
                             Icon="{materialDesign:PackIcon Kind=Menu}" Width="150" Height="32" Header="Menu" BorderThickness="1"
                                     BorderBrush="#FF673AB7" Foreground="#DDFFFFFF" Padding="0" 
                                     CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF673AB7">
 
-                            <MenuItem Header="New"
+                                <MenuItem Header="New"
                                               Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
                                               InputGestureText="Ctrl+N" Foreground="#DD000000"/>
-                            <MenuItem Header="Open"
+                                <MenuItem Header="Open"
                                               Icon="{materialDesign:PackIcon Kind=FolderOpenOutline}"
                                               InputGestureText="Ctrl+O" Foreground="#DD000000"/>
-                            <MenuItem Header="Save"
+                                <MenuItem Header="Save"
                                              Icon="{materialDesign:PackIcon Kind=ContentSave}"
                                              InputGestureText="Ctrl+S" Foreground="#DD111111"/>
 
-                            <MenuItem Header="Save As.."
+                                <MenuItem Header="Save As.."
                                               InputGestureText="Ctrl+Shift+S" Foreground="#DD000000"/>
 
-                            <MenuItem Header=".gedcome"
+                                <MenuItem Header=".gedcome"
                                          
                                               Foreground="#DD121010" />
-                            <MenuItem Header="Exit"
+                                <MenuItem Header="Exit"
                                               InputGestureText="Ctrl+E"
                                               Icon="{materialDesign:PackIcon Kind=ExitToApp}" Foreground="#DD121010" />
-                        </MenuItem>
-                        <Separator />
-                    </Menu>
+                            </MenuItem>
+                            <Separator />
+                        </Menu>
+
+                        <Button x:Name="bnt_New" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
+                            <materialDesign:PackIcon Kind="NotePlusOutline" />
+                        </Button>
+
+                        <Button x:Name="bnt_Open" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4">
+                            <materialDesign:PackIcon Kind="FolderOpen" />
+                        </Button >
+
+                        <Button x:Name="bnt_Save" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
+                            <materialDesign:PackIcon Kind="ContentSaveEdit" />
+                        </Button >
+                    </StackPanel>
+
                 </materialDesign:ColorZone>
             </Grid>
         </Grid>

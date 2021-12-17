@@ -321,9 +321,6 @@
                                         <Setter Property="Cursor" Value="Hand"/>
                                     </Style>
                                 </Button.Style>
-                                <Button Background="Transparent" >
-                                    <materialDesign:PackIcon x:Name="close" Kind="WindowClose" Background="Black"  />
-                                </Button>
 
                             </Button>
                         </Grid>
