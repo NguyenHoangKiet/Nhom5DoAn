@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FamilyTree.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace FamilyTree
         {
             InitializeComponent();
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FamilyData familyData = new FamilyData(App.Family);
+            familyData.ShowDialog();
         }
     }
 }
