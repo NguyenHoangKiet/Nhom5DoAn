@@ -32,6 +32,18 @@ namespace FamilyTree.Components
             peopleCollection = people;
             listviewMember.ItemsSource = peopleCollection;
 
+            foreach (Person person in peopleCollection)
+            {
+                if (person.Gender == Gender.Male)
+                {
+                    person.Gender = Gender.Nam;
+                }
+                else
+                {
+                    person.Gender = Gender.Nữ;
+                }
+            }
+
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listviewMember.ItemsSource);
             view.Filter = UserFilter;
         }

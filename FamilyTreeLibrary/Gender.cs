@@ -8,6 +8,6 @@ namespace FamilyTreeLibrary
 {
     public enum Gender
     {
-        Male, Female, unknown
+        Male, Female, unknown,Nam,Nữ
     }
 }
