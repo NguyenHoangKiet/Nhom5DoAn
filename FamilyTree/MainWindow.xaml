@@ -331,7 +331,7 @@
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center">
                                     <Button
-                                        
+                                        Click="Button_Click"
                             Style="{StaticResource MaterialDesignRaisedButton}"
                              Width="115"
                                         Content="{DynamicResource view}"
