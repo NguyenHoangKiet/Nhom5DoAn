@@ -57,6 +57,13 @@
     <Compile Include="AgeGroup.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="Family.cs" />
+    <Compile Include="FamilyMap.cs" />
+    <Compile Include="GedcomConvert.cs" />
+    <Compile Include="GedcomExport.cs" />
+    <Compile Include="GedcomIdMap.cs" />
+    <Compile Include="GedcomImport.cs" />
+    <Compile Include="GedcomLine.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="OPCUtillity.cs" />
     <Compile Include="ParentSet.cs" />
