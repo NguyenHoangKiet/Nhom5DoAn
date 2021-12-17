@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:FamilyTree.Components"  
-        xmlns:local="clr-namespace:FamilyTree"
+        xmlns:tree="clr-namespace:FamilyTree.Components.Tree"
 
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -342,30 +342,17 @@
                     </Grid>
                 </Border>
             </Grid>
-            <ScrollViewer Margin="0,5,0,-0.2" Width="1153" >
-                <Grid
-                     Margin="0,10,0,10">
-                    <Border BorderBrush="Black" BorderThickness="1" Background="Snow" Margin="0,0,-0.4,-0.2" >
-                        <Grid Margin="0.2,0.2,0.4,-26.8" >
-                            <materialDesign:PackIcon Kind="AccountCircle" Height="93" Width="105" Margin="80,43,0,0" />
-                            <Slider
-                                Orientation="Vertical"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Bottom"
-                                Value="100"
-                                Minimum="30"
-                                Maximum="800" 
-                                Width="20"
-                                Height="200"
-                                Margin="0,0,0,31.2"
-                                SmallChange="1"
-                                Style="{StaticResource MaterialDesignDiscreteSlider}"
-                                TickFrequency="{Binding DiscreteHorizontal.TickFrequency}"
-                                />
-                        </Grid>
-                    </Border>
-                </Grid>
-            </ScrollViewer>
+            <Grid x:Name="DiagramPane" Margin="10,0,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <!--  The column 1 clone is used when the details area is collapsed  -->
+                    <ColumnDefinition x:Name="column1CloneForLayer0" SharedSizeGroup="column1" />
+                </Grid.ColumnDefinitions>
+                <Border
+                    x:Name="TreeBorder">
+                    <tree:TreeViewer x:Name="Tree" Zoom="1.5" Margin="0,0,-477.6,-0.4" />
+                </Border>
+            </Grid>
         </DockPanel>
     </Grid>
 </Window>

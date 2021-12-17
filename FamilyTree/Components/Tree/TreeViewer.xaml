@@ -113,7 +113,7 @@
     <Grid>
         <ScrollViewer x:Name="ScrollViewer" Style="{StaticResource ScrollViewerStyle}">
             <Grid x:Name="Grid">
-                <tree:Tree x:Name="tree"></tree:Tree>
+                <tree:Tree x:Name="Tree"></tree:Tree>
             </Grid>
         </ScrollViewer>
 
