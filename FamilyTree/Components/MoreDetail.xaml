@@ -128,12 +128,10 @@
                                                 <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path=IsChecked}" 
                                         Value = "True">
                                                     <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoMale}"/>
-
                                                 </DataTrigger>
                                                 <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
                                         Value = "False">
                                                     <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoFemale}"/>
-
                                                 </DataTrigger>
                                             </Style.Triggers>
 
