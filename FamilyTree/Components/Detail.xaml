@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="FamilyTree.Components.Detail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FamilyTree.Components"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             mc:Ignorable="d" Height="633.2" Width="446">
+    <Grid>
+        <Border BorderBrush="#512DA8" BorderThickness="3" Grid.ColumnSpan="2" Margin="0,0,0,0">
+
+            <Grid Background="White" Margin="-3.2,-3.2,-2.8,-3.6"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="34"></RowDefinition>
+                    <RowDefinition Height="199*"></RowDefinition>
+                    <RowDefinition Height="367*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" 
+                                  Background="Gray" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Lee Tom" 
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"></TextBlock>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Button Background="Red"
+                        Margin="155,1,0.4,0.6">X
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="10,10.6,10.2,9.8" Grid.RowSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="193*"></ColumnDefinition>
+                            <ColumnDefinition Width="185*"></ColumnDefinition>
+                            <ColumnDefinition Width="7.2"/>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle
+                    Grid.Column="0"
+                    AllowDrop="true"
+                    Fill="WhiteSmoke"
+                    RadiusX="30"
+                    RadiusY="10"
+                    StrokeDashArray="10"
+                    StrokeThickness="0"
+                    StrokeDashCap="Round"
+                    Stroke="Silver"
+                    Height="150"
+                    Width="150" Margin="20,25,20.4,25"
+                    >
+                        </Rectangle>
+                        <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
+                            <StackPanel HorizontalAlignment="Left"
+                                VerticalAlignment="Center">
+                                <TextBlock Text="Họ tên : Lee Tom" 
+                           Foreground="Black"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"></TextBlock>
+                                <TextBlock Text="Ngày sinh : 15/1/1999" 
+                           Foreground="Black"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+                                <TextBlock Text="Nơi sinh : Đồng Tháp"
+                           Foreground="Black"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" >
+                                <materialDesign:PackIcon Kind="AccountCacheOutline"
+                                                     Height="20"
+                                                     Width="20"/>
+                                <TextBlock Text="{DynamicResource detail}" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                            <Button x:Name="bnt_view_edit" Click="bnt_view_edit_Click"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115"
+                                        Content="{DynamicResource set}"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                            </Button>
+
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" >
+                                <materialDesign:PackIcon Kind="ViewList"
+                                                     Height="20"
+                                                     Width="20"/>
+                                <TextBlock Text="{DynamicResource family}"  
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                            <Button x:Name="bnt_viewlistfamily"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115"
+                                        Content="{DynamicResource view}"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                            </Button>
+
+                        </Grid>
+                    </Grid>
+
+                    <Grid Background="#B2E3FA" Grid.Row="3" Margin="0,9.6,-0.8,0" Height="79" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" >
+                                <materialDesign:PackIcon Kind="PlusCircle"
+                                                     Height="20"
+                                                     Width="20"/>
+                                <TextBlock Text="{DynamicResource addRelationship}" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="18"
+                                   Width="177" Margin="0,2,0,0"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <ComboBox x:Name="cbbAdd" FontSize="20" Background="#B2E3FA" Margin="24,20,26.6,21.2">
+                                
+                                <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource father}"
+                                      FontSize="20"
+                                      >
+                                </ComboBoxItem>
+                                <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource mother}"
+                                      FontSize="20"
+                                      >
+                                </ComboBoxItem>
+                                <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource  child}"
+                                      FontSize="20"
+                                      >
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Background="#B2E3FA" Grid.Row="3" Margin="0,88.6,-0.8,0" Height="94" VerticalAlignment="Top" Grid.RowSpan="2">
+                        <Button x:Name="btnAdd" Background="#02EE5B" Width="105" Margin="266,21,56.2,41">
+                            <Button.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path=SelectedIndex}" 
+                                        Value = "0">
+                                            <Setter Property = "Button.Content" Value = "{DynamicResource addfather}"/>
+
+                                        </DataTrigger>
+                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                        Value = "1">
+                                            <Setter Property = "Button.Content" Value = "{DynamicResource addmother}"/>
+
+                                        </DataTrigger>
+                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                        Value = "2">
+                                            <Setter Property = "Button.Content" Value = "{DynamicResource addchild}"/>
+
+                                        </DataTrigger>
+                                    </Style.Triggers>
+
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

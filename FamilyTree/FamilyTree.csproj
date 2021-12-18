@@ -101,6 +101,9 @@
     <Compile Include="Components\ControlBarUC.xaml.cs">
       <DependentUpon>ControlBarUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\FamilyData.xaml.cs">
       <DependentUpon>FamilyData.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     <Page Include="Components\ControlBarUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\FamilyData.xaml">
       <SubType>Designer</SubType>
@@ -176,6 +183,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resource\ResourceTheme.default.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\ResourceTheme.light.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -212,6 +227,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Components\Picture1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Components\kisspng-genealogy-family-tree-happy-family-day-child.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Components\Flat_tick_icon.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />

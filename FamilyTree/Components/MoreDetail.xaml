@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamilyTree"
-        
-        
+        ResizeMode="NoResize"
+        WindowStyle="None"
         mc:Ignorable="d"
+        Topmost="True"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
         d:DesignHeight="650" d:DesignWidth="405">
@@ -39,45 +40,61 @@
                     <ScrollViewer HorizontalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Vertical"
                         Margin="10">
-                            <StackPanel Orientation="Horizontal">
-                                <Border BorderThickness="2" 
-                                BorderBrush="Black"
-                               >
-                                    <Image x:Name="imgPhoto"
-                               Stretch="Fill" Grid.Column="1" 
-                               Width="190"
-                               
-                               Height="170"/>
-                                </Border>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Height="160"
+                                    Width="150"
+                                    Margin="0 0 0 0"
+                                    Grid.Row="0">
+                                    <Image x:Name="photoBox" Margin="0,0,0,30"></Image>
+                                </Grid>
+                                <Grid Grid.Row="0">
+                                    <Grid Height="160"
+                                        Width="150"
+                                        Margin="0 0 0 0"
+                                         >
+                                        <materialDesign:PackIcon
+                                    x:Name="icon"
+                                    Kind="AccountCircle"
+                                    Height="125"
+                                    Width="150"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" Margin="0,5,0,30" />
 
-                                <Button Width="130"
-                            FontSize="16"
-                            x:Name="buttonLoadImage"
-                            Content="Tải hình ảnh"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Margin="20" 
-                            Click="buttonLoadImage_Click"></Button>
-                            </StackPanel>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="1" VerticalAlignment="Bottom"
+                      >
+                                    <Button Margin="50,0,50,0"
+                                        Click="btnGetPhoto_Click"
+                                        Content="{DynamicResource btnImport}"
+                                        Background="White"
+                                        Foreground="Black"
+                                        BorderBrush="White"></Button>
+                                </Grid>
+                            </Grid>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Tên của bạn : "  
+                                <TextBlock Text="{DynamicResource yourName}"  
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="150">
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="Họ"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource lastName2}"
                     
                          x:Name="textboxFirstName"
                          FontSize="20"
                          Margin="0 0 0 0"
                          TextChanged="textboxFirstName_TextChanged"/>
-                                <TextBox materialDesign:HintAssist.Hint="Tên đệm"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource midName}"
                         TextChanged="textboxMiddleName_TextChanged"
                          FontSize="20"
                           x:Name="textboxMiddleName"
                          Margin="20 0 0 0"/>
-                                <TextBox materialDesign:HintAssist.Hint="Tên"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource firstName2}"
                          TextChanged="textboxLastName_TextChanged"
                          FontSize="20"
                          x:Name="textboxLastName"
@@ -85,18 +102,17 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Giới tính : "
+                                <TextBlock Text="{DynamicResource tblGender}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="150">
                                 </TextBlock>
+                                
                                 <ToggleButton
                               Click="genderToggleButton_Click"
                               Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
                               ToolTip="MaterialDesignSwitchLightToggleButton"
-                              
-                             
                               x:Name="genderToggleButton"  />
 
                                 <TextBlock 
@@ -111,12 +127,12 @@
                                             <Style.Triggers>
                                                 <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path=IsChecked}" 
                                         Value = "True">
-                                                    <Setter Property = "TextBlock.Text" Value = "Nam"/>
+                                                    <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoMale}"/>
 
                                                 </DataTrigger>
                                                 <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
                                         Value = "False">
-                                                    <Setter Property = "TextBlock.Text" Value = "Nữ"/>
+                                                    <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoFemale}"/>
 
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -127,20 +143,20 @@
 
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Địa chỉ : "
+                                <TextBlock Text="{DynamicResource address}"
                                FontSize="20"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"
                                Width="150">
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
                         TextChanged="textboxAddress_TextChanged"
                          x:Name="textboxAddress"
                          FontSize="20"
                          Margin="0 0 0 0" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Ngày sinh : "
+                                <TextBlock Text="{DynamicResource Birthday}"
                                FontSize="20"
                               
                          
@@ -153,18 +169,18 @@
                             FontSize="20"
                             Width="150"
                             x:Name="DatePickerofBirth"
-                            materialDesign:HintAssist.Hint="Chọn ngày"
+                            materialDesign:HintAssist.Hint="{DynamicResource chose}"
                             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Nơi sinh : "
+                                <TextBlock Text="{DynamicResource placeOfBirth}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="Điền địa chỉ"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
                          x:Name="textboxPlaceofBirth"
                          TextChanged="textboxPlaceofBirth_TextChanged" 
                          FontSize="20"
@@ -173,13 +189,13 @@
 
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Số điện thoại : "
+                                <TextBlock Text="{DynamicResource numberphone}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="Điền số điện thoại"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterNumberphone}"
                          TextChanged="textboxPhoneNum_TextChanged"
                          x:Name="textboxPhoneNum"
                          FontSize="20"
@@ -192,7 +208,7 @@
                                VerticalAlignment="Bottom"
                                Width="150">
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="Điền gmail"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterGmail}"
                          TextChanged="textboxGmail_TextChanged"
                          x:Name="textboxGmail"
                          FontSize="20"
@@ -200,7 +216,7 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Đã mất : "
+                                <TextBlock Text="{DynamicResource isDead}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
@@ -217,7 +233,7 @@
                             <StackPanel Orientation="Horizontal"
                             x:Name="DayofdeathStackPanel"
                             >
-                                <TextBlock Text="Ngày mất : "
+                                <TextBlock Text="{DynamicResource DeadPlace}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
@@ -228,7 +244,7 @@
                             FontSize="20"
                             x:Name="DatePickerDeath"
                             Width="150"
-                            materialDesign:HintAssist.Hint="Chọn ngày"
+                            materialDesign:HintAssist.Hint="{DynamicResource chose}"
                             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                                 <StackPanel.Style>
                                     <Style>
@@ -248,7 +264,7 @@
 
                             <StackPanel Orientation="Horizontal"
                             x:Name="PlaceofdeathStackPanel">
-                                <TextBlock Text="Nơi mất : "
+                                <TextBlock Text="{DynamicResource tblDeadDate}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
@@ -274,6 +290,7 @@
                                     </Style>
                                 </StackPanel.Style>
                             </StackPanel>
+                            <Button Click="Save_Click" Background="#02EE5B" Margin="220,50,10,10" Content="{DynamicResource ResourceKey=save}" Width="116"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
@@ -281,264 +298,6 @@
             </Grid>
             <!--Detail-->
         </Grid>
-        <!--Detail-->
-        <Grid Margin="0,0,0,0">
-            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" Margin="0,0,0,0">
-
-                <Grid Background="White" Width="405"  >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="34"></RowDefinition>
-                        <RowDefinition Height="199*"></RowDefinition>
-                        <RowDefinition Height="367*"/>
-                    </Grid.RowDefinitions>
-
-                    <Grid Grid.Row="0" 
-                                  Background="Gray" Margin="0,0,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0">
-                            <TextBlock Text="Lee Tom" 
-                           Foreground="White"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontFamily="Fonts/#Dosis"
-                           FontWeight="Medium"
-                           FontSize="20"></TextBlock>
-                        </Grid>
-
-                        <Grid Grid.Column="1">
-                            <Button Background="Transparent"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        BorderThickness="0"
-                        >
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Setter Property="Cursor" Value="Hand"/>
-                                    </Style>
-                                </Button.Style>
-
-                            </Button>
-                        </Grid>
-                    </Grid>
-
-                    <Grid Grid.Row="1" Margin="10,10.6,10.2,9.8" Grid.RowSpan="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="200"></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0" Margin="0,10,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="193*"></ColumnDefinition>
-                                <ColumnDefinition Width="185*"></ColumnDefinition>
-                                <ColumnDefinition Width="7.2"/>
-                            </Grid.ColumnDefinitions>
-                            <Rectangle
-                    Grid.Column="0"
-                    AllowDrop="true"
-                    Fill="WhiteSmoke"
-                    RadiusX="30"
-                    RadiusY="10"
-                    StrokeDashArray="10"
-                    StrokeThickness="0"
-                    StrokeDashCap="Round"
-                    Stroke="Silver"
-                    Height="150"
-                    Width="150" Margin="20,25,20.4,25"
-                    >
-                            </Rectangle>
-                            <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
-                                <StackPanel HorizontalAlignment="Left"
-                                VerticalAlignment="Center">
-                                    <TextBlock Text="Họ tên : Lee Tom" 
-                           Foreground="Black"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center"
-                           FontFamily="Fonts/#Dosis"
-                           FontWeight="Medium"
-                           FontSize="20"></TextBlock>
-                                    <TextBlock Text="Ngày sinh : 15/1/1999" 
-                           Foreground="Black"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center"
-                           FontFamily="Fonts/#Dosis"
-                           FontWeight="Medium"
-                           FontSize="20"/>
-                                    <TextBlock Text="Nơi sinh : Đồng Tháp"
-                           Foreground="Black"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center"
-                           FontFamily="Fonts/#Dosis"
-                           FontWeight="Medium"
-                           FontSize="20"/>
-
-                                </StackPanel>
-                            </Grid>
-                        </Grid>
-
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid Grid.Column="0" HorizontalAlignment="Left"
-                      VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" >
-                                    <materialDesign:PackIcon Kind="AccountCacheOutline"
-                                                     Height="20"
-                                                     Width="20"/>
-                                    <TextBlock Text="{DynamicResource detail}" 
-                                   Foreground="Black"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Fonts/#Dosis"
-                                   FontWeight="Medium"
-                                   FontSize="16"
-                                   Height="16"
-                                   Width="150"></TextBlock>
-                                </StackPanel>
-                            </Grid>
-                            <Grid Grid.Column="1"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-                                <Button x:Name="bnt_view_edit"
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                             Width="115"
-                                        Content="{DynamicResource set}"
-                             ToolTip="Resource name: MaterialDesignRaisedButton">
-                                </Button>
-
-                            </Grid>
-                        </Grid>
-
-                        <Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid Grid.Column="0" HorizontalAlignment="Left"
-                      VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" >
-                                    <materialDesign:PackIcon Kind="Image"
-                                                     Height="20"
-                                                     Width="20"/>
-                                    <TextBlock Text="{DynamicResource picture}" 
-                                   Foreground="Black"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Fonts/#Dosis"
-                                   FontWeight="Medium"
-                                   FontSize="16"
-                                   Height="16"
-                                   Width="150"></TextBlock>
-                                </StackPanel>
-                            </Grid>
-                            <Grid Grid.Column="1"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-                                <Button x:Name="bnt_add"
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                             Width="115"
-                                        Content="{DynamicResource btnAdd}"
-                             ToolTip="Resource name: MaterialDesignRaisedButton">
-                                </Button>
-
-                            </Grid>
-                        </Grid>
-                        <Grid Grid.Row="3">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid Grid.Column="0" HorizontalAlignment="Left"
-                      VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" >
-                                    <materialDesign:PackIcon Kind="PlusCircle"
-                                                     Height="20"
-                                                     Width="20"/>
-                                    <TextBlock Text="{DynamicResource addRelationship}" 
-                                   Foreground="Black"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Fonts/#Dosis"
-                                   FontWeight="Medium"
-                                   FontSize="16"
-                                   Height="18"
-                                   Width="150" Margin="0,2,0,0"></TextBlock>
-                                </StackPanel>
-                            </Grid>
-                            <Grid Grid.Column="1"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-                                <ComboBox Width="115">
-                                    <ComboBoxItem FontFamily="Fonts/#Dosis"
-                                                      Content="{DynamicResource father}"
-                                      FontSize="16"
-                                      >
-                                    </ComboBoxItem>
-                                    <ComboBoxItem FontFamily="Fonts/#Dosis"
-                                                      Content="{DynamicResource mother}"
-                                      FontSize="16"
-                                      >
-                                    </ComboBoxItem>
-                                    <ComboBoxItem FontFamily="Fonts/#Dosis"
-                                                      Content="{DynamicResource child}"
-                                      FontSize="16"
-                                      >
-                                    </ComboBoxItem>
-                                </ComboBox>
-                            </Grid>
-                        </Grid>
-
-                        <Grid Grid.Row="4">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid Grid.Column="0" HorizontalAlignment="Left"
-                      VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" >
-                                    <materialDesign:PackIcon Kind="ViewList"
-                                                     Height="20"
-                                                     Width="20"/>
-                                    <TextBlock Text="{DynamicResource family}"  
-                                   Foreground="Black"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Fonts/#Dosis"
-                                   FontWeight="Medium"
-                                   FontSize="16"
-                                   Height="16"
-                                   Width="150"></TextBlock>
-                                </StackPanel>
-                            </Grid>
-                            <Grid Grid.Column="1"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-                                <Button x:Name="bnt_view_listfamily"
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                             Width="115"
-                                        Content="{DynamicResource view}"
-                             ToolTip="Resource name: MaterialDesignRaisedButton">
-                                </Button>
-
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Border>
-        </Grid>
+        
     </Grid>
 </Window>

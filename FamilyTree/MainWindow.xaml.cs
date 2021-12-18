@@ -25,5 +25,34 @@ namespace FamilyTree
             InitializeComponent();
 
         }
+
+        private void ThemeDefaul_Click(object sender, RoutedEventArgs e)
+        {
+            //ResourceDictionary dict = new ResourceDictionary();
+            //dict.Source = new Uri("..\\Resource\\Theme_Defaul.xaml", UriKind.Relative);
+            //Application.Current.Resources.MergedDictionaries.Add(dict);
+        }
+
+        private void ThemeLight_Click(object sender, RoutedEventArgs e)
+        {
+            //ResourceDictionary dict = new ResourceDictionary();
+            //dict.Source = new Uri("..\\Resource\\Theme_Light.xaml", UriKind.Relative);
+            //Application.Current.Resources.MergedDictionaries.Add(dict);
+        }
+
+        private void MenuItem_About_Click(object sender, RoutedEventArgs e)
+        {
+            string text = "Xin chào!\n" +
+                "Team phát triển phần mềm gia phả này bao gồm:\n" +
+                "   -Trần Quốc Thắng\n" +
+                "   -Nguyễn Hoàng Kiệt\n" +
+                "   -Ngô Quang Vũ\n" +
+                "   -Lê Minh Quân\n" +
+                "   -Hồng Trường Vinh\n" +
+                "\n Cảm ơn các bạn rất nhiều vì đã sử sụng phần mềm của chúng tôi.\n" +
+                "\n\n Phiên bản 1.0.0";
+
+            MessageBox.Show(text);
+        }
     }
 }

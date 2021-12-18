@@ -31,16 +31,19 @@
     <system:String x:Key="getPicture">Get picture</system:String>
 
     <!--MoreDetail-->
-    <system:String x:Key="yourName">Your name</system:String>
+    <system:String x:Key="yourName">Your name :</system:String>
     <system:String x:Key="midName">Mid Name</system:String>
-    <system:String x:Key="address">Address</system:String>
+    <system:String x:Key="address">Address :</system:String>
     <system:String x:Key="enterAddress">Enter</system:String>
-    <system:String x:Key="choose">Choose day</system:String>
-    <system:String x:Key="numberphone">Numberphone</system:String>
+    <system:String x:Key="chose">Choose day</system:String>
+    <system:String x:Key="numberphone">Numberphone :</system:String>
     <system:String x:Key="enterNumberphone">Enter</system:String>
-    <system:String x:Key="gmail">Gmail</system:String>
+    <system:String x:Key="gmail">Gmail :</system:String>
     <system:String x:Key="enterGmail">Enter</system:String>
-    <system:String x:Key="isDead">Is Dead</system:String>
+    <system:String x:Key="isDead">Is Dead :</system:String>
+    <system:String x:Key="DeadPlace">Place of dead:</system:String>
+    <system:String x:Key="lastName2">Last name</system:String>
+    <system:String x:Key="firstName2">First name</system:String>
     
     <!--MainWindow-->
     <system:String x:Key="set">Setup</system:String>
@@ -54,6 +57,10 @@
     <system:String x:Key="exit">Exit</system:String>
     <system:String x:Key="menu">Menu</system:String>
     <system:String x:Key="exportGedcom">Export gedcom file</system:String>
+    <system:String x:Key="about">About</system:String>
+    <system:String x:Key="theme">Theme</system:String>
+    <system:String x:Key="themeDark">Dark</system:String>
+    <system:String x:Key="themeDefault">Default</system:String>
 
 
     <system:String x:Key="language">English</system:String>
@@ -73,4 +80,7 @@
     <system:String x:Key="father">Father</system:String>
     <system:String x:Key="mother">Mother</system:String>
     <system:String x:Key="child">Child</system:String>
+    <system:String x:Key="addfather">Add a father</system:String>
+    <system:String x:Key="addmother">Add a mother</system:String>
+    <system:String x:Key="addchild">Add a child</system:String>
 </ResourceDictionary>

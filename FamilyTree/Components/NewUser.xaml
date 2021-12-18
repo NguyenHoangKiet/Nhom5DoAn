@@ -19,7 +19,7 @@
         Topmost="True"
         WindowStartupLocation="CenterScreen"
         Title="NewUser" Height="700" Width="500">
-    <Grid>
+    <Grid Background="#fafafa">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -154,7 +154,7 @@
             </Grid>
             <Grid Grid.Column="1"
                   Margin="35 35 35 61">
-                <TextBox 
+                <TextBox
                     x:Name="tbPlaceOfBirth"
                     materialDesign:HintAssist.Hint="{DynamicResource placeOfBirth}"
                     FontSize="25"

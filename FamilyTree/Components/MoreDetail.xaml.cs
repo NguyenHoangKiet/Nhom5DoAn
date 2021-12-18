@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using FamilyTreeLibrary;
 using System.IO;
 using Microsoft;
+using MaterialDesignThemes.Wpf;
 
 namespace FamilyTree
 {
@@ -100,7 +101,7 @@ namespace FamilyTree
             {
                 foreach (Photo image in personobj.Photos)
                 {
-                    imgPhoto.Source = new BitmapImage(new Uri(image.RelativePath));
+                    photoBox.Source = new BitmapImage(new Uri(image.RelativePath));
                 }
             }
             #endregion
@@ -214,7 +215,7 @@ namespace FamilyTree
         }
 
         // Update Avatar
-        private void buttonLoadImage_Click(object sender, RoutedEventArgs e)
+        private void btnGetPhoto_Click(object sender, RoutedEventArgs e)
         {
             /*
             MessageBox.Show("Fisrt name = " + personobj.FirstName + "\n" +
@@ -237,10 +238,21 @@ namespace FamilyTree
               "Portable Network Graphic (*.png)|*.png";
             if (op.ShowDialog() == true)
             {
-                imgPhoto.Source = new BitmapImage(new Uri(op.FileName));
+                photoBox.Source = new BitmapImage(new Uri(op.FileName));
                 personobj.Photos.Add(new Photo(op.FileName));
+
+                PackIcon getIcon = icon;
+                if (getIcon != null)
+                {
+                    icon.Visibility = Visibility.Collapsed;
+                }
             }
         }
         #endregion
+
+        void Save_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

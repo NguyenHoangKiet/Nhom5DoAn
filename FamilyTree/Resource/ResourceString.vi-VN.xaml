@@ -30,16 +30,19 @@
     <system:String x:Key="getPicture">Nhấn vào đây để thêm ảnh</system:String>
 
     <!--MoreDetail-->
-    <system:String x:Key="yourName">Tên của bạn</system:String>
+    <system:String x:Key="yourName">Tên của bạn :</system:String>
     <system:String x:Key="midName">Tên đệm</system:String>
-    <system:String x:Key="address">Địa chỉ</system:String>
+    <system:String x:Key="address">Địa chỉ :</system:String>
     <system:String x:Key="enterAddress">Điền địa chỉ</system:String>
     <system:String x:Key="chose">Chọn ngày</system:String>
-    <system:String x:Key="numberphone">Số điện thoại</system:String>
+    <system:String x:Key="numberphone">Số điện thoại :</system:String>
     <system:String x:Key="enterNumberphone">Điền số điện thoại</system:String>
-    <system:String x:Key="gmail">Gmail</system:String>
+    <system:String x:Key="gmail">Gmail :</system:String>
     <system:String x:Key="enterGmail">Điền gmail</system:String>
-    <system:String x:Key="isDead">Đã mất</system:String>
+    <system:String x:Key="isDead">Đã mất :</system:String>
+    <system:String x:Key="DeadPlace">Nơi mất :</system:String>
+    <system:String x:Key="lastName2">Họ</system:String>
+    <system:String x:Key="firstName2">Tên</system:String>
     
     <!--MainWindow-->
     <system:String x:Key="set">Xem/Sửa</system:String>
@@ -52,6 +55,10 @@
     <system:String x:Key="saveAs">Lưu file mới</system:String>
     <system:String x:Key="exit">Thoát</system:String>
     <system:String x:Key="menu">Tùy chọn</system:String>
+    <system:String x:Key="about">Về chúng tôi</system:String>
+    <system:String x:Key="theme">Giao diện</system:String>
+    <system:String x:Key="themeDark">Tối</system:String>
+    <system:String x:Key="themeDefault">Mạc định</system:String>
     <system:String x:Key="exportGedcom">Xuất tệp gedcom</system:String>
 
     <system:String x:Key="language">Tiếng Việt</system:String>
@@ -72,5 +79,8 @@
     <system:String x:Key="father">Cha</system:String>
     <system:String x:Key="mother">Mẹ</system:String>
     <system:String x:Key="child">Con</system:String>
+    <system:String x:Key="addfather">Thêm Cha</system:String>
+    <system:String x:Key="addmother">Thêm Mẹ</system:String>
+    <system:String x:Key="addchild">Thêm Con</system:String>
     
 </ResourceDictionary>

@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="btn">#673AB7</SolidColorBrush>
+    <SolidColorBrush x:Key="colorZone">#512DA8</SolidColorBrush>
+    <SolidColorBrush x:Key="bgMainWD">#FF332DA8</SolidColorBrush>
+    <SolidColorBrush x:Key="bgWhiteDefault">#fafafa</SolidColorBrush>
+    <SolidColorBrush x:Key="bgWhite">white</SolidColorBrush>
+    <SolidColorBrush x:Key="foregroundTextDark">black</SolidColorBrush>
+    <SolidColorBrush x:Key="foregroundTextLight">white</SolidColorBrush>
+    
+    <!--FamilyData-->
+    <SolidColorBrush x:Key="bgListView">AliceBlue</SolidColorBrush>
+
+</ResourceDictionary>

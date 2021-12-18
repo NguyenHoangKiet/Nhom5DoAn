@@ -40,6 +40,9 @@
     <system:String x:Key="gmail">Gmail</system:String>
     <system:String x:Key="enterGmail">入力</system:String>
     <system:String x:Key="isDead">死</system:String>
+    <system:String x:Key="DeadPlace">死者の場所 :</system:String>
+    <system:String x:Key="lastName2">苗字</system:String>
+    <system:String x:Key="firstName2">名前</system:String>
 
     <!--MainWindow-->
     <system:String x:Key="set">設定</system:String>
@@ -53,6 +56,10 @@
     <system:String x:Key="exit">出口</system:String>
     <system:String x:Key="menu">メニュー</system:String>
     <system:String x:Key="exportGedcom">gedcomファイルをエクスポートする</system:String>
+    <system:String x:Key="about">私について</system:String>
+    <system:String x:Key="theme">テーマ</system:String>
+    <system:String x:Key="themeDark">闇</system:String>
+    <system:String x:Key="themeDefault">ディフォルト</system:String>
 
 
 
@@ -73,4 +80,7 @@
     <system:String x:Key="father">父親</system:String>
     <system:String x:Key="mother">母親</system:String>
     <system:String x:Key="child">子</system:String>
+    <system:String x:Key="addfather">父親を追加する</system:String>
+    <system:String x:Key="addmother">母親を追加する</system:String>
+    <system:String x:Key="addchild">子供を追加する</system:String>
 </ResourceDictionary>
