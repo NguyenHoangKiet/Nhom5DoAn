@@ -56,10 +56,5 @@ namespace FamilyTree
             MessageBox.Show(text);
            
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            FamilyData familyData = new FamilyData(App.Family);
-            familyData.ShowDialog();
-        }
     }
 }

@@ -167,7 +167,7 @@
                       VerticalAlignment="Center">
                             <Button x:Name="bnt_viewlistfamily"
                             Style="{StaticResource MaterialDesignRaisedButton}"
-                             Width="115"
+                             Width="115" Click="btn_view_Click"
                                         Content="{DynamicResource view}"
                              ToolTip="Resource name: MaterialDesignRaisedButton">
                             </Button>

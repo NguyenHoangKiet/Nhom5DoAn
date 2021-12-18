@@ -36,5 +36,11 @@ namespace FamilyTree.Components
             moreDetail.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             moreDetail.ShowDialog();
         }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            FamilyData familyData = new FamilyData(App.Family);
+            familyData.ShowDialog();
+        }
     }
 }
