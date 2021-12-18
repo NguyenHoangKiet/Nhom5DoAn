@@ -99,8 +99,264 @@
                 </materialDesign:ColorZone>
             </Grid>
         </Grid>
-        <Grid Margin="0,111,0,10.4" Grid.RowSpan="2">
+           <Grid Margin="0,111,0,10.4" Grid.RowSpan="2">
             <uc:Detail Margin="0,10,1050,0" Height="Auto" Width="Auto"/>
         </Grid>
+        <DockPanel Grid.ColumnSpan="2" Margin="0,105,0,0.4" Grid.Row="1">
+            <Grid 
+                    DockPanel.Dock="Left"
+                    Margin="10,13,7,9.8">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0.2,-0.2">
+                    <Grid Background="White" Width="405" Margin="-0.8,0.2,0.6,-1"  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34"></RowDefinition>
+                            <RowDefinition Height="199*"></RowDefinition>
+                            <RowDefinition Height="367*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" 
+                                  Background="Gray" Margin="0,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <TextBlock Text="Lee Tom" 
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"></TextBlock>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Button Background="Transparent"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        BorderThickness="0"
+                        >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                        </Style>
+                                    </Button.Style>
+                                    <materialDesign:PackIcon Kind="WindowClose" />
+                                </Button>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="10,10.6,10.2,9.8" Grid.RowSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="190*"></ColumnDefinition>
+                                    <ColumnDefinition Width="182*"></ColumnDefinition>
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
+                    Grid.Column="0"
+                    AllowDrop="true"
+                    Fill="WhiteSmoke"
+                    RadiusX="30"
+                    RadiusY="10"
+                    StrokeDashArray="10"
+                    StrokeThickness="0"
+                    StrokeDashCap="Round"
+                    Stroke="Silver"
+                    Height="150"
+                    Width="150" Margin="20,25,20.4,25"
+                    >
+                                </Rectangle>
+                                <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
+                                    <StackPanel HorizontalAlignment="Left"
+                                VerticalAlignment="Center">
+                                        <TextBlock Text="Họ tên : Lee Tom" 
+                           Foreground="Black"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"></TextBlock>
+                                        <TextBlock Text="Ngày sinh : 15/1/1999" 
+                           Foreground="Black"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+                                        <TextBlock Text="Nơi sinh : Đồng Tháp"
+                           Foreground="Black"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="AccountCacheOutline"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="{DynamicResource detail}" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <Button
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115"
+                                        Content="{DynamicResource set}"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="Image"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="{DynamicResource picture}"
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <Button
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115" Content="{DynamicResource btnAdd}"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="PlusCircle"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="{DynamicResource addRelationship}" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="18"
+                                   Width="170" Margin="0,2,0,0"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <ComboBox Width="115">
+                                        <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource father}"
+                                      FontSize="16"
+                                      >
+                                        </ComboBoxItem>
+                                        <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource mother}"
+                                      FontSize="16"
+                                      >
+                                        </ComboBoxItem>
+                                        <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource child}"
+                                      FontSize="16"
+                                      >
+                                        </ComboBoxItem>
+                                    </ComboBox>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="ViewList"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="{DynamicResource family}" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <Button
+                                        Click="Button_Click"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115"
+                                        Content="{DynamicResource view}"
+                             ToolTip="Resource name: MaterialDesignRaisedButton">
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid x:Name="DiagramPane" Margin="10,0,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <!--  The column 1 clone is used when the details area is collapsed  -->
+                    <ColumnDefinition x:Name="column1CloneForLayer0" SharedSizeGroup="column1" />
+                </Grid.ColumnDefinitions>
+                <Border
+                    x:Name="TreeBorder">
+                    <tree:TreeViewer x:Name="Tree" Zoom="1.5" Margin="0,0,-477.6,-0.4" />
+                </Border>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>

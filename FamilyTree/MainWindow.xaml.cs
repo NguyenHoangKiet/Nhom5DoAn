@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FamilyTree.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,6 +54,12 @@ namespace FamilyTree
                 "\n\n Phiên bản 1.0.0";
 
             MessageBox.Show(text);
+           
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FamilyData familyData = new FamilyData(App.Family);
+            familyData.ShowDialog();
         }
     }
 }
