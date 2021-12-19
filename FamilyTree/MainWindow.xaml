@@ -100,7 +100,7 @@
             </Grid>
         </Grid>
         <Grid Background="#FFFAFA" Margin="0,111,0,10.4" Grid.RowSpan="2">
-            <uc:Detail Margin="0,4,1050,0" Height="Auto" Width="Auto"/>
+            <uc:Detail Height="533.2" Width="400" Margin="0,51,990,45" />
         </Grid>
     </Grid>
 </Window>

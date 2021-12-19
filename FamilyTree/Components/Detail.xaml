@@ -14,7 +14,7 @@
     <Grid>
         <Border BorderBrush="#512DA8" BorderThickness="5" Grid.ColumnSpan="2" Margin="0,0,0,0">
 
-            <Grid Background="White" Margin="-3.2,-3.2,-2.8,-3.6"  >
+            <Grid Background="White" Margin="-3.2,-3.2,-2.8,-3.6" RenderTransformOrigin="0.465,0.471"  >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="34"></RowDefinition>
                     <RowDefinition Height="199*"></RowDefinition>
@@ -48,26 +48,26 @@
                 <Grid Grid.Row="1" Margin="10,10.6,10.2,9.8" Grid.RowSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="200"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="71*"></RowDefinition>
+                        <RowDefinition Height="77*"></RowDefinition>
+                        <RowDefinition Height="74*"></RowDefinition>
+                        <RowDefinition Height="154*"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0" Margin="0,10,0,0">
+                    <Grid Grid.Row="0" Margin="0,10,0,0" HorizontalAlignment="Right" Width="423">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="193*"></ColumnDefinition>
                             <ColumnDefinition Width="185*"></ColumnDefinition>
                             <ColumnDefinition Width="7.2"/>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="photoBox" Margin="0,0,27.8,10"></Image>
+                        <Image x:Name="photoBox" Margin="18,0,0,10" HorizontalAlignment="Left" Width="185"/>
                         <materialDesign:PackIcon
                                     x:Name="icon"
                                     Kind="AccountCircle"
                                     Height="125"
                                     Width="150"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Center" Margin="10,25,52.8,40" />
+                                    HorizontalAlignment="Center" Margin="53,30,9.8,35" />
                         <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
                             <StackPanel HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
@@ -97,7 +97,7 @@
                         </Grid>
                     </Grid>
 
-                    <Grid Grid.Row="1">
+                    <Grid Grid.Row="1" Margin="0,0,0,0.2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -132,7 +132,7 @@
                         </Grid>
                     </Grid>
 
-                    <Grid Grid.Row="2">
+                    <Grid Grid.Row="2" Margin="0,5.8,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -167,7 +167,7 @@
                         </Grid>
                     </Grid>
 
-                    <Grid Background="#B2E3FA" Grid.Row="3" Margin="0,9.6,-0.8,0" Height="79" VerticalAlignment="Top">
+                    <Grid Background="#B2E3FA" Grid.Row="3" Margin="0,9,-1,0" Height="79" VerticalAlignment="Top" Grid.RowSpan="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -192,7 +192,7 @@
                         </Grid>
                         <Grid Grid.Column="1">
                             <ComboBox x:Name="cbbAdd" FontSize="20" Background="#B2E3FA" Margin="24,20,26.6,21.2">
-                                
+
                                 <ComboBoxItem FontFamily="Fonts/#Dosis"
                                                       Content="{DynamicResource father}"
                                       FontSize="20"
@@ -212,8 +212,12 @@
                         </Grid>
                     </Grid>
 
-                    <Grid Background="#B2E3FA" Grid.Row="3" Margin="0,88.6,-0.8,0" Height="94" VerticalAlignment="Top" Grid.RowSpan="2">
-                        <Button x:Name="btnAdd" Background="#02EE5B" Width="105" Margin="266,21,56.2,41">
+                    <Grid Background="#B2E3FA" Grid.Row="4" Margin="0,3.4,-1,0" Height="94" VerticalAlignment="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="21*"/>
+                            <RowDefinition Height="26*"/>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="btnAdd" Background="#02EE5B" Width="114" Margin="0,21,49.2,40.4" Grid.RowSpan="2" HorizontalAlignment="Right">
                             <Button.Style>
                                 <Style>
                                     <Style.Triggers>
