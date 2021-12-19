@@ -105,12 +105,12 @@ namespace FamilyTree.Components
             try
             {
                 List<string> lines = new List<string>();
-                int i = 0;
+                
                 foreach (string line in System.IO.File.ReadLines(fileName))
                 {
                     if (line.StartsWith("LANGUAGE"))
                     {
-                        lines.Add("LANGUAGE" + curentlang.ToString());
+                        lines.Add("LANGUAGE_" + curentlang.ToString());
                     }
                     else
                     {
@@ -137,7 +137,7 @@ namespace FamilyTree.Components
                     st.Close();
                     TextWriter tw = new StreamWriter(fileName, true);
 
-                    tw.WriteLine("LANGUAGE" + curentlang.ToString());
+                    tw.WriteLine("LANGUAGE_" + curentlang.ToString());
 
                     tw.Close();
                 }
@@ -153,7 +153,7 @@ namespace FamilyTree.Components
                 {
                     if (line.StartsWith("LANGUAGE"))
                     {
-                        string[] arrListStr = line.Split('E');
+                        string[] arrListStr = line.Split('_');
 
                         string input = arrListStr[1];
                         try
@@ -163,22 +163,49 @@ namespace FamilyTree.Components
 
                             if (curentlang == 1)
                             {
-                                LanguageManager.SetLanguageDictionary(ELanguage.English); return;
+                                LanguageManager.SetLanguageDictionary(ELanguage.English);
                             }
                             else if (curentlang == 2)
                             {
-                                LanguageManager.SetLanguageDictionary(ELanguage.Japanese); return;
+                                LanguageManager.SetLanguageDictionary(ELanguage.Japanese);
                             }
                             else
                             {
-                                LanguageManager.SetLanguageDictionary(ELanguage.VietNamese); return;
+                                LanguageManager.SetLanguageDictionary(ELanguage.VietNamese);
                             }
                         }
                         catch (FormatException)
                         {
 
                         }
-                        this.InitializeComponent();
+                    }
+
+                    if (line.StartsWith("THEME"))
+                    {
+                        string[] arrListStr = line.Split('_');
+
+                        string input = arrListStr[1];
+                        try
+                        {
+                            int result = Int32.Parse(input);
+
+                            if (result == 1)
+                            {
+                                ResourceDictionary dict = new ResourceDictionary();
+                                dict.Source = new Uri("..\\Resource\\ResourceTheme.light.xaml", UriKind.Relative);
+                                Application.Current.Resources.MergedDictionaries.Add(dict);
+                            }
+                            else
+                            {
+                                ResourceDictionary dict = new ResourceDictionary();
+                                dict.Source = new Uri("..\\Resource\\ResourceTheme.default.xaml", UriKind.Relative);
+                                Application.Current.Resources.MergedDictionaries.Add(dict);
+                            }
+                        }
+                        catch (FormatException)
+                        {
+
+                        }
                     }
                 }
             }
