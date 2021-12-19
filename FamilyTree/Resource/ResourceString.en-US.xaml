@@ -10,7 +10,7 @@
     <ImageBrush x:Key="btnLoginImgClick" ImageSource="/Images/UK/bt_login_2.png"/>-->
 
     <!--WelcomeWindow-->
-    <system:String x:Key="greeting">Welcome</system:String>
+    <system:String x:Key="greeting">My Family Tree</system:String>
     <system:String x:Key="btnNew">New</system:String>
     <system:String x:Key="btnOpen">Open</system:String>
     <system:String x:Key="btnImport">Import</system:String>

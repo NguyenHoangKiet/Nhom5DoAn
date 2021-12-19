@@ -10,7 +10,7 @@
     <ImageBrush x:Key="btnLoginImgClick" ImageSource="/Images/VN/bt_login_2.png"/>-->
 
     <!--WelcomWindow-->
-    <system:String x:Key="greeting">Chào mừng bạn đến với chương trình cây gia phả</system:String>
+    <system:String x:Key="greeting">QUẢN LÝ GIA PHẢ</system:String>
     <system:String x:Key="btnNew">Thêm mới</system:String>
     <system:String x:Key="btnOpen">Mở</system:String>
     <system:String x:Key="btnImport">Thêm từ thiết bị</system:String>

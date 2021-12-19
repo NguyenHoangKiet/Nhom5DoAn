@@ -10,7 +10,7 @@
     <ImageBrush x:Key="btnLoginImgClick" ImageSource="/Images/VN/bt_login_2.png"/>-->
 
     <!--WelcomWindow-->
-    <system:String x:Key="greeting">いらっしゃいませ</system:String>
+    <system:String x:Key="greeting">私の家系</system:String>
     <system:String x:Key="btnNew">新しく追加する</system:String>
     <system:String x:Key="btnOpen">開ける</system:String>
     <system:String x:Key="btnImport">デバイスからもっと</system:String>

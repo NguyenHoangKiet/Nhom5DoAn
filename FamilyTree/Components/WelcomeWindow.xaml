@@ -39,10 +39,6 @@
 
             <!--banner-->
             <Grid Grid.Row="0" Margin="0,-5,0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
@@ -50,12 +46,13 @@
                         <GradientStop Color="#FF4B4DA2"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-                <TextBlock Text="{DynamicResource greeting}" FontStretch="UltraCondensed" Grid.Row="0" VerticalAlignment="Bottom" 
-                       FontSize="30" Foreground="Snow"
-                       Width="883"
-                       HorizontalAlignment="Left"
-                       Margin="10,0,0,0" Grid.ColumnSpan="2">
-                </TextBlock>
+                <TextBlock Text="{DynamicResource greeting}"
+                           FontSize="40"
+                           FontFamily="Arial"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           Foreground="Gold"></TextBlock>
             </Grid>
 
             <!--main-->
