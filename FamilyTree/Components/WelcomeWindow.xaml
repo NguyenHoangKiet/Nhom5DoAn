@@ -50,11 +50,11 @@
                         <GradientStop Color="#FF4B4DA2"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-                <TextBlock Grid.Row="0" VerticalAlignment="Bottom" 
-                       FontSize="40" Foreground="Snow"
-                       Width="200"
+                <TextBlock Text="{DynamicResource greeting}" FontStretch="UltraCondensed" Grid.Row="0" VerticalAlignment="Bottom" 
+                       FontSize="30" Foreground="Snow"
+                       Width="883"
                        HorizontalAlignment="Left"
-                       Margin="10,0,0,0">
+                       Margin="10,0,0,0" Grid.ColumnSpan="2">
                 </TextBlock>
             </Grid>
 
