@@ -20,9 +20,9 @@
                 <ResourceDictionary Source="/Resource/ResourceString.vi-VN.xaml" />
             </UserControl.Resources>
     <Grid>
-        <materialDesign:ColorZone
+        <materialDesign:ColorZone 
             Mode="PrimaryDark"
-            Padding="16"
+            Padding="16" Background="{DynamicResource controlbar}"
             CornerRadius="3"
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
             Margin="2,2,2,0" Height="63">

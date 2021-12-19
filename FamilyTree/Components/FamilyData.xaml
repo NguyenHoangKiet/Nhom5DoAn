@@ -18,7 +18,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Title="FamilyData" Height="800" Width="800">
-    <Border BorderBrush="#512DA8" BorderThickness="3">
+    <Border BorderBrush="{DynamicResource border}" BorderThickness="3">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
@@ -39,7 +39,7 @@
                        ></TextBlock>
                 </materialDesign:ColorZone>
             </Grid>
-            <Grid Background="#fafafa" Grid.Row="2">
+            <Grid Background="{DynamicResource bg_FamilyData}" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
@@ -50,7 +50,7 @@
                        FontWeight="Bold"
                        HorizontalAlignment="Left"></TextBlock>
                     <materialDesign:ColorZone 
-                Mode="Light" Background="#fafafa"
+                Mode="Light" Background="{DynamicResource bg_FamilyData}"
                 Padding="16">
                         <DockPanel>
                             <StackPanel
@@ -101,7 +101,7 @@
                 </Grid>
                 <Grid Grid.Column="1" HorizontalAlignment="Right">
                     <Button
-                    Background="AliceBlue"
+                    Background="{DynamicResource label_FamilyData}"
                     Click="Button_Click"
                     Margin="0,20,0,-20"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
@@ -112,7 +112,7 @@
                     </Button>
                 </Grid>
             </Grid>
-            <Grid Background="#fafafa" Grid.Row="3">
+            <Grid Background="{DynamicResource bg_FamilyData}" Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="7*"/>
                     <ColumnDefinition/>
@@ -126,7 +126,7 @@
                     <DataGridTextColumn Width="150" Header="{DynamicResource tblDeathDate}" Binding="{Binding DeadDate, ConverterCulture='fr-FR', StringFormat={}{0:d}}"/>
                 </DataGrid.Columns>
             </DataGrid>-->
-                <ListView Background="AliceBlue"
+                <ListView Background="{DynamicResource label_FamilyData}"
                       HorizontalAlignment="Left"
                       VerticalAlignment="Top"
                       x:Name="listviewMember" Grid.ColumnSpan="2">

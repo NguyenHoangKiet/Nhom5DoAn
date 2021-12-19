@@ -19,41 +19,42 @@
         Topmost="True"
         WindowStartupLocation="CenterScreen"
         Title="NewUser" Height="700" Width="500">
-    <Grid Background="#fafafa">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <uc:ControlBarUC></uc:ControlBarUC>
-        </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" 
+    <Border BorderBrush="#512DA8" BorderThickness="2">
+        <Grid Background="{DynamicResource bg_NewUser}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Background="{DynamicResource controlbar}" Grid.Row="0">
+                <uc:ControlBarUC></uc:ControlBarUC>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" 
                   Margin="0,0,0,-0.4" 
                   RenderTransformOrigin="0.5,0.508" >
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Height="160"
-                      Width="150"
-                      Margin="0 0 0 0"
-                      Grid.Row="0">
-                    <Image x:Name="photoBox" Margin="0,0,0,30"></Image>
-                </Grid>
-                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
                     <Grid Height="160"
                       Width="150"
                       Margin="0 0 0 0"
+                      Grid.Row="0">
+                        <Image x:Name="photoBox" Margin="0,0,0,30"></Image>
+                    </Grid>
+                    <Grid Grid.Row="0">
+                        <Grid Height="160"
+                      Width="150"
+                      Margin="0 0 0 0"
                       >
-                        <materialDesign:PackIcon
+                            <materialDesign:PackIcon
                                     x:Name="icon"
                                     Kind="AccountCircle"
                                     Height="125"
@@ -61,37 +62,37 @@
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center" Margin="0,5,0,30" />
 
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="1" VerticalAlignment="Bottom"
+                    <Grid Grid.Row="1" VerticalAlignment="Bottom"
                       >
-                    <Button Margin="50,0,50,0"
+                        <Button Margin="50,0,50,0"
                             Click="btnGetPhoto_Click"
                             Content="{DynamicResource btnImport}"
                             Background="White"
                             Foreground="Black"
                             BorderBrush="White"></Button>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Grid Grid.Column="1"
+                <Grid Grid.Column="1"
                   Margin="30 0 0 0">
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock VerticalAlignment="Bottom"
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock VerticalAlignment="Bottom"
                                FontSize="20"
                                >
-                        <TextBlock.Inlines>
-                            <Run FontWeight="Bold" 
+                            <TextBlock.Inlines>
+                                <Run FontWeight="Bold" 
                                  FontSize="20" 
                                  Text="{DynamicResource Sex}"/>
-                        </TextBlock.Inlines>
-                    </TextBlock>
-                </Grid>
-                <Grid Grid.Row="1" >
-                    <RadioButton 
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="1" >
+                        <RadioButton 
                         VerticalAlignment="Top"
                         x:Name="radiobtnMale"
                         Style="{StaticResource MaterialDesignRadioButton}"
@@ -101,8 +102,8 @@
                             HorizontalAlignment="Left" 
                             Width="77">
 
-                    </RadioButton>
-                    <RadioButton 
+                        </RadioButton>
+                        <RadioButton 
                             VerticalAlignment="Center"
                         x:Name="radiobtnFemale"
                         Style="{StaticResource MaterialDesignRadioButton}"
@@ -110,40 +111,40 @@
                         FontSize= "20"  
                         HorizontalAlignment="Left" 
                         Width="115" RenderTransformOrigin="0.5,0.5">
-                    </RadioButton>
+                        </RadioButton>
+                    </Grid>
                 </Grid>
             </Grid>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
                   Margin="35 50">
-                <TextBox 
+                    <TextBox 
                     x:Name="tbFirstname"
                     materialDesign:HintAssist.Hint="{DynamicResource lastName}"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            </Grid>
-            <Grid Grid.Column="1"
+                </Grid>
+                <Grid Grid.Column="1"
                   Margin="35 50">
-                <TextBox 
+                    <TextBox 
                     x:Name="tbLastName"
                     materialDesign:HintAssist.Hint="{DynamicResource firstName}"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0.6,0.4" />
+                </Grid>
             </Grid>
-        </Grid>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
                   Margin="35,35,35,35.2">
-                <DatePicker 
+                    <DatePicker 
                     x:Name="tbBirthDay"
                     materialDesign:HintAssist.Hint="{DynamicResource Birthday}"
                     FontSize="25"
@@ -151,37 +152,38 @@
                     Height="67" 
                     Margin="1,0,0.4,25.2"
                     VerticalAlignment="Bottom" />
-            </Grid>
-            <Grid Grid.Column="1"
+                </Grid>
+                <Grid Grid.Column="1"
                   Margin="35 35 35 61">
-                <TextBox
+                    <TextBox
                     x:Name="tbPlaceOfBirth"
                     materialDesign:HintAssist.Hint="{DynamicResource placeOfBirth}"
                     FontSize="25"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </Grid>
             </Grid>
-        </Grid>
-        <Grid Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                        Width="200"
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        Width="200" Background="{DynamicResource button}"
                         Content="Thêm"
                         FontSize="15"
                         Click="addNewUser_Click">
-                </Button>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                        Width="200"
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        Width="200" Background="{DynamicResource button}"
                         Click="Cancel_Click"
                         Content="Hủy"
                         FontSize="15">
-                </Button>
+                    </Button>
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </Window>

@@ -1,4 +1,49 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
+    <!--Sài chung tất cả các WD -->
+    <SolidColorBrush x:Key="button">#EC255A</SolidColorBrush>
+    <SolidColorBrush x:Key="controlbar">#161853</SolidColorBrush>
+    <SolidColorBrush x:Key="border">#161853</SolidColorBrush>
+
+    <!--WelcomeWD Chưa cần cài-->
+
+    <!--MainWD-->
+    <SolidColorBrush x:Key="bg_MainWD1">#FF332DA8</SolidColorBrush>
+    <!--Background này ko cần quan tâm-->
+    <SolidColorBrush x:Key="bg_MainWD2">#FAEDF0</SolidColorBrush>
+    <!--Background nền vẽ Tree màu trắng-->
+
+    <!--Detail-->
+    <SolidColorBrush x:Key="btnAdd_Detail">#02EE5B</SolidColorBrush>
+    <!--btn thêm quan hệ-->
+    <SolidColorBrush x:Key="zoneAdd_Detail">#B2E3FA</SolidColorBrush>
+    <!--Nền vùng thêm quan hệ-->
+    <SolidColorBrush x:Key="bg_Detail">#FAEDF0</SolidColorBrush>
+    <!--Nền-->
+
+    <!--FamilyData-->
+    <SolidColorBrush x:Key="bg_FamilyData">#FAEDF0</SolidColorBrush>
+    <!--Nền của list View-->
+    <SolidColorBrush x:Key="label_FamilyData">AliceBlue</SolidColorBrush>
+    <!--Nền của thanh chứa họ tên, ngày sinh vv-->
+    <!--Nền lable nhãn màu tím chưa cài-->
+
+    <!--NewUser-->
+    <SolidColorBrush x:Key="bg_NewUser">#FAEDF0</SolidColorBrush>
+    <!--Nền-->
+
+    <!--FamilyData-->
+    <SolidColorBrush x:Key="bgListView">AliceBlue</SolidColorBrush>
+
+    <!--MoreDetail-->
+    <SolidColorBrush x:Key="bg_MoreDetail">LightBlue</SolidColorBrush>
+    <!--Nền-->
+    <SolidColorBrush x:Key="btnSave_MoreDetail">#02EE5B</SolidColorBrush>
+    <!--btn lưu-->
+
+    <!--<SolidColorBrush x:Key="bgWhite">white</SolidColorBrush>
+    <SolidColorBrush x:Key="foregroundTextDark">black</SolidColorBrush>
+    <SolidColorBrush x:Key="foregroundTextLight">white</SolidColorBrush>-->
+
 </ResourceDictionary>

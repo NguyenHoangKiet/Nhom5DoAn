@@ -21,7 +21,7 @@
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="750" Width="1400">
     <Grid
-        Background="#FF332DA8"
+        Background="{DynamicResource border}"
         >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -43,7 +43,7 @@
 
             <Grid Grid.Row="1">
                 <materialDesign:ColorZone
-            Mode="PrimaryDark"
+            Mode="PrimaryDark" Background="{DynamicResource controlbar}"
             Padding="5"
             CornerRadius="3"
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
@@ -53,8 +53,8 @@
                         IsMainMenu="True" Margin="0,0,0,11.2" HorizontalAlignment="Left" Width="150" >
                             <MenuItem                      
                             Icon="{materialDesign:PackIcon Kind=Menu}" Width="163" Height="32" Header="{DynamicResource menu}" BorderThickness="1"
-                                    BorderBrush="#FF673AB7" Foreground="#DDFFFFFF" Padding="0" 
-                                    CommandParameter="{Binding ElementName=ucControlBar}" Background="#FF673AB7">
+                                    BorderBrush="{DynamicResource controlbar}" Foreground="#DDFFFFFF" Padding="0" 
+                                    CommandParameter="{Binding ElementName=ucControlBar}" Background="{DynamicResource button}">
 
                                 <MenuItem Header="{DynamicResource btnAdd}" Background="#fafafa"
                                               Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
@@ -83,16 +83,16 @@
                             <Separator />
                         </Menu>
 
-                        <Button x:Name="bnt_New" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
-                            <materialDesign:PackIcon Kind="NotePlusOutline" />
+                        <Button x:Name="bnt_New"  Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
+                            <materialDesign:PackIcon Kind="NotePlusOutline"/>
                         </Button>
 
-                        <Button x:Name="bnt_Open" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4">
-                            <materialDesign:PackIcon Kind="FolderOpen" />
+                        <Button x:Name="bnt_Open"  Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4">
+                            <materialDesign:PackIcon Kind="FolderOpen"/>
                         </Button >
 
-                        <Button x:Name="bnt_Save" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
-                            <materialDesign:PackIcon Kind="ContentSaveEdit" />
+                        <Button x:Name="bnt_Save"  Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
+                            <materialDesign:PackIcon Kind="ContentSaveEdit"/>
                         </Button >
                     </StackPanel>
 

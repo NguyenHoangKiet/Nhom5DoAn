@@ -34,7 +34,7 @@
               ></Grid>
 
                 <Grid Grid.Row="1"
-              Background="LightBlue"
+              Background="{DynamicResource bg_MoreDetail}"
               Margin="0"
               >
                     <ScrollViewer HorizontalScrollBarVisibility="Auto">
@@ -288,7 +288,7 @@
                                     </Style>
                                 </StackPanel.Style>
                             </StackPanel>
-                            <Button Click="Save_Click" Background="#02EE5B" Margin="220,50,10,10" Content="{DynamicResource ResourceKey=save}" Width="116"/>
+                            <Button Click="Save_Click" Background="{DynamicResource btnSave_MoreDetail}" Margin="220,50,10,10" Content="{DynamicResource ResourceKey=save}" Width="116"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

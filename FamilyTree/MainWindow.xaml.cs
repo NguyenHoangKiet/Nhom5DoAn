@@ -29,16 +29,30 @@ namespace FamilyTree
 
         private void ThemeDefaul_Click(object sender, RoutedEventArgs e)
         {
-            //ResourceDictionary dict = new ResourceDictionary();
-            //dict.Source = new Uri("..\\Resource\\Theme_Defaul.xaml", UriKind.Relative);
-            //Application.Current.Resources.MergedDictionaries.Add(dict);
+            try
+            {
+                ResourceDictionary dict = new ResourceDictionary();
+                dict.Source = new Uri("..\\Resource\\ResourceTheme.default.xaml", UriKind.Relative);
+                Application.Current.Resources.MergedDictionaries.Add(dict);
+            }
+            catch
+            {
+
+            }
         }
 
         private void ThemeLight_Click(object sender, RoutedEventArgs e)
         {
-            //ResourceDictionary dict = new ResourceDictionary();
-            //dict.Source = new Uri("..\\Resource\\Theme_Light.xaml", UriKind.Relative);
-            //Application.Current.Resources.MergedDictionaries.Add(dict);
+            try
+            {
+                ResourceDictionary dict = new ResourceDictionary();
+                dict.Source = new Uri("..\\Resource\\ResourceTheme.light.xaml", UriKind.Relative);
+                Application.Current.Resources.MergedDictionaries.Add(dict);
+            }
+            catch
+            {
+
+            }
         }
 
         private void MenuItem_About_Click(object sender, RoutedEventArgs e)
