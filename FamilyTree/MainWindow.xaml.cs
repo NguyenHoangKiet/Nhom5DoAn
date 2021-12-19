@@ -56,5 +56,10 @@ namespace FamilyTree
             MessageBox.Show(text);
            
         }
+
+        private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

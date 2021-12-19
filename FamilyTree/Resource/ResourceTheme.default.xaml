@@ -4,6 +4,7 @@
     <SolidColorBrush x:Key="btn">#673AB7</SolidColorBrush>
     <SolidColorBrush x:Key="colorZone">#512DA8</SolidColorBrush>
     <SolidColorBrush x:Key="bgMainWD">#FF332DA8</SolidColorBrush>
+    <SolidColorBrush x:Key="bgMainWD2">#FFFAFA</SolidColorBrush>
     <SolidColorBrush x:Key="bgWhiteDefault">#fafafa</SolidColorBrush>
     <SolidColorBrush x:Key="bgWhite">white</SolidColorBrush>
     <SolidColorBrush x:Key="foregroundTextDark">black</SolidColorBrush>

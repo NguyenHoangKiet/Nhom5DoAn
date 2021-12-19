@@ -169,7 +169,6 @@
             <Grid Grid.Column="0">
                 <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200"
-                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
                         Content="Thêm"
                         FontSize="15"
                         Click="addNewUser_Click">
@@ -179,7 +178,6 @@
                 <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200"
                         Click="Cancel_Click"
-                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
                         Content="Hủy"
                         FontSize="15">
                 </Button>

@@ -31,14 +31,12 @@
 
                     <Button
                         Command="{Binding minimizedwindowCommand}"
-                        CommandParameter="{Binding ElementName=ucControlBar}"
-                        ToolTip="Thu nhỏ">
+                        CommandParameter="{Binding ElementName=ucControlBar}" >
                         <materialDesign:PackIcon Kind="WindowMinimize" />
                     </Button>
                     <Button
                         Command="{Binding maximizedwindowCommand}"
-                        CommandParameter="{Binding ElementName=ucControlBar}"
-                            ToolTip="Save">
+                        CommandParameter="{Binding ElementName=ucControlBar}" >
                         <materialDesign:PackIcon
                                 Kind="WindowMaximize" />
                     </Button>
@@ -46,8 +44,7 @@
                     <Button 
                         Command="{Binding closewindowCommand}"
                         CommandParameter="{Binding ElementName=ucControlBar}"
-                        Background="Red"
-                        ToolTip="Follow me on Twitter">
+                        Background="Red" >
                         <materialDesign:PackIcon Kind="WindowClose" />
                     </Button>
 

@@ -69,25 +69,21 @@
                   Background="CornflowerBlue"   RenderTransformOrigin="0.497,0.509" Margin="0,0,414.6,-1.2" Grid.ColumnSpan="2">
                     <Button x:Name="btnNew"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="{DynamicResource btnNew}"
                     Margin="47,34,22,221.6"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="NewUser_Click"  />
                     <Button x:Name="btnOpen"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="{DynamicResource btnOpen}"
                     Margin="47,94,22,161.6"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"/>
                     <Button x:Name="btnImport"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    ToolTip="Resource name: nhập từ thiết bị nhé"
                     Content="{DynamicResource btnImport}"
                     Margin="47,154,22,101.6"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" />
                     <Button x:Name="btnOldestOpen"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="{DynamicResource btnOldestOpen}"
                     Margin="47,218,22,38.4"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"/>

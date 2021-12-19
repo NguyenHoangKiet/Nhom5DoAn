@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace FamilyTree.Components
 
         public ControlBarUC()
         {
-            InitializeComponent();
+            InitializeComponent(); LoadStaticSource();
             this.DataContext = userDataContext = new UserDataContext();
         }
 
@@ -94,7 +95,98 @@ namespace FamilyTree.Components
                 LanguageManager.SetLanguageDictionary(ELanguage.VietNamese);
             }
             curentlang = combo.SelectedIndex;
+            SetStaticSource();
             this.InitializeComponent();
+        }
+
+        string fileName = "StaticSource.txt";
+        void SetStaticSource()
+        {
+            try
+            {
+                List<string> lines = new List<string>();
+                int i = 0;
+                foreach (string line in System.IO.File.ReadLines(fileName))
+                {
+                    if (line.StartsWith("LANGUAGE"))
+                    {
+                        lines.Add("LANGUAGE" + curentlang.ToString());
+                    }
+                    else
+                    {
+                        lines.Add(line);
+                    }
+                }
+
+                var st = new FileStream(fileName, FileMode.Create);
+                st.Close();
+
+                foreach (var line in lines)
+                {
+                    TextWriter tw = new StreamWriter(fileName, true);
+
+                    tw.WriteLine(line);
+
+                    tw.Close();
+                }
+            }
+            catch
+            {
+                using (var st = new FileStream(fileName, FileMode.Create))
+                {
+                    st.Close();
+                    TextWriter tw = new StreamWriter(fileName, true);
+
+                    tw.WriteLine("LANGUAGE" + curentlang.ToString());
+
+                    tw.Close();
+                }
+            }
+            
+        }
+
+        void LoadStaticSource()
+        {
+            try
+            {
+                foreach (string line in System.IO.File.ReadLines(fileName))
+                {
+                    if (line.StartsWith("LANGUAGE"))
+                    {
+                        string[] arrListStr = line.Split('E');
+
+                        string input = arrListStr[1];
+                        try
+                        {
+                            int result = Int32.Parse(input);
+                            curentlang = result;
+
+                            if (curentlang == 1)
+                            {
+                                LanguageManager.SetLanguageDictionary(ELanguage.English); return;
+                            }
+                            else if (curentlang == 2)
+                            {
+                                LanguageManager.SetLanguageDictionary(ELanguage.Japanese); return;
+                            }
+                            else
+                            {
+                                LanguageManager.SetLanguageDictionary(ELanguage.VietNamese); return;
+                            }
+                        }
+                        catch (FormatException)
+                        {
+
+                        }
+                        this.InitializeComponent();
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 
@@ -122,6 +214,7 @@ namespace FamilyTree.Components
             //Application.Current.Resources.MergedDictionaries.Clear();
             Application.Current.Resources.MergedDictionaries.Add(dict);
         }
+
     }
     public enum ELanguage
     {
