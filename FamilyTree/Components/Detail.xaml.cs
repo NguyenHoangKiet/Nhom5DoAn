@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using FamilyTree.Components;
 using FamilyTreeLibrary;
+using MaterialDesignThemes.Wpf;
 
 namespace FamilyTree.Components
 {
@@ -50,6 +51,28 @@ namespace FamilyTree.Components
                 //PersonBirthDay = App.Family.Current.BirthDate.ToString("MM/dd/yyyy");
                 PersonBirthDay = App.Family.Current.BirthDate.ToString();
                 PersonBirthPlace = App.Family.Current.BirthPlace;
+
+                if (App.Family.Current.Photos != null)
+                {
+                    try
+                    {
+                        foreach (Photo image in App.Family.Current.Photos)
+                        {
+                            photoBox.Source = new BitmapImage(new Uri(image.RelativePath));
+                        }
+
+                        PackIcon getIcon = icon;
+                        if (getIcon != null)
+                        {
+                            icon.Visibility = Visibility.Collapsed;
+                        }
+
+                    }
+                    catch
+                    {
+
+                    }
+                }
 
             }
         }

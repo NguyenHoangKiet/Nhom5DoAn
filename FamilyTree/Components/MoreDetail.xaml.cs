@@ -187,9 +187,23 @@ namespace FamilyTree
                 // Load Photo
                 if (currentPerson.Photos != null)
                 {
-                    foreach (Photo image in currentPerson.Photos)
+                    try
                     {
-                        photoBox.Source = new BitmapImage(new Uri(image.RelativePath));
+                        foreach (Photo image in currentPerson.Photos)
+                        {
+                            photoBox.Source = new BitmapImage(new Uri(image.RelativePath));
+                        }
+
+                        PackIcon getIcon = icon;
+                        if (getIcon != null)
+                        {
+                            icon.Visibility = Visibility.Collapsed;
+                        }
+
+                    }
+                    catch
+                    {
+
                     }
                 }
             }
