@@ -1,73 +1,184 @@
-﻿<Window x:Class="FamilyTree.MoreDetail"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FamilyTree"
-        ResizeMode="NoResize"
-        WindowStyle="None"
-        mc:Ignorable="d"
-        Topmost="True"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        
-        d:DesignHeight="650" d:DesignWidth="405">
-    
+﻿<UserControl x:Class="FamilyTree.Components.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FamilyTree.Components"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Background="{DynamicResource bg_Detail}"
+             d:DesignHeight="650" d:DesignWidth="405" >
     <Grid>
-        <!--Moredetail-->
-        <Grid>
-            <Grid >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"></RowDefinition>
+            <RowDefinition Height="304*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0"
-              Background="DarkViolet"
-              ></Grid>
+        <Grid Grid.Row="0" 
+                                  Background="Gray" Margin="0,0,-0.2,5.6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-                <Grid Grid.Row="1"
-              Background="{DynamicResource bg_MoreDetail}"
-              Margin="0"
-              >
-                    <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                        <StackPanel Orientation="Vertical"
-                        Margin="10">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition Height="auto"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid Height="160"
-                                    Width="150"
-                                    Margin="0 0 0 0"
-                                    Grid.Row="0">
-                                    <Image x:Name="photoBox" Margin="0,0,0,30"></Image>
-                                </Grid>
-                                <Grid Grid.Row="0">
-                                    <Grid Height="160"
-                                        Width="150"
-                                        Margin="0 0 0 0"
-                                         >
-                                        <materialDesign:PackIcon
+            <Grid Grid.Column="0">
+                <TextBlock Text="Lee Tom" 
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"></TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Background="Red"
+                        Margin="155,1,0.4,0.6">X
+                </Button>
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="128*"></RowDefinition> <!--cot Hinh-->
+                        <RowDefinition Height="131*"></RowDefinition> <!--cot Detail--> 
+                        <RowDefinition Height="349*"></RowDefinition> <!--cot MoreDetail-->
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Image x:Name="photoBox" Margin="122,10,0,-0.4" HorizontalAlignment="Left" Width="185"/>
+                        <materialDesign:PackIcon
                                     x:Name="icon"
                                     Kind="AccountCircle"
                                     Height="125"
                                     Width="150"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Center" Margin="0,5,0,30" />
+                                    HorizontalAlignment="Center"
+                                    Margin="53,30,9.8,35" />
+                    </Grid>
 
-                                    </Grid>
+                    <!--cot Detail-->
+                    <Grid Grid.Row="1">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" HorizontalAlignment="Left"
+                                        VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <materialDesign:PackIcon Kind="ViewList"
+                                                     Height="20"
+                                                     Width="20"/>
+                                        <TextBlock Text="{DynamicResource family}"  
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="16"
+                                   Width="150"></TextBlock>
+                                    </StackPanel>
                                 </Grid>
-                                <Grid Grid.Row="1" VerticalAlignment="Bottom"
-                      >
-                                    <Button Margin="50,0,50,0"
-                                        Click="btnGetPhoto_Click"
-                                        Content="{DynamicResource btnImport}"
-                                        Background="White"
-                                        Foreground="Black"
-                                        BorderBrush="White"></Button>
+                                <Grid Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                                    <Button x:Name="bnt_viewlistfamily" Background="{DynamicResource button}"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                             Width="115" Click="btn_view_Click"
+                              Content="{DynamicResource view}">
+                                    </Button>
+
                                 </Grid>
                             </Grid>
+
+                            <Grid>
+                                <Grid Background="{DynamicResource zoneAdd_Detail}" Grid.Row="3" Height="79" VerticalAlignment="Top" Grid.RowSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0" HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                                        <StackPanel Orientation="Horizontal" >
+                                            <materialDesign:PackIcon Kind="PlusCircle"
+                                                     Height="20"
+                                                     Width="20"/>
+                                            <TextBlock Text="{DynamicResource addRelationship}" 
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Fonts/#Dosis"
+                                   FontWeight="Medium"
+                                   FontSize="16"
+                                   Height="18"
+                                   Width="177" Margin="0,2,0,0"></TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <ComboBox x:Name="cbbAdd" FontSize="20" Background="#B2E3FA" Margin="24,20,26.6,21.2">
+
+                                            <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource father}"
+                                      FontSize="20"
+                                      >
+                                            </ComboBoxItem>
+                                            <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource mother}"
+                                      FontSize="20"
+                                      >
+                                            </ComboBoxItem>
+                                            <ComboBoxItem FontFamily="Fonts/#Dosis"
+                                                      Content="{DynamicResource  child}"
+                                      FontSize="20"
+                                      >
+                                            </ComboBoxItem>
+                                        </ComboBox>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Background="{DynamicResource zoneAdd_Detail}" Height="40">
+                                <Button x:Name="btnAdd" Background="{DynamicResource btnAdd_Detail}" Width="114" HorizontalAlignment="Right" Margin="0,0,41,0">
+                                    <Button.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path=SelectedIndex}" 
+                                        Value = "0">
+                                                    <Setter Property = "Button.Content" Value = "{DynamicResource addfather}"/>
+
+                                                </DataTrigger>
+                                                <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                        Value = "1">
+                                                    <Setter Property = "Button.Content" Value = "{DynamicResource addmother}"/>
+
+                                                </DataTrigger>
+                                                <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                        Value = "2">
+                                                    <Setter Property = "Button.Content" Value = "{DynamicResource addchild}"/>
+
+                                                </DataTrigger>
+                                            </Style.Triggers>
+
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                        
+                    </Grid>
+
+                    <!--cot MoreDetail-->
+                    <Grid Grid.Row="2">
+                        
+                        <!--cot HoTen-->
+                        <StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{DynamicResource yourName}"  
                                FontSize="20"
@@ -93,6 +204,7 @@
                          Margin="20 0 0 0"/>
                             </StackPanel>
 
+                            <!--cot GioiTinh-->
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{DynamicResource tblGender}"
                                FontSize="20"
@@ -100,7 +212,7 @@
                                VerticalAlignment="Center"
                                Width="150">
                                 </TextBlock>
-                                
+
                                 <ToggleButton
                               Click="genderToggleButton_Click"
                               Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
@@ -129,9 +241,9 @@
 
                                         </Style>
                                     </TextBlock.Style>
-                                </TextBlock>
-
+                                </TextBlock> 
                             </StackPanel>
+
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{DynamicResource address}"
                                FontSize="20"
@@ -145,6 +257,7 @@
                          FontSize="20"
                          Margin="0 0 0 0" />
                             </StackPanel>
+
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{DynamicResource Birthday}"
                                FontSize="20"
@@ -177,7 +290,6 @@
                          Margin="0 0 0 0"/>
                             </StackPanel>
 
-
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{DynamicResource numberphone}"
                                FontSize="20"
@@ -191,6 +303,7 @@
                          FontSize="20"
                          Margin="0 0 0 0" />
                             </StackPanel>
+
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Gmail : "
                                FontSize="20"
@@ -223,7 +336,7 @@
                             <StackPanel Orientation="Horizontal"
                             x:Name="DayofdeathStackPanel"
                             >
-                                <TextBlock Text="{DynamicResource tblDeadDate}"
+                                <TextBlock Text="{DynamicResource DeadPlace}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
@@ -254,13 +367,13 @@
 
                             <StackPanel Orientation="Horizontal"
                             x:Name="PlaceofdeathStackPanel">
-                                <TextBlock Text="{DynamicResource DeadPlace}"
+                                <TextBlock Text="{DynamicResource tblDeadDate}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
+                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource address}"
                          x:Name="textboxPlaceofDeath"
                          TextChanged="textboxPlaceofDeath_TextChanged"
                          FontSize="20"
@@ -280,14 +393,13 @@
                                     </Style>
                                 </StackPanel.Style>
                             </StackPanel>
-                            <Button Click="Save_Click" Background="{DynamicResource btnSave_MoreDetail}" Margin="220,50,10,10" Content="{DynamicResource ResourceKey=save}" Width="116"/>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Grid>
 
-            </Grid>
-            <!--Detail-->
+                            <Button Click="Save_Click" Background="{DynamicResource btnSave_MoreDetail}" Margin="220,50,10,10" Content="{DynamicResource ResourceKey=save}" Width="116"/>
+
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
         </Grid>
-        
     </Grid>
-</Window>
+</UserControl>

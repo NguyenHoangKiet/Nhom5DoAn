@@ -15,6 +15,7 @@ using FamilyTreeLibrary;
 using System.IO;
 using Microsoft;
 using MaterialDesignThemes.Wpf;
+using FamilyTree.Components;
 
 namespace FamilyTree
 {
@@ -94,7 +95,7 @@ namespace FamilyTree
             // Load Death place
             textboxPlaceofDeath.Text = personobj.DeathPlace;
             // Load Death date
-            DatePickerDeath.Text = personobj.BirthDate.ToString();
+            DatePickerDeath.Text = personobj.DeathDate.ToString();
 
             // Load Photo
             if (personobj.Photos != null)
@@ -106,32 +107,121 @@ namespace FamilyTree
             }
             #endregion
         }
+
+        public MoreDetail(Person currentPerson)
+        {
+            InitializeComponent();
+
+            if (currentPerson == null)
+            {
+                currentPerson = new Person();
+            }
+
+            if (currentPerson != null)
+            {
+                personobj = currentPerson;
+
+                if (currentPerson.FirstName != null)
+                {
+                    textboxFirstName.Text = currentPerson.FirstName;
+                }
+
+                if (currentPerson.MiddleName != null)
+                {
+                    textboxMiddleName.Text = currentPerson.MiddleName;
+                }
+
+                if (currentPerson.LastName != null)
+                {
+                    textboxLastName.Text = currentPerson.LastName;
+                }
+
+                if (currentPerson.Gender == Gender.Male)
+                {
+                    genderToggleButton.IsChecked = true;
+                }
+                else
+                {
+                    genderToggleButton.IsChecked = false;
+                }
+
+                if (currentPerson.BirthPlace != null)
+                {
+                    textboxPlaceofBirth.Text = currentPerson.BirthPlace;
+                }
+
+                if (currentPerson.BirthDate != null)
+                {
+                    DatePickerofBirth.Text = currentPerson.BirthDate.ToString();
+                }
+
+                if (currentPerson.Contact != null)
+                {
+                    if (currentPerson.Contact.Mail != null)
+                    {
+                        textboxGmail.Text = currentPerson.Contact.Mail;
+                    }
+                    if (currentPerson.Contact.Phone != null)
+                    {
+                        textboxPhoneNum.Text = currentPerson.Contact.Phone;
+                    }
+                    if (currentPerson.Contact.Address.Address1 != null)
+                    {
+                        textboxAddress.Text = currentPerson.Contact.Address.Address1;
+                    }
+                }
+
+                if (currentPerson.IsLiving == true)
+                {
+                    deathToggleButton.IsChecked = false;
+                }
+                else
+                {
+                    deathToggleButton.IsChecked = true;
+                }
+                // Load Death place
+                textboxPlaceofDeath.Text = currentPerson.DeathPlace;
+                // Load Death date
+                DatePickerDeath.Text = currentPerson.DeathDate.ToString();
+
+                // Load Photo
+                if (currentPerson.Photos != null)
+                {
+                    foreach (Photo image in currentPerson.Photos)
+                    {
+                        photoBox.Source = new BitmapImage(new Uri(image.RelativePath));
+                    }
+                }
+            }
+        }
+
+
         #region Event update property of person
 
         // Update Name
         private void textboxFirstName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            personobj.FirstName = textboxFirstName.Text;
+            App.Family.Current.FirstName = textboxFirstName.Text;
         }
         private void textboxMiddleName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            personobj.MiddleName = textboxMiddleName.Text;
+            App.Family.Current.MiddleName = textboxMiddleName.Text;
         }
         private void textboxLastName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            personobj.LastName = textboxLastName.Text;
+            App.Family.Current.LastName = textboxLastName.Text;
         }
 
         // Update gender
         private void genderToggleButton_Click(object sender, RoutedEventArgs e)
         {
-            if (personobj.Gender == Gender.Male)
+            if (App.Family.Current.Gender == Gender.Male)
             {
-                personobj.Gender = Gender.Female;
+                App.Family.Current.Gender = Gender.Female;
             }
             else
             {
-                personobj.Gender = Gender.Male;
+                App.Family.Current.Gender = Gender.Male;
             }
 
         }
@@ -161,13 +251,12 @@ namespace FamilyTree
             else
             {
                 personobj.BirthDate = date;
-                // this.Title = date.Value.ToShortDateString();
             }
         }
         // Update place of birth
         private void textboxPlaceofBirth_TextChanged(object sender, TextChangedEventArgs e)
         {
-            personobj.BirthPlace = textboxPlaceofBirth.Text;
+            App.Family.Current.BirthPlace = textboxPlaceofBirth.Text;
         }
         // Update Contact phone
         private void textboxPhoneNum_TextChanged(object sender, TextChangedEventArgs e)
@@ -200,12 +289,11 @@ namespace FamilyTree
 
             if (date == null)
             {
-                //this.Title = "No date";
+                
             }
             else
             {
                 personobj.DeathDate = date;
-                //this.Title = date.Value.ToShortDateString();
             }
         }
         // Update place of death
@@ -217,20 +305,6 @@ namespace FamilyTree
         // Update Avatar
         private void btnGetPhoto_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            MessageBox.Show("Fisrt name = " + personobj.FirstName + "\n" +
-                            "Midde name = " + personobj.MiddleName + "\n" +
-                            "Last name = "  + personobj.LastName + "\n"  +
-                            "Gender = " + personobj.Gender.ToString() + "\n" +
-                            "Birth place = " + personobj.BirthPlace + "\n" +
-                            "Birth date = " + personobj.BirthDate.ToString() + "\n" +
-                            "Phone = " + personobj.Contact.Phone + "\n" +
-                            "Gmail = " + personobj.Contact.Mail + "\n" +
-                            "Is living = " + personobj.IsLiving.ToString() + "\n" +
-                            "Death date = " + personobj.DeathDate.ToString() + "\n" +
-                            "Death place = " + personobj.DeathPlace + "\n" 
-                );
-            */
             Microsoft.Win32.OpenFileDialog op = new Microsoft.Win32.OpenFileDialog();
             op.Title = "Select a picture";
             op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
@@ -252,6 +326,8 @@ namespace FamilyTree
 
         void Save_Click(object sender, RoutedEventArgs e)
         {
+            App.Family.Current = personobj;
+
             this.Close();
         }
     }

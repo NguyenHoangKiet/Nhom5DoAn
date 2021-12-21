@@ -78,9 +78,17 @@
     <!--Relationship-->
     <system:String x:Key="father">Cha</system:String>
     <system:String x:Key="mother">Mẹ</system:String>
-    <system:String x:Key="child">Con</system:String>
-    <system:String x:Key="addfather">Thêm Cha</system:String>
-    <system:String x:Key="addmother">Thêm Mẹ</system:String>
-    <system:String x:Key="addchild">Thêm Con</system:String>
+    <system:String x:Key="spause">Vợ/chồng</system:String>
+    <system:String x:Key="sister">Chị/em gái</system:String>
+    <system:String x:Key="brother">Anh/em trai</system:String>
+    <system:String x:Key="daught">Con gái</system:String>
+    <system:String x:Key="son">Con trai</system:String>
+    <system:String x:Key="addFather">Thêm Cha</system:String>
+    <system:String x:Key="addMother">Thêm Mẹ</system:String>
+    <system:String x:Key="addSpause">Thêm vợ/chồng</system:String>
+    <system:String x:Key="addSister">Thêm chị/em gái</system:String>
+    <system:String x:Key="addBrother">Thêm anh/em trai</system:String>
+    <system:String x:Key="addDaught">Thêm con gái</system:String>
+    <system:String x:Key="addSon">Thêm con trai</system:String>
     
 </ResourceDictionary>

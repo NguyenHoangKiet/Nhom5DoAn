@@ -82,7 +82,7 @@ namespace FamilyTree.Components
             }
 
             FamilyTree.App.Family.Add(newPerson);
-            //System.Windows.MessageBox.Show(newPerson.Gender.ToString());
+
             this.Close();
         }
 

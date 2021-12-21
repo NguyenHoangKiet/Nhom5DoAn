@@ -59,8 +59,25 @@ namespace FamilyTree
 
             WelcomeWindow w = new WelcomeWindow();
             w.Show();
-
+            Tet();
             base.OnStartup(e);
+        }
+
+        void Tet()
+        {
+            Person person = new Person();
+            person.FirstName = "Hồng";
+            person.MiddleName = "Trường";
+            person.LastName = "Vinh";
+            person.Gender = Gender.Male;
+            person.BirthDate = new DateTime(2002,6,6);
+            person.BirthPlace = "Nam Xuan, Krong No, Dak Nong";
+            Contact x = new Contact();
+            x.Phone = "19008198";
+            //x.Address.Address1 = "UIT"; có bug
+            x.Mail = "hongvinhkrn@gmail.com";
+            person.Contact = x;
+            Family.Current = person;
         }
 
         protected override void OnExit(ExitEventArgs e)

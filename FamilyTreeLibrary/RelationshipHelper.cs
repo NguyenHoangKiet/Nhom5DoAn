@@ -3,6 +3,17 @@ using System.Collections.Generic;
 
 namespace FamilyTreeLibrary
 {
+    public enum FamilyMemberComboBoxValue
+    {
+        Father,
+        Mother,
+        Brother,
+        Sister,
+        Spouse,
+        Son,
+        Daughter
+    }
+
     public static class RelationshipHelper
     {
         public static void AddChild(PeopleCollection family, Person person, Person child)
