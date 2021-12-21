@@ -79,8 +79,16 @@
     <!--Relationship-->
     <system:String x:Key="father">父親</system:String>
     <system:String x:Key="mother">母親</system:String>
-    <system:String x:Key="child">子</system:String>
-    <system:String x:Key="addfather">父親を追加する</system:String>
-    <system:String x:Key="addmother">母親を追加する</system:String>
-    <system:String x:Key="addchild">子供を追加する</system:String>
+    <system:String x:Key="spause">夫/妻</system:String>
+    <system:String x:Key="sister">姉/妹</system:String>
+    <system:String x:Key="brother">兄さん/弟</system:String>
+    <system:String x:Key="daught">娘</system:String>
+    <system:String x:Key="son">息子</system:String>
+    <system:String x:Key="addFather">父を追加</system:String>
+    <system:String x:Key="addMother">母を追加</system:String>
+    <system:String x:Key="addSpause">夫を追加する/妻を追加</system:String>
+    <system:String x:Key="addSister">姉を追加/妹を追加</system:String>
+    <system:String x:Key="addBrother">兄を追加/弟を追加</system:String>
+    <system:String x:Key="addDaught">娘を追加</system:String>
+    <system:String x:Key="addSon">追加する</system:String>
 </ResourceDictionary>

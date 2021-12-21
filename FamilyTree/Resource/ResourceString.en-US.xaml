@@ -79,8 +79,16 @@
     <!--Relationship-->
     <system:String x:Key="father">Father</system:String>
     <system:String x:Key="mother">Mother</system:String>
-    <system:String x:Key="child">Child</system:String>
-    <system:String x:Key="addfather">Add a father</system:String>
-    <system:String x:Key="addmother">Add a mother</system:String>
-    <system:String x:Key="addchild">Add a child</system:String>
+    <system:String x:Key="spause">Husband/Wife</system:String>
+    <system:String x:Key="sister">Older/Little sister</system:String>
+    <system:String x:Key="brother">Older/Little brother</system:String>
+    <system:String x:Key="daught">Daughter</system:String>
+    <system:String x:Key="son">Son</system:String>
+    <system:String x:Key="addFather">Add Father</system:String>
+    <system:String x:Key="addMother">Add Mother</system:String>
+    <system:String x:Key="addSpause">Add husband/wife</system:String>
+    <system:String x:Key="addSister">Add older/little sister</system:String>
+    <system:String x:Key="addBrother">Add older/little brother</system:String>
+    <system:String x:Key="addDaught">Add daughter</system:String>
+    <system:String x:Key="addSon">Add son</system:String>
 </ResourceDictionary>

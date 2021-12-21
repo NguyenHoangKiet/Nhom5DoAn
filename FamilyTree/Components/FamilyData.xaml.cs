@@ -29,7 +29,11 @@ namespace FamilyTree.Components
         public FamilyData(PeopleCollection people)
         {
             InitializeComponent();
+
+            peopleCollection = new PeopleCollection();
+
             peopleCollection = people;
+
             listviewMember.ItemsSource = peopleCollection;
 
             foreach (Person person in peopleCollection)
@@ -38,9 +42,13 @@ namespace FamilyTree.Components
                 {
                     person.Gender = Gender.Nam;
                 }
-                else
+                else if (person.Gender == Gender.Female)
                 {
                     person.Gender = Gender.Nữ;
+                }
+                else
+                {
+
                 }
             }
 
