@@ -165,7 +165,7 @@ namespace FamilyTree
                     {
                         textboxPhoneNum.Text = currentPerson.Contact.Phone;
                     }
-                    if (currentPerson.Contact.Address.Address1 != null)
+                    if (currentPerson.Contact.Address != null)
                     {
                         textboxAddress.Text = currentPerson.Contact.Address.Address1;
                     }

@@ -57,59 +57,67 @@ namespace FamilyTree.Components
 
         private void addPerson_Click(object sender, RoutedEventArgs e)
         {
-            newPerson = new Person(tbFirstname.Text != null ? tbFirstname.Text : null, tbLastName.Text != null ? tbLastName.Text : null, _gender);
+            try
+            {
 
-            if (tbBirthDay.SelectedDate != null)
+                newPerson = new Person(tbFirstname.Text != null ? tbFirstname.Text : null, tbLastName.Text != null ? tbLastName.Text : null, _gender);
+
+                if (tbBirthDay.SelectedDate != null)
+                {
+                    newPerson.BirthDate = tbBirthDay.SelectedDate;
+                }
+
+                if (tbPlaceOfBirth.Text != null)
+                {
+                    newPerson.BirthPlace = tbPlaceOfBirth.Text;
+                }
+
+                if (_index == 0)
+                {
+                    // add father
+                    RelationshipHelper.AddParent(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
+                }
+                else if (_index == 1)
+                {
+                    // add mother
+                    RelationshipHelper.AddParent(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
+                }
+                else if (_index == 2)
+                {
+                    // add spause
+                    RelationshipHelper.AddSpouse(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson, SpouseModifier.Current);
+                }
+                else if (_index == 3)
+                {
+                    // add sister
+                    RelationshipHelper.AddSibling(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
+                }
+                else if (_index == 4)
+                {
+                    // add brother
+                    RelationshipHelper.AddSibling(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
+                }
+                else if (_index == 5)
+                {
+                    // add daught
+                    RelationshipHelper.AddChild(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
+                }
+                else if (_index == 6)
+                {
+                    // add son
+                    RelationshipHelper.AddChild(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
+                }
+                else
+                {
+                    MessageBox.Show("error"); return;
+                }
+            }
+            catch
             {
-                newPerson.BirthDate = tbBirthDay.SelectedDate;
+                MessageBox.Show("error");
             }
 
-            if (tbPlaceOfBirth.Text != null)
-            {
-                newPerson.BirthPlace = tbPlaceOfBirth.Text;
-            }
-
-            if (_index == 0)
-            {
-                // add father
-                RelationshipHelper.AddParent(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
-            }
-            else if(_index == 1)
-            {
-                // add mother
-                RelationshipHelper.AddParent(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
-            }
-            else if (_index == 2)
-            {
-                // add spause
-                RelationshipHelper.AddSpouse(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson, SpouseModifier.Current);
-            }
-            else if (_index == 3)
-            {
-                // add sister
-                RelationshipHelper.AddSibling(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
-            }
-            else if (_index == 4)
-            {
-                // add brother
-                RelationshipHelper.AddSibling(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
-            }
-            else if (_index == 5)
-            {
-                // add daught
-                RelationshipHelper.AddChild(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
-            }
-            else if (_index == 6)
-            {
-                // add son
-                RelationshipHelper.AddChild(FamilyTree.App.Family, FamilyTree.App.Family.Current, newPerson);
-            }
-            else
-            {
-                MessageBox.Show("error");return;
-            }
-
-
+            this.Close();
         }
     }
 }
