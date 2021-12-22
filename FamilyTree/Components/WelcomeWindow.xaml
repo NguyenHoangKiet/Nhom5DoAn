@@ -76,7 +76,7 @@
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="btnOpen_Click"/>
                     <Button x:Name="btnImport" Background="{DynamicResource button}"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Content="Mở file gedcom"
+                    Content="{DynamicResource btnOpenGedcom}"
                     Margin="47,154,22,101.6"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="btnImport_Click" />
 

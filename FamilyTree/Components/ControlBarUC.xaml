@@ -29,12 +29,12 @@
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" Background="Transparent" Orientation="Horizontal">
 
-                    <Button
+                    <Button Background="{DynamicResource btn_Resize}"
                         Command="{Binding minimizedwindowCommand}"
                         CommandParameter="{Binding ElementName=ucControlBar}" >
                         <materialDesign:PackIcon Kind="WindowMinimize" />
                     </Button>
-                    <Button
+                    <Button Background="{DynamicResource btn_Resize}"
                         Command="{Binding maximizedwindowCommand}"
                         CommandParameter="{Binding ElementName=ucControlBar}" >
                         <materialDesign:PackIcon
@@ -44,7 +44,7 @@
                     <Button 
                         Command="{Binding closewindowCommand}"
                         CommandParameter="{Binding ElementName=ucControlBar}"
-                        Background="Red" >
+                        Background="{DynamicResource btn_Exit}" >
                         <materialDesign:PackIcon Kind="WindowClose" />
                     </Button>
 

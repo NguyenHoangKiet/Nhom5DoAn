@@ -27,12 +27,12 @@
             </Grid.RowDefinitions>
             <Grid Background="{DynamicResource controlbar}" Grid.Row="0">
                 <TextBlock x:Name="lable"  VerticalAlignment="Center" Foreground="White"
-                               FontSize="20" Width="150" Margin="198,0,148.8,0"
+                               FontSize="20" Width="150" Margin="177,6,169.8,-6"
                                >
                     <TextBlock.Inlines>
                         <Run FontWeight="Bold" 
                                  FontSize="20"  
-                                 Text="________"/>
+                                 Text="{Binding Contentt}"/>
                     </TextBlock.Inlines>
                 </TextBlock>
             </Grid>
@@ -91,7 +91,7 @@
                 <Grid Grid.Column="0">
                     <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200" Background="{DynamicResource button}"
-                        Content="Thêm"
+                        Content="{DynamicResource btnAdd}"
                         FontSize="15"
                         Click="addPerson_Click">
                     </Button>
@@ -100,7 +100,7 @@
                     <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200" Background="{DynamicResource button}"
                         Click="Cancel_Click"
-                        Content="Hủy"
+                        Content="{DynamicResource btnCancel}"
                         FontSize="15">
                     </Button>
                 </Grid>

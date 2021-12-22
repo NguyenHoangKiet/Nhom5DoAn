@@ -28,16 +28,13 @@ namespace FamilyTree.Components
         private string name;
         string birthDay;
         string bithPalce;
+        string fullName;
 
         public Detail()
         {
             InitializeComponent();
 
-            this.DataContext = this;
-
-            //PersonBirthDay = CurrentPerson.currentPerson.BirthDate.ToString();
-            //PersonName = CurrentPerson.currentPerson.FullName;
-            //PersonBirthPlace = CurrentPerson.currentPerson.BirthPlace;
+            this.DataContext = this; 
 
             LoadPerson();
             StarTimer();
@@ -47,19 +44,24 @@ namespace FamilyTree.Components
         {
             if (App.Family.Current != null)
             {
-                PersonName = App.Family.Current.FullName;
+                PersonName = App.Family.Current.Name;
                 //PersonBirthDay = App.Family.Current.BirthDate.ToString("MM/dd/yyyy");
                 PersonBirthDay = App.Family.Current.BirthDate.ToString();
                 PersonBirthPlace = App.Family.Current.BirthPlace;
-
+                FullName = App.Family.Current.FullName;
                 if (App.Family.Current.Photos != null)
                 {
                     try
                     {
                         foreach (Photo image in App.Family.Current.Photos)
                         {
-                            photoBox.Source = new BitmapImage(new Uri(image.RelativePath));
+                            photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Avatar));
+                            //photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Photos[0].RelativePath)); 
                         }
+                        photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Avatar));
+                        //PhotoCollection photos = App.Family.Current.Photos;
+
+                        //photoBox.Source = App.Family.Current.Photos;
 
                         PackIcon getIcon = icon;
                         if (getIcon != null)
@@ -72,6 +74,8 @@ namespace FamilyTree.Components
                     {
 
                     }
+                    //MessageBox.Show(App.Family.Current.Avatar);
+                    //photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Avatar));
                 }
 
             }
@@ -101,6 +105,20 @@ namespace FamilyTree.Components
             {
                 name = value;
                 OnPropertyChanged("PersonName");
+            }
+        }
+
+        public string FullName
+        {
+            get
+            {
+                return fullName;
+            }
+
+            set
+            {
+                fullName = value;
+                OnPropertyChanged("FullName");
             }
         }
 
@@ -164,39 +182,45 @@ namespace FamilyTree.Components
         {
             if (cbbAdd == null) return;
 
-            AddRelationship addRelationship;
+            AddRelationship addRelationship = new AddRelationship();
 
             switch (cbbAdd.SelectedIndex)
             {
                 case 0://add Father
-                    addRelationship = new AddRelationship(0, Gender.Male);
+                    addRelationship = new AddRelationship(0, Gender.Male, btnAdd.Content.ToString());
                     addRelationship.ShowDialog();
                     break;
                 case 1://add mother
-                    addRelationship = new AddRelationship(1, Gender.Female);
+                    addRelationship = new AddRelationship(1, Gender.Female, btnAdd.Content.ToString());
                     addRelationship.ShowDialog();
                     break;
                 case 2://add spause
-                    addRelationship = new AddRelationship(2, Gender.Female);
+                    addRelationship = new AddRelationship(2, Gender.Female, btnAdd.Content.ToString());
                     addRelationship.ShowDialog();
                     break;
                 case 3://add sister
-                    addRelationship = new AddRelationship(3, Gender.Female);
+                    addRelationship = new AddRelationship(3, Gender.Female, btnAdd.Content.ToString());
                     addRelationship.ShowDialog();
                     break;
                 case 4:// add brother
-                    addRelationship = new AddRelationship(4, Gender.Male);
+                    addRelationship = new AddRelationship(4, Gender.Male, btnAdd.Content.ToString());
                     addRelationship.ShowDialog();
                     break;
                 case 5://add daughter
-                    addRelationship = new AddRelationship(5, Gender.Female);
+                    addRelationship = new AddRelationship(5, Gender.Female, btnAdd.Content.ToString());
                     addRelationship.ShowDialog();
                     break;
                 case 6:// add son
-                    addRelationship = new AddRelationship(6, Gender.Male);
+                    addRelationship = new AddRelationship(6, Gender.Male, btnAdd.Content.ToString());
                     addRelationship.ShowDialog();
                     break;
             }
+
+            //if (addRelationship != null)
+            //{
+            //    addRelationship.DataContext = this;
+            //    MessageBox.Show("dd");
+            //}
         }
 
         private void DeletePerson_Click(object sender, RoutedEventArgs e)

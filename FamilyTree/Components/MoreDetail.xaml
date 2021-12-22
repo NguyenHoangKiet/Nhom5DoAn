@@ -11,44 +11,44 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
         d:DesignHeight="650" d:DesignWidth="405">
-    
-    <Grid>
-        <!--Moredetail-->
+    <Border BorderBrush="{DynamicResource border}" BorderThickness="2" Grid.ColumnSpan="2" Margin="0,0,0,0"> 
         <Grid>
-            <Grid >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
+        <!--Moredetail-->
+            <Grid>
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0"
+                    <Grid Grid.Row="0"
               Background="DarkViolet"
               ></Grid>
 
-                <Grid Grid.Row="1"
+                    <Grid Grid.Row="1"
               Background="{DynamicResource bg_MoreDetail}"
               Margin="0"
               >
-                    <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                        <StackPanel Orientation="Vertical"
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                            <StackPanel Orientation="Vertical"
                         Margin="10">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition Height="auto"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid Height="160"
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition Height="auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid Height="160"
                                     Width="150"
                                     Margin="0 0 0 0"
                                     Grid.Row="0">
-                                    <Image x:Name="photoBox" Margin="0,0,0,30"></Image>
-                                </Grid>
-                                <Grid Grid.Row="0">
-                                    <Grid Height="160"
+                                        <Image x:Name="photoBox" Margin="0,0,0,30"></Image>
+                                    </Grid>
+                                    <Grid Grid.Row="0">
+                                        <Grid Height="160"
                                         Width="150"
                                         Margin="0 0 0 0"
                                          >
-                                        <materialDesign:PackIcon
+                                            <materialDesign:PackIcon
                                     x:Name="icon"
                                     Kind="AccountCircle"
                                     Height="125"
@@ -56,238 +56,236 @@
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center" Margin="0,5,0,30" />
 
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                                <Grid Grid.Row="1" VerticalAlignment="Bottom"
+                                    <Grid Grid.Row="1" VerticalAlignment="Bottom"
                       >
-                                    <Button Margin="50,0,50,0"
+                                        <Button Margin="50,0,50,0"
                                         Click="btnGetPhoto_Click"
                                         Content="{DynamicResource btnImport}"
                                         Background="White"
                                         Foreground="Black"
                                         BorderBrush="White"></Button>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{DynamicResource yourName}"  
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource yourName}"  
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="150">
-                                </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource lastName2}"
+                                    </TextBlock>
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource lastName2}"
                     
                          x:Name="textboxFirstName"
                          FontSize="20"
                          Margin="0 0 0 0"
                          TextChanged="textboxFirstName_TextChanged"/>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource midName}"
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource midName}"
                         TextChanged="textboxMiddleName_TextChanged"
                          FontSize="20"
                           x:Name="textboxMiddleName"
                          Margin="20 0 0 0"/>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource firstName2}"
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource firstName2}"
                          TextChanged="textboxLastName_TextChanged"
                          FontSize="20"
                          x:Name="textboxLastName"
                          Margin="20 0 0 0"/>
-                            </StackPanel>
+                                </StackPanel>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{DynamicResource tblGender}"
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource tblGender}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Width="150">
-                                </TextBlock>
-                                
-                                <ToggleButton
+                                    </TextBlock>
+
+                                    <ToggleButton
                               Click="genderToggleButton_Click"
                               Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
-                              ToolTip="MaterialDesignSwitchLightToggleButton"
                               x:Name="genderToggleButton"  />
 
-                                <TextBlock 
+                                    <TextBlock 
                                FontSize="20"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
                                Width="150"
                                Margin="10 0 0 0"
                                >
-                                    <TextBlock.Style>
-                                        <Style>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path=IsChecked}" 
+                                        <TextBlock.Style>
+                                            <Style>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path=IsChecked}" 
                                         Value = "True">
-                                                    <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoMale}"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
+                                                        <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoMale}"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding = "{Binding ElementName = genderToggleButton, Path = IsChecked}" 
                                         Value = "False">
-                                                    <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoFemale}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
+                                                        <Setter Property = "TextBlock.Text" Value = "{DynamicResource rdoFemale}"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
 
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
 
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{DynamicResource address}"
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource address}"
                                FontSize="20"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
+                                    </TextBlock>
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
                         TextChanged="textboxAddress_TextChanged"
                          x:Name="textboxAddress"
                          FontSize="20"
                          Margin="0 0 0 0" />
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{DynamicResource Birthday}"
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource Birthday}"
                                FontSize="20"
                               
                          
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <DatePicker
+                                    </TextBlock>
+                                    <DatePicker
                             SelectedDateChanged="DatePickerofBirth_SelectedDateChanged"
                             FontSize="20"
                             Width="150"
                             x:Name="DatePickerofBirth"
                             materialDesign:HintAssist.Hint="{DynamicResource chose}"
                             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-                            </StackPanel>
+                                </StackPanel>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{DynamicResource placeOfBirth}"
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource placeOfBirth}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
+                                    </TextBlock>
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
                          x:Name="textboxPlaceofBirth"
                          TextChanged="textboxPlaceofBirth_TextChanged" 
                          FontSize="20"
                          Margin="0 0 0 0"/>
-                            </StackPanel>
+                                </StackPanel>
 
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{DynamicResource numberphone}"
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource numberphone}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterNumberphone}"
+                                    </TextBlock>
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterNumberphone}"
                          TextChanged="textboxPhoneNum_TextChanged"
                          x:Name="textboxPhoneNum"
                          FontSize="20"
                          Margin="0 0 0 0" />
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Gmail : "
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Gmail : "
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterGmail}"
+                                    </TextBlock>
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterGmail}"
                          TextChanged="textboxGmail_TextChanged"
                          x:Name="textboxGmail"
                          FontSize="20"
                          Margin="0 0 0 0"/>
-                            </StackPanel>
+                                </StackPanel>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{DynamicResource isDead}"
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource isDead}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <ToggleButton
+                                    </TextBlock>
+                                    <ToggleButton
                              Click="deathToggleButton_Click"
                               Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
-                              ToolTip="MaterialDesignSwitchLightToggleButton"
                               IsChecked="False" 
                               x:Name="deathToggleButton"/>
-                            </StackPanel>
+                                </StackPanel>
 
-                            <StackPanel Orientation="Horizontal"
+                                <StackPanel Orientation="Horizontal"
                             x:Name="DayofdeathStackPanel"
                             >
-                                <TextBlock Text="{DynamicResource tblDeadDate}"
+                                    <TextBlock Text="{DynamicResource tblDeadDate}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <DatePicker
+                                    </TextBlock>
+                                    <DatePicker
                             SelectedDateChanged="DatePickerDeath_SelectedDateChanged"
                             FontSize="20"
                             x:Name="DatePickerDeath"
                             Width="150"
                             materialDesign:HintAssist.Hint="{DynamicResource chose}"
                             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-                                <StackPanel.Style>
-                                    <Style>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                    <StackPanel.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
                                              Value="True">
-                                                <Setter Property="StackPanel.Visibility" Value="Visible"></Setter>
-                                            </DataTrigger>
-                                            <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                                    <Setter Property="StackPanel.Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
                                              Value="False">
-                                                <Setter Property="StackPanel.Visibility" Value="Collapsed"></Setter>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </StackPanel.Style>
-                            </StackPanel>
+                                                    <Setter Property="StackPanel.Visibility" Value="Collapsed"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </StackPanel.Style>
+                                </StackPanel>
 
-                            <StackPanel Orientation="Horizontal"
+                                <StackPanel Orientation="Horizontal"
                             x:Name="PlaceofdeathStackPanel">
-                                <TextBlock Text="{DynamicResource DeadPlace}"
+                                    <TextBlock Text="{DynamicResource DeadPlace}"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
                                Width="150">
-                                </TextBlock>
-                                <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
+                                    </TextBlock>
+                                    <TextBox materialDesign:HintAssist.Hint="{DynamicResource enterAddress}"
                          x:Name="textboxPlaceofDeath"
                          TextChanged="textboxPlaceofDeath_TextChanged"
                          FontSize="20"
                          Margin="0 0 0 0"/>
-                                <StackPanel.Style>
-                                    <Style>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                    <StackPanel.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
                                              Value="True">
-                                                <Setter Property="StackPanel.Visibility" Value="Visible"></Setter>
-                                            </DataTrigger>
-                                            <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
+                                                    <Setter Property="StackPanel.Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding ElementName = deathToggleButton, Path=IsChecked}"
                                              Value="False">
-                                                <Setter Property="StackPanel.Visibility" Value="Collapsed"></Setter>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </StackPanel.Style>
+                                                    <Setter Property="StackPanel.Visibility" Value="Collapsed"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </StackPanel.Style>
+                                </StackPanel>
+                                <Button Click="Save_Click" Background="{DynamicResource btnSave_MoreDetail}" Margin="220,50,10,10" Content="{DynamicResource ResourceKey=save}" Width="116"/>
                             </StackPanel>
-                            <Button Click="Save_Click" Background="{DynamicResource btnSave_MoreDetail}" Margin="220,50,10,10" Content="{DynamicResource ResourceKey=save}" Width="116"/>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Grid>
+                        </ScrollViewer>
+                    </Grid>
 
+                </Grid>
+                <!--Detail-->
             </Grid>
-            <!--Detail-->
         </Grid>
-        
-    </Grid>
+    </Border>
 </Window>

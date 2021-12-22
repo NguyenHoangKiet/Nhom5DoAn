@@ -6,18 +6,22 @@
     <SolidColorBrush x:Key="controlbar">#161853</SolidColorBrush>
     <SolidColorBrush x:Key="border">#161853</SolidColorBrush>
 
+    <!--background nút ở Ctrolbar-->
+    <SolidColorBrush x:Key="btn_Exit">#d40200</SolidColorBrush>
+    <SolidColorBrush x:Key="btn_Resize">#EB9900</SolidColorBrush>
+
     <!--WelcomeWD Chưa cần cài-->
 
     <!--MainWD-->
     <SolidColorBrush x:Key="bg_MainWD1">#FF332DA8</SolidColorBrush>
     <!--Background này ko cần quan tâm-->
-    <SolidColorBrush x:Key="bg_MainWD2">#FAEDF0</SolidColorBrush>
+    <SolidColorBrush x:Key="bg_MainWD2">#FF332DA8</SolidColorBrush>
     <!--Background nền vẽ Tree màu trắng-->
 
     <!--Detail-->
     <SolidColorBrush x:Key="btnAdd_Detail">#02EE5B</SolidColorBrush>
     <!--btn thêm quan hệ-->
-    <SolidColorBrush x:Key="zoneAdd_Detail">#B2E3FA</SolidColorBrush>
+    <SolidColorBrush x:Key="zoneAdd_Detail">#F8FAC0</SolidColorBrush>
     <!--Nền vùng thêm quan hệ-->
     <SolidColorBrush x:Key="bg_Detail">#FAEDF0</SolidColorBrush>
     <!--Nền-->
@@ -37,9 +41,9 @@
     <SolidColorBrush x:Key="bgListView">AliceBlue</SolidColorBrush>
 
     <!--MoreDetail-->
-    <SolidColorBrush x:Key="bg_MoreDetail">LightBlue</SolidColorBrush>
+    <SolidColorBrush x:Key="bg_MoreDetail">#F8FAC0</SolidColorBrush>
     <!--Nền-->
-    <SolidColorBrush x:Key="btnSave_MoreDetail">#02EE5B</SolidColorBrush>
+    <SolidColorBrush x:Key="btnSave_MoreDetail">#E3E645</SolidColorBrush>
     <!--btn lưu-->
 
     <!--<SolidColorBrush x:Key="bgWhite">white</SolidColorBrush>

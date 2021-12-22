@@ -10,11 +10,12 @@
              TextElement.FontSize="13"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource bg_Detail}"
              mc:Ignorable="d" Height="633.2" Width="446">
     <Grid>
         <Border BorderBrush="#512DA8" BorderThickness="5" Grid.ColumnSpan="2" Margin="0,0,0,0">
 
-            <Grid Background="White" Margin="-3.2,-3.2,-2.8,-3.6" RenderTransformOrigin="0.465,0.471"  >
+            <Grid Background="{DynamicResource bg_Detail}" Margin="-3.2,-3.2,-2.8,-3.6" RenderTransformOrigin="0.465,0.471"  >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="34"></RowDefinition>
                     <RowDefinition Height="199*"></RowDefinition>
@@ -29,19 +30,16 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-                        <TextBlock 
-                            Text="Lee Tom" 
+                        <TextBlock Text="{Binding FullName}" 
                            Foreground="White"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
-                           FontWeight="Medium"
-                           FontSize="20"></TextBlock>
+                           FontWeight="Medium" TextWrapping="WrapWithOverflow"
+                           FontSize="20" RenderTransformOrigin="0.239,0.683" Margin="10,0,-150.4,10.4"></TextBlock>
                     </Grid>
 
                     <Grid Grid.Column="1">
-                        <Button Click="DeletePerson_Click" Background="Red"
-                        Margin="155,1,0.4,0.6">X
+                        <Button Click="DeletePerson_Click" Background="{DynamicResource btn_Exit}"
+                        Margin="155,1,0.4,0.6" ToolTip="{DynamicResource about}">X
                         </Button>
                     </Grid>
                 </Grid>
@@ -61,14 +59,14 @@
                             <ColumnDefinition Width="185*"></ColumnDefinition>
                             <ColumnDefinition Width="7.2"/>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="photoBox" Margin="18,0,0,10" HorizontalAlignment="Left" Width="185"/>
+                        <Image x:Name="photoBox" Margin="10,0,0,10" HorizontalAlignment="Left" Width="185"/>
                         <materialDesign:PackIcon
                                     x:Name="icon"
                                     Kind="AccountCircle"
                                     Height="125"
                                     Width="150"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Center" Margin="53,30,9.8,35" />
+                                    HorizontalAlignment="Center" Margin="35,31,27.8,34" />
                         <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
                             <StackPanel HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
@@ -199,7 +197,7 @@
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Column="1">
-                            <ComboBox x:Name="cbbAdd" FontSize="20" Background="#B2E3FA" Margin="24,20,26.6,21.2">
+                            <ComboBox x:Name="cbbAdd" FontSize="20" Background="{DynamicResource zoneAdd_Detail}" Margin="24,20,26.6,21.2">
 
                                 <ComboBoxItem FontFamily="Fonts/#Dosis"  Content="{DynamicResource father}" FontSize="20" ></ComboBoxItem>
 
@@ -223,7 +221,7 @@
                             <RowDefinition Height="21*"/>
                             <RowDefinition Height="26*"/>
                         </Grid.RowDefinitions>
-                        <Button Click="btnAdd_Click" x:Name="btnAdd" Background="{DynamicResource btnAdd_Detail}" Width="114" Margin="0,21,49.2,40.4" Grid.RowSpan="2" HorizontalAlignment="Right">
+                        <Button Click="btnAdd_Click" x:Name="btnAdd" Background="{DynamicResource btnSave_MoreDetail}" Width="114" Margin="0,21,49.2,40.4" Grid.RowSpan="2" HorizontalAlignment="Right">
                             <Button.Style>
                                 <Style>
                                     <Style.Triggers>

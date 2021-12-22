@@ -5,35 +5,49 @@
     <SolidColorBrush x:Key="button">#673AB7</SolidColorBrush>
     <SolidColorBrush x:Key="controlbar">#512DA8</SolidColorBrush>
     <SolidColorBrush x:Key="border">#512DA8</SolidColorBrush>
-    
+
+    <!--background nút ở Ctrolbar-->
+    <SolidColorBrush x:Key="btn_Exit">red</SolidColorBrush>
+    <SolidColorBrush x:Key="btn_Resize">#673AB7</SolidColorBrush>
+
     <!--WelcomeWD Chưa cần cài-->
-    
+
     <!--MainWD-->
-    <SolidColorBrush x:Key="bg_MainWD1">#FF332DA8</SolidColorBrush> <!--Background này ko cần quan tâm-->
-    <SolidColorBrush x:Key="bg_MainWD2">#FFFAFA</SolidColorBrush> <!--Background nền vẽ Tree màu trắng-->
-    
+    <SolidColorBrush x:Key="bg_MainWD1">#512DA8</SolidColorBrush>
+    <!--Background này ko cần quan tâm-->
+    <SolidColorBrush x:Key="bg_MainWD2">#FFFAFA</SolidColorBrush>
+    <!--Background nền vẽ Tree màu trắng-->
+
     <!--Detail-->
-    <SolidColorBrush x:Key="btnAdd_Detail">#02EE5B</SolidColorBrush> <!--btn thêm quan hệ-->
-    <SolidColorBrush x:Key="zoneAdd_Detail">#B2E3FA</SolidColorBrush> <!--Nền vùng thêm quan hệ-->
-    <SolidColorBrush x:Key="bg_Detail">#FFFAFA</SolidColorBrush> <!--Nền-->
-    
+    <SolidColorBrush x:Key="btnAdd_Detail">#02EE5B</SolidColorBrush>
+    <!--btn thêm quan hệ-->
+    <SolidColorBrush x:Key="zoneAdd_Detail">#B2E3FA</SolidColorBrush>
+    <!--Nền vùng thêm quan hệ-->
+    <SolidColorBrush x:Key="bg_Detail">#FFFAFA</SolidColorBrush>
+    <!--Nền-->
+
     <!--FamilyData-->
-    <SolidColorBrush x:Key="bg_FamilyData">#fafafa</SolidColorBrush> <!--Nền của list View-->
-    <SolidColorBrush x:Key="label_FamilyData">AliceBlue</SolidColorBrush><!--Nền của thanh chứa họ tên, ngày sinh vv-->
+    <SolidColorBrush x:Key="bg_FamilyData">#fafafa</SolidColorBrush>
+    <!--Nền của list View-->
+    <SolidColorBrush x:Key="label_FamilyData">AliceBlue</SolidColorBrush>
+    <!--Nền của thanh chứa họ tên, ngày sinh vv-->
     <!--Nền lable nhãn màu tím chưa cài-->
-    
+
     <!--NewUser-->
-    <SolidColorBrush x:Key="bg_NewUser">#fafafa</SolidColorBrush> <!--Nền--> 
+    <SolidColorBrush x:Key="bg_NewUser">#fafafa</SolidColorBrush>
+    <!--Nền-->
 
     <!--FamilyData-->
     <SolidColorBrush x:Key="bgListView">AliceBlue</SolidColorBrush>
-    
+
     <!--MoreDetail-->
-    <SolidColorBrush x:Key="bg_MoreDetail">LightBlue</SolidColorBrush> <!--Nền-->
-    <SolidColorBrush x:Key="btnSave_MoreDetail">#02EE5B</SolidColorBrush> <!--btn lưu-->
+    <SolidColorBrush x:Key="bg_MoreDetail">LightBlue</SolidColorBrush>
+    <!--Nền-->
+    <SolidColorBrush x:Key="btnSave_MoreDetail">#02EE5B</SolidColorBrush>
+    <!--btn lưu-->
 
     <!--<SolidColorBrush x:Key="bgWhite">white</SolidColorBrush>
     <SolidColorBrush x:Key="foregroundTextDark">black</SolidColorBrush>
     <SolidColorBrush x:Key="foregroundTextLight">white</SolidColorBrush>-->
-    
+
 </ResourceDictionary>

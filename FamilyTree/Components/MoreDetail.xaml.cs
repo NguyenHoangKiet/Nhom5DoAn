@@ -328,7 +328,7 @@ namespace FamilyTree
             {
                 photoBox.Source = new BitmapImage(new Uri(op.FileName));
                 personobj.Photos.Add(new Photo(op.FileName));
-
+                personobj.Avatar = op.FileName;
                 PackIcon getIcon = icon;
                 if (getIcon != null)
                 {

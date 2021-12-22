@@ -11,10 +11,10 @@
 
     <!--WelcomWindow-->
     <system:String x:Key="greeting">QUẢN LÝ GIA PHẢ</system:String>
-    <system:String x:Key="btnNew">Thêm mới</system:String>
+    <system:String x:Key="btnNew">Tạo mới</system:String>
     <system:String x:Key="btnOpen">Mở</system:String>
-    <system:String x:Key="btnImport">Thêm từ thiết bị</system:String>
-    <system:String x:Key="btnOldestOpen">Mở gần đây nhất</system:String>
+    <system:String x:Key="btnImport">Thêm ảnh từ thiết bị</system:String>
+    <system:String x:Key="btnOpenGedcom">Mở file Gedcom</system:String>
 
     <!--New user Window-->
     <system:String x:Key="tagNewUser">Thêm Thành Viên Mới</system:String>
@@ -60,6 +60,7 @@
     <system:String x:Key="themeDark">Tối</system:String>
     <system:String x:Key="themeDefault">Mạc định</system:String>
     <system:String x:Key="exportGedcom">Xuất tệp gedcom</system:String>
+    <system:String x:Key="aboutgedcom">Gedcom là gì ?</system:String>
 
     <system:String x:Key="language">Tiếng Việt</system:String>
 

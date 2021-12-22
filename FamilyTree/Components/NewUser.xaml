@@ -170,7 +170,7 @@
                 <Grid Grid.Column="0">
                     <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200" Background="{DynamicResource button}"
-                        Content="Thêm"
+                        Content="{DynamicResource btnAdd}"
                         FontSize="15"
                         Click="addNewUser_Click">
                     </Button>
@@ -179,7 +179,7 @@
                     <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="200" Background="{DynamicResource button}"
                         Click="Cancel_Click"
-                        Content="Hủy"
+                        Content="{DynamicResource btnCancel}"
                         FontSize="15">
                     </Button>
                 </Grid>

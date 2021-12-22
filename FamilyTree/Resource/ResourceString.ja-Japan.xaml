@@ -14,7 +14,7 @@
     <system:String x:Key="btnNew">新しく追加する</system:String>
     <system:String x:Key="btnOpen">開ける</system:String>
     <system:String x:Key="btnImport">デバイスからもっと</system:String>
-    <system:String x:Key="btnOldestOpen">最近</system:String>
+    <system:String x:Key="btnOpenGedcom">ファイルgedcomを開く</system:String>
 
     <!--New user Window-->
     <system:String x:Key="tagNewUser">新しいメンバーを追加する</system:String>
@@ -60,6 +60,7 @@
     <system:String x:Key="theme">テーマ</system:String>
     <system:String x:Key="themeDark">闇</system:String>
     <system:String x:Key="themeDefault">ディフォルト</system:String>
+    <system:String x:Key="aboutgedcom">filegedcomとは?</system:String>
 
 
 

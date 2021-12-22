@@ -14,7 +14,7 @@
     <system:String x:Key="btnNew">New</system:String>
     <system:String x:Key="btnOpen">Open</system:String>
     <system:String x:Key="btnImport">Import Image</system:String>
-    <system:String x:Key="btnOldestOpen">Recent</system:String>
+    <system:String x:Key="btnOpenGedcom">Open file Gedcom</system:String>
     <system:String x:Key="ok">OK</system:String>
 
     <!--newUserWindow-->
@@ -61,6 +61,7 @@
     <system:String x:Key="theme">Theme</system:String>
     <system:String x:Key="themeDark">Dark</system:String>
     <system:String x:Key="themeDefault">Default</system:String>
+    <system:String x:Key="aboutgedcom">What is file Gedcom?</system:String>
 
 
     <system:String x:Key="language">English</system:String>

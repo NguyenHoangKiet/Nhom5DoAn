@@ -80,7 +80,6 @@ namespace FamilyTree.Components
             {
 
             }
-
             FamilyTree.App.Family.Add(newPerson);
             FamilyTree.App.Family.Current = newPerson;
             FamilyTree.App.Family.OnContentChanged();
@@ -89,7 +88,7 @@ namespace FamilyTree.Components
             App.mainWindow.Tree.Visibility = Visibility.Visible;
             this.Close();
         }
-
+        string fileAvatar;
         private void btnGetPhoto_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -108,6 +107,7 @@ namespace FamilyTree.Components
 
                 }
                 photoBox.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+                fileAvatar = openFileDialog.FileName;
             }
         }
     }

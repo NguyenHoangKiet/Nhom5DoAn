@@ -13,13 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FamilyTreeLibrary;
 using FamilyTree;
+using System.ComponentModel;
 
 namespace FamilyTree.Components
 {
     /// <summary>
     /// Interaction logic for AddRelationship.xaml
     /// </summary>
-    public partial class AddRelationship : Window
+    public partial class AddRelationship : Window, INotifyPropertyChanged
     {
         Person newPerson;
 
@@ -30,9 +31,11 @@ namespace FamilyTree.Components
         public AddRelationship()
         {
             InitializeComponent();
+
+            this.DataContext = this;
         }
 
-        public AddRelationship(int index, Gender gender)
+        public AddRelationship(int index, Gender gender, string content)
         {
             InitializeComponent();
 
@@ -48,6 +51,34 @@ namespace FamilyTree.Components
                 tbFirstname.Text = App.Family.Current.FirstName;
             }
 
+            _content = content;
+            
+            this.DataContext = this;
+        }
+
+        string _content;
+        public string Contentt
+        {
+            get
+            {
+                return _content;
+            }
+
+            set
+            {
+                _content = value;
+                OnPropertyChanged("PersonBirthPlace");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string newName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(newName));
+            }
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

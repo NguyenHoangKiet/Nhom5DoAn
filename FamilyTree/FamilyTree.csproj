@@ -118,9 +118,6 @@
     <Compile Include="Components\Tree\TreeViewer.xaml.cs">
       <DependentUpon>TreeViewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Components\ViewModel\ControlBarViewModel.cs" />
     <Compile Include="Components\WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
@@ -150,10 +147,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\Tree\TreeViewer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Components\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,9 +241,6 @@
       <Project>{d108023a-6a69-4558-9471-e51bef6da935}</Project>
       <Name>FamilyTreeLibrary</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Components\Picture1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Components\kisspng-genealogy-family-tree-happy-family-day-child.jpg" />
