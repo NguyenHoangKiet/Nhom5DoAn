@@ -56,19 +56,21 @@
                                     BorderBrush="{DynamicResource controlbar}" Foreground="#DDFFFFFF" Padding="0" 
                                     CommandParameter="{Binding ElementName=ucControlBar}" Background="{DynamicResource button}">
 
-                                <MenuItem Header="{DynamicResource btnAdd}" Background="#fafafa"
+                                <MenuItem Header="Tạo mới" Background="#fafafa"
                                               Icon="{materialDesign:PackIcon Kind=NotePlusOutline}"
-                                              InputGestureText="Ctrl+N" Foreground="#DD000000"/>
+                                              InputGestureText="Ctrl+N" Foreground="#DD000000" Click="MenuItem_Click"/>
                                 <MenuItem Header="{DynamicResource btnOpen}" Background="#fafafa"
                                               Icon="{materialDesign:PackIcon Kind=FolderOpenOutline}"
-                                              InputGestureText="Ctrl+O" Foreground="#DD000000"/>
+                                              InputGestureText="Ctrl+O" Foreground="#DD000000" Click="MenuItem_Click_1"/>
                                 <MenuItem Header="{DynamicResource save}" Background="#fafafa"
                                              Icon="{materialDesign:PackIcon Kind=ContentSave}"
-                                             InputGestureText="Ctrl+S" Foreground="#DD111111"/>
+                                             InputGestureText="Ctrl+S" Foreground="#DD111111" Click="MenuItem_Click_2"/>
                                 <MenuItem Header="{DynamicResource saveAs}" Background="#fafafa"
-                                              InputGestureText="Ctrl+Shift+S" Foreground="#DD000000"/>
+                                              InputGestureText="Ctrl+Shift+S" Foreground="#DD000000" Click="MenuItem_Click_3"/>
                                 <MenuItem Header="{DynamicResource exportGedcom}" Background="#fafafa"
-                                              Foreground="#DD121010" />
+                                              Foreground="#DD121010" Click="MenuItem_Click_4" />
+                                <MenuItem Header="Gedcom là gì ?" Background="#fafafa"
+                                              Foreground="#DD121010" Click="MenuItem_Click_5"/>
                                 <MenuItem Header="{DynamicResource theme}" Background="#fafafa"
                                                Foreground="#DD000000">
                                     <MenuItem Click="ThemeDefaul_Click" Header="{DynamicResource themeDefault}" Background="#fafafa"></MenuItem>
@@ -99,8 +101,18 @@
                 </materialDesign:ColorZone>
             </Grid>
         </Grid>
-        <Grid Background="#FFFAFA" Margin="0,111,0,10.4" Grid.RowSpan="2">
-            <uc:Detail Height="533.2" Width="400" Margin="0,51,990,45" />
+        <Grid Grid.ColumnSpan="2" Margin="0,67,-0.4,-0.2" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="313*"/>
+                <RowDefinition Height="371*"/>
+            </Grid.RowDefinitions>
+            <uc:Detail x:Name="DetailsControl" Margin="0,44,1156.4,10.2" Height="Auto" Width="Auto" Grid.RowSpan="2"/>
+            <Border
+                    x:Name="TreeBorder" Margin="375,0,0.4,-0.4" Grid.RowSpan="2">
+                <tree:TreeViewer x:Name="Tree" Zoom="1.5" Margin="45,1,-0.2,10.2" />
+            </Border>
+
         </Grid>
+
     </Grid>
 </Window>

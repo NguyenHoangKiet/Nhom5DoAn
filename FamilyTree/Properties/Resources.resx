@@ -154,22 +154,22 @@
     <value>Export</value>
   </data>
   <data name="FamilyExtensions" xml:space="preserve">
-    <value>*.family;*.familytree</value>
+    <value>*.familytree</value>
   </data>
   <data name="FamilyFiles" xml:space="preserve">
-    <value>Family.Show Files (.familytree or .family)</value>
+    <value>Family Tree Files (.familytree)</value>
   </data>
   <data name="FamilyV2Extension" xml:space="preserve">
-    <value>*.family</value>
+    <value>*.familytree</value>
   </data>
   <data name="FamilyV2Files" xml:space="preserve">
-    <value>Family.Tree V2 Files (.family)</value>
+    <value>Family Tree Files (.familytree)</value>
   </data>
   <data name="FamilyV3Extension" xml:space="preserve">
     <value>*.familytree</value>
   </data>
   <data name="FamilyV3Files" xml:space="preserve">
-    <value>Family.Tree V3 Files (.familytree)</value>
+    <value>Family Tree Files (.familytree)</value>
   </data>
   <data name="GedcomExtension" xml:space="preserve">
     <value>*.ged</value>

@@ -56,6 +56,7 @@
     <Compile Include="AgeGroup.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="EventBaptism.cs" />
     <Compile Include="Family.cs" />
     <Compile Include="FamilyMap.cs" />
     <Compile Include="GedcomConvert.cs" />

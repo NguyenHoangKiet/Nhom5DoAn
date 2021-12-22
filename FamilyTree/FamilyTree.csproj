@@ -98,6 +98,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BindableExtender.cs" />
+    <Compile Include="BoolToVisibilityConverter.cs" />
     <Compile Include="Components\AddRelationship.xaml.cs">
       <DependentUpon>AddRelationship.xaml</DependentUpon>
     </Compile>
@@ -173,6 +175,9 @@
     <Compile Include="Components\Tree\Node.cs" />
     <Compile Include="Components\Tree\Row.cs" />
     <Compile Include="Components\ViewModel\BaseViewModel.cs" />
+    <Compile Include="ComposingConverter.cs" />
+    <Compile Include="Dialog.cs" />
+    <Compile Include="ImageConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -205,8 +210,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resource\TreeResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

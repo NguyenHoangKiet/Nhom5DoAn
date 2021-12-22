@@ -73,17 +73,13 @@
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Content="{DynamicResource btnOpen}"
                     Margin="47,94,22,161.6"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"/>
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="btnOpen_Click"/>
                     <Button x:Name="btnImport" Background="{DynamicResource button}"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Content="{DynamicResource btnImport}"
+                    Content="Mở file gedcom"
                     Margin="47,154,22,101.6"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" />
-                    <Button x:Name="btnOldestOpen" Background="{DynamicResource button}"
-                    Style="{StaticResource MaterialDesignRaisedButton}"
-                    Content="{DynamicResource btnOldestOpen}"
-                    Margin="47,218,22,38.4"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522"/>
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" RenderTransformOrigin="0.075,-1.522" Click="btnImport_Click" />
+
                 </Grid>
                 <Image Grid.Column="1" HorizontalAlignment="Left" Height="505" Margin="148.8,0,0,0" VerticalAlignment="Top" Width="848" Grid.ColumnSpan="2" Source="kisspng-genealogy-family-tree-happy-family-day-child.jpg" Stretch="Fill"/>
 

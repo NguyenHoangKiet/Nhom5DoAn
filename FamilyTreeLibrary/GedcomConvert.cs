@@ -10,11 +10,13 @@ namespace FamilyTreeLibrary
             string xmlFilePath, bool combineSplitValues)
         {
             int prevLevel = -1;
+
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             using (XmlWriter writer = XmlWriter.Create(xmlFilePath, settings))
             {
                 writer.WriteStartElement("root");
+
                 using (StreamReader sr = new StreamReader(gedcomFilePath))
                 {
                     string text;
@@ -22,6 +24,7 @@ namespace FamilyTreeLibrary
                     while ((text = sr.ReadLine()) != null)
                     {
                         text = text.Trim();
+
                         if (line.Parse(text))
                         {
                             if (line.Level <= prevLevel)
@@ -32,6 +35,7 @@ namespace FamilyTreeLibrary
                                     writer.WriteEndElement();
                                 }
                             }
+
                             writer.WriteStartElement(line.Tag);
                             writer.WriteAttributeString("Value", line.Data);
 
@@ -39,8 +43,11 @@ namespace FamilyTreeLibrary
                         }
                     }
                 }
+
                 writer.WriteEndElement();
+
                 writer.WriteEndElement();
+
                 writer.Flush();
                 writer.Close();
 
@@ -50,20 +57,26 @@ namespace FamilyTreeLibrary
                 }
             }
         }
+
         static private void CombineSplitValues(string xmlFilePath)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(xmlFilePath);  
-            XmlNodeList list = doc.SelectNodes("//CONT/.. | ");
+            doc.Load(xmlFilePath);
+
+            XmlNodeList list = doc.SelectNodes("//CONT/.. | //CONC/..");
+
             foreach (XmlNode node in list)
             {
                 AppendValues(node);
             }
+
             doc.Save(xmlFilePath);
         }
+
         static private void AppendValues(XmlNode node)
         {
             StringBuilder sb = new StringBuilder(node.Attributes["Value"].Value);
+
             XmlNodeList list = node.SelectNodes("CONT | CONC");
             foreach (XmlNode childNode in list)
             {
@@ -72,12 +85,15 @@ namespace FamilyTreeLibrary
                     case "CONC":
                         sb.Append(childNode.Attributes["Value"].Value);
                         break;
+
                     case "CONT":
                         sb.AppendFormat("\r{0}", childNode.Attributes["Value"].Value);
                         break;
                 }
+
                 node.RemoveChild(childNode);
             }
+
             node.Attributes["Value"].Value = sb.ToString();
         }
     }

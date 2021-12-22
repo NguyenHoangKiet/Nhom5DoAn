@@ -36,11 +36,11 @@ namespace FamilyTree.Components
         {
             Gender gender;
 
-            if(radiobtnMale.IsChecked == true)
+            if (radiobtnMale.IsChecked == true)
             {
                 gender = Gender.Male;
             }
-            else if(radiobtnFemale.IsChecked == true)
+            else if (radiobtnFemale.IsChecked == true)
             {
                 gender = Gender.Female;
             }
@@ -82,7 +82,11 @@ namespace FamilyTree.Components
             }
 
             FamilyTree.App.Family.Add(newPerson);
+            FamilyTree.App.Family.Current = newPerson;
+            FamilyTree.App.Family.OnContentChanged();
 
+            App.mainWindow.DetailsControl.Visibility = Visibility.Visible;
+            App.mainWindow.Tree.Visibility = Visibility.Visible;
             this.Close();
         }
 

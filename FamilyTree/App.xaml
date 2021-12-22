@@ -2,7 +2,6 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:FamilyTree"
-             
              >
     <Application.Resources>
         <ResourceDictionary>
@@ -14,6 +13,7 @@
                 <ResourceDictionary Source="/Resource/BaseResource.xaml"/>
                 <ResourceDictionary Source="/Resource/ResourceString.vi-VN.xaml"/>
                 <ResourceDictionary Source="/Resource/ResourceTheme.Default.xaml"/>
+                <ResourceDictionary Source="/Resource/TreeResource.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

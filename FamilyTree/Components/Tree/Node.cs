@@ -6,7 +6,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using FamilyTreeLibrary;
 
-namespace FamilyTree.Components
+namespace FamilyTree.Components.Tree
 {
     public enum NodeType
     {

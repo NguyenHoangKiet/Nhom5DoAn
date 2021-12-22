@@ -80,7 +80,7 @@ namespace FamilyTree.Components
         void StarTimer()
         {
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromMilliseconds(200);
             timer.Tick += timer_Tick;
             timer.Start();
         }
@@ -90,7 +90,8 @@ namespace FamilyTree.Components
             LoadPerson();
         }
 
-        public string PersonName {
+        public string PersonName
+        {
             get
             {
                 return name;
@@ -143,14 +144,14 @@ namespace FamilyTree.Components
 
         private void bnt_view_edit_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MoreDetail moreDetail = new MoreDetail(App.Family.Current);
 
             moreDetail.Width = 470;
             moreDetail.Height = 700;
             moreDetail.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             moreDetail.ShowDialog();
-            
+
         }
 
         private void btn_view_Click(object sender, RoutedEventArgs e)
@@ -168,7 +169,7 @@ namespace FamilyTree.Components
             switch (cbbAdd.SelectedIndex)
             {
                 case 0://add Father
-                    addRelationship = new AddRelationship(0,Gender.Male);
+                    addRelationship = new AddRelationship(0, Gender.Male);
                     addRelationship.ShowDialog();
                     break;
                 case 1://add mother

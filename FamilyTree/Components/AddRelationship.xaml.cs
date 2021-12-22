@@ -39,8 +39,8 @@ namespace FamilyTree.Components
             _gender = gender;
             _index = index;
 
-            if(index == 1 || index == 2)
-            { 
+            if (index == 1 || index == 2)
+            {
                 tbFirstname.Text = null;
             }
             else
@@ -117,6 +117,7 @@ namespace FamilyTree.Components
                 MessageBox.Show("error");
             }
 
+            App.Family.OnContentChanged(newPerson);
             this.Close();
         }
     }

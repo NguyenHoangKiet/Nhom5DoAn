@@ -29,7 +29,8 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-                        <TextBlock Text="Lee Tom" 
+                        <TextBlock 
+                            Text="Lee Tom" 
                            Foreground="White"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
@@ -201,7 +202,7 @@
                             <ComboBox x:Name="cbbAdd" FontSize="20" Background="#B2E3FA" Margin="24,20,26.6,21.2">
 
                                 <ComboBoxItem FontFamily="Fonts/#Dosis"  Content="{DynamicResource father}" FontSize="20" ></ComboBoxItem>
-                                
+
                                 <ComboBoxItem FontFamily="Fonts/#Dosis" Content="{DynamicResource mother}" FontSize="20" ></ComboBoxItem>
 
                                 <ComboBoxItem FontFamily="Fonts/#Dosis" Content="{DynamicResource  spause}" FontSize="20" ></ComboBoxItem>
@@ -226,20 +227,20 @@
                             <Button.Style>
                                 <Style>
                                     <Style.Triggers>
-                                        
+
                                         <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path=SelectedIndex}" 
                                         Value = "0">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addFather}"/> 
+                                            <Setter Property = "Button.Content" Value = "{DynamicResource addFather}"/>
                                         </DataTrigger>
-                                        
+
                                         <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "1">
                                             <Setter Property = "Button.Content" Value = "{DynamicResource addMother}"/>
                                         </DataTrigger>
-                                        
+
                                         <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "2">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addSpause}"/> 
+                                            <Setter Property = "Button.Content" Value = "{DynamicResource addSpause}"/>
                                         </DataTrigger>
 
                                         <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
@@ -261,7 +262,7 @@
                                         Value = "6">
                                             <Setter Property = "Button.Content" Value = "{DynamicResource addSon}"/>
                                         </DataTrigger>
-                                        
+
                                     </Style.Triggers>
 
                                 </Style>

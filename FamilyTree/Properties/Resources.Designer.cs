@@ -19,7 +19,7 @@ namespace FamilyTree.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -169,7 +169,7 @@ namespace FamilyTree.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.family;*.familytree.
+        ///   Looks up a localized string similar to *.familytree.
         /// </summary>
         internal static string FamilyExtensions {
             get {
@@ -178,7 +178,7 @@ namespace FamilyTree.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Family.Show Files (.familytree or .family).
+        ///   Looks up a localized string similar to Family Tree Files (.familytree).
         /// </summary>
         internal static string FamilyFiles {
             get {
@@ -187,7 +187,7 @@ namespace FamilyTree.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.family.
+        ///   Looks up a localized string similar to *.familytree.
         /// </summary>
         internal static string FamilyV2Extension {
             get {
@@ -196,7 +196,7 @@ namespace FamilyTree.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Family.Tree V2 Files (.family).
+        ///   Looks up a localized string similar to Family Tree Files (.familytree).
         /// </summary>
         internal static string FamilyV2Files {
             get {
@@ -214,7 +214,7 @@ namespace FamilyTree.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Family.Tree V3 Files (.familytree).
+        ///   Looks up a localized string similar to Family Tree Files (.familytree).
         /// </summary>
         internal static string FamilyV3Files {
             get {

@@ -16,11 +16,14 @@ namespace FamilyTreeLibrary
         {
             public const string DefaultFirstName = "Unknown";
         }
+
         private string id;
         private string firstName;
         private string lastName;
         private string middleName;
+        private string suffix;
         private string nickName;
+        private string marriedName;
         private Gender gender;
         private DateTime? birthDate;
         private string birthPlace;
@@ -31,6 +34,7 @@ namespace FamilyTreeLibrary
         private Story story;
         private RelationshipCollection relationships;
         private Contact contact;
+        private EventBaptism baptism;
 
         #endregion
 
@@ -43,7 +47,7 @@ namespace FamilyTreeLibrary
             {
                 if (id != value)
                 {
-                    id = value; 
+                    id = value;
                     OnPropertyChanged(nameof(Id));
                 }
             }
@@ -127,7 +131,25 @@ namespace FamilyTreeLibrary
                     fullName += " " + lastName;
                 }
 
+                if (!string.IsNullOrEmpty(suffix))
+                {
+                    fullName += " " + suffix;
+                }
+
                 return fullName;
+            }
+        }
+        public string Suffix
+        {
+            get { return suffix; }
+            set
+            {
+                if (suffix != value)
+                {
+                    suffix = value;
+                    OnPropertyChanged(nameof(Suffix));
+                    OnPropertyChanged(nameof(FullName));
+                }
             }
         }
         public string NickName
@@ -139,6 +161,18 @@ namespace FamilyTreeLibrary
                 {
                     nickName = value;
                     OnPropertyChanged(nameof(NickName));
+                }
+            }
+        }
+        public string MarriedName
+        {
+            get { return marriedName; }
+            set
+            {
+                if (marriedName != value)
+                {
+                    marriedName = value;
+                    OnPropertyChanged(nameof(MarriedName));
                 }
             }
         }
@@ -173,7 +207,6 @@ namespace FamilyTreeLibrary
                 return Math.Max(0, age);
             }
         }
-
         [XmlIgnore]
         public AgeGroup AgeGroup
         {
@@ -218,7 +251,6 @@ namespace FamilyTreeLibrary
                 }
             }
         }
-
         public string YearOfDeath
         {
             get
@@ -233,7 +265,6 @@ namespace FamilyTreeLibrary
                 }
             }
         }
-
         public DateTime? BirthDate
         {
             get { return birthDate; }
@@ -251,6 +282,7 @@ namespace FamilyTreeLibrary
                 }
             }
         }
+
         public string BirthPlace
         {
             get { return birthPlace; }
@@ -264,7 +296,6 @@ namespace FamilyTreeLibrary
                 }
             }
         }
-
         [XmlIgnore]
         public string BirthMonthAndDay
         {
@@ -280,7 +311,6 @@ namespace FamilyTreeLibrary
                 }
             }
         }
-
         [XmlIgnore]
         public string BirthDateAndPlace
         {
@@ -306,7 +336,6 @@ namespace FamilyTreeLibrary
                 }
             }
         }
-
         public DateTime? DeathDate
         {
             get { return deathDate; }
@@ -362,6 +391,19 @@ namespace FamilyTreeLibrary
             }
         }
 
+
+        public EventBaptism Baptism
+        {
+            get { return baptism; }
+            set
+            {
+                if (baptism != value)
+                {
+                    baptism = value;
+                    OnPropertyChanged(nameof(Baptism));
+                }
+            }
+        }
         public Story Story
         {
             get { return story; }
@@ -374,7 +416,6 @@ namespace FamilyTreeLibrary
                 }
             }
         }
-
         [XmlIgnore, System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "value")]
         public string Avatar
         {
@@ -401,7 +442,6 @@ namespace FamilyTreeLibrary
                 OnPropertyChanged(nameof(HasAvatar));
             }
         }
-
         [XmlIgnore]
         public bool IsDeletable
         {
@@ -438,7 +478,6 @@ namespace FamilyTreeLibrary
         {
             get { return relationships; }
         }
-
         [XmlIgnore]
         public Collection<Person> Spouses
         {
@@ -521,7 +560,6 @@ namespace FamilyTreeLibrary
                 return lst;
             }
         }
-
         [XmlIgnore]
         public Collection<Person> Children
         {
@@ -539,7 +577,6 @@ namespace FamilyTreeLibrary
                 return children;
             }
         }
-
         [XmlIgnore]
         public Collection<Person> Parents
         {
@@ -557,7 +594,6 @@ namespace FamilyTreeLibrary
                 return parents;
             }
         }
-
         [XmlIgnore]
         public Collection<Person> Siblings
         {
@@ -575,7 +611,6 @@ namespace FamilyTreeLibrary
                 return siblings;
             }
         }
-
         [XmlIgnore]
         public Collection<Person> HalfSiblings
         {
@@ -597,7 +632,6 @@ namespace FamilyTreeLibrary
                 return halfSiblings;
             }
         }
-
         [XmlIgnore]
         public ParentSet ParentSet
         {
@@ -614,7 +648,6 @@ namespace FamilyTreeLibrary
                 }
             }
         }
-
         [XmlIgnore]
         public ParentSetCollection PossibleParentSets
         {
@@ -637,7 +670,6 @@ namespace FamilyTreeLibrary
                 return parentSets;
             }
         }
-
         public Person Father
         {
             get
@@ -650,7 +682,6 @@ namespace FamilyTreeLibrary
                 return null;
             }
         }
-
         public Person Mother
         {
             get
@@ -663,7 +694,6 @@ namespace FamilyTreeLibrary
                 return null;
             }
         }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "value")]
         public bool HasParents
         {
@@ -677,7 +707,6 @@ namespace FamilyTreeLibrary
                 OnPropertyChanged(nameof(PossibleParentSets));
             }
         }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "value")]
         public bool HasSpouse
         {
@@ -691,7 +720,6 @@ namespace FamilyTreeLibrary
                 OnPropertyChanged(nameof(Spouses));
             }
         }
-
         [XmlIgnore]
         public bool HasAvatar
         {
@@ -711,7 +739,6 @@ namespace FamilyTreeLibrary
                 return false;
             }
         }
-
         [XmlIgnore]
         public string ParentRelationshipText
         {
@@ -719,15 +746,14 @@ namespace FamilyTreeLibrary
             {
                 if (gender == Gender.Male)
                 {
-                    return "Son";
+                    return "Con trai";
                 }
                 else
                 {
-                    return "Daughter";
+                    return "Con gái";
                 }
             }
         }
-
         [XmlIgnore]
         public string ParentsText
         {
@@ -742,7 +768,7 @@ namespace FamilyTreeLibrary
 
                     if (parents.Count == 2)
                     {
-                        parentsText += " and " + parents[1].Name;
+                        parentsText += " và " + parents[1].Name;
                     }
                     else
                     {
@@ -750,7 +776,7 @@ namespace FamilyTreeLibrary
                         {
                             if (i == parents.Count - 1)
                             {
-                                parentsText += ", and " + parents[i].Name;
+                                parentsText += ", và " + parents[i].Name;
                             }
                             else
                             {
@@ -763,7 +789,6 @@ namespace FamilyTreeLibrary
                 return parentsText;
             }
         }
-
         [XmlIgnore]
         public string SiblingRelationshipText
         {
@@ -771,15 +796,14 @@ namespace FamilyTreeLibrary
             {
                 if (gender == Gender.Male)
                 {
-                    return "Brother";
+                    return "Anh/Em trai";
                 }
                 else
                 {
-                    return "Sister";
+                    return "Chị/Em gái";
                 }
             }
         }
-
         [XmlIgnore]
         public string SiblingsText
         {
@@ -794,7 +818,7 @@ namespace FamilyTreeLibrary
 
                     if (siblings.Count == 2)
                     {
-                        siblingsText += " and " + siblings[1].Name;
+                        siblingsText += " và " + siblings[1].Name;
                     }
                     else
                     {
@@ -802,7 +826,7 @@ namespace FamilyTreeLibrary
                         {
                             if (i == siblings.Count - 1)
                             {
-                                siblingsText += ", and " + siblings[i].Name;
+                                siblingsText += ", và " + siblings[i].Name;
                             }
                             else
                             {
@@ -815,7 +839,6 @@ namespace FamilyTreeLibrary
                 return siblingsText;
             }
         }
-
         [XmlIgnore]
         public string SpouseRelationshipText
         {
@@ -823,15 +846,14 @@ namespace FamilyTreeLibrary
             {
                 if (gender == Gender.Male)
                 {
-                    return "Husband";
+                    return "Chồng";
                 }
                 else
                 {
-                    return "Wife";
+                    return "Vợ";
                 }
             }
         }
-
         [XmlIgnore]
         public string SpousesText
         {
@@ -846,7 +868,7 @@ namespace FamilyTreeLibrary
 
                     if (spouses.Count == 2)
                     {
-                        spousesText += " and " + spouses[1].Name;
+                        spousesText += " và " + spouses[1].Name;
                     }
                     else
                     {
@@ -854,7 +876,7 @@ namespace FamilyTreeLibrary
                         {
                             if (i == spouses.Count - 1)
                             {
-                                spousesText += ", and " + spouses[i].Name;
+                                spousesText += ", và " + spouses[i].Name;
                             }
                             else
                             {
@@ -867,7 +889,6 @@ namespace FamilyTreeLibrary
                 return spousesText;
             }
         }
-
         [XmlIgnore]
         public string ChildRelationshipText
         {
@@ -875,15 +896,14 @@ namespace FamilyTreeLibrary
             {
                 if (gender == Gender.Male)
                 {
-                    return "Father";
+                    return "Cha";
                 }
                 else
                 {
-                    return "Mother";
+                    return "Mẹ";
                 }
             }
         }
-
         [XmlIgnore]
         public string ChildrenText
         {
@@ -898,7 +918,7 @@ namespace FamilyTreeLibrary
 
                     if (children.Count == 2)
                     {
-                        childrenText += " and " + children[1].Name;
+                        childrenText += " và " + children[1].Name;
                     }
                     else
                     {
@@ -906,7 +926,7 @@ namespace FamilyTreeLibrary
                         {
                             if (i == children.Count - 1)
                             {
-                                childrenText += ", and " + children[i].Name;
+                                childrenText += ", và " + children[i].Name;
                             }
                             else
                             {
@@ -930,7 +950,6 @@ namespace FamilyTreeLibrary
             firstName = Const.DefaultFirstName;
             isLiving = true;
         }
-
         public Person(string firstName, string lastName) : this()
         {
             if (!string.IsNullOrEmpty(firstName))
@@ -940,7 +959,6 @@ namespace FamilyTreeLibrary
 
             this.lastName = lastName;
         }
-
         public Person(string firstName, string lastName, Gender gender) : this(firstName, lastName)
         {
             this.gender = gender;

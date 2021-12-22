@@ -7,8 +7,8 @@ namespace FamilyTreeLibrary
 {
     public class OPCUtility
     {
-        private const string PackageRelationshipType = @"";
-        private const string ResourceRelationshipType = @"";
+        private const string PackageRelationshipType = @"http://schemas.microsoft.com/opc/2006/sample/document";
+        private const string ResourceRelationshipType = @"http://schemas.microsoft.com/opc/2006/sample/required-resource";
 
         #region Write Package
         public static void CreatePackage(string PackageFileName, string TargetDirectory)
