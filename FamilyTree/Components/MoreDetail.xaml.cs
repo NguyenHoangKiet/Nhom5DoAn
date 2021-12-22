@@ -185,21 +185,23 @@ namespace FamilyTree
                 DatePickerDeath.Text = currentPerson.DeathDate.ToString();
 
                 // Load Photo
-                if (currentPerson.Photos != null)
+                if (App.Family.Current.Photos != null)
                 {
                     try
                     {
-                        foreach (Photo image in currentPerson.Photos)
+                        foreach (Photo image in App.Family.Current.Photos)
                         {
-                            photoBox.Source = new BitmapImage(new Uri(image.RelativePath));
-                        }
+                            BitmapImage bitmap = new BitmapImage(new Uri(image.FullyQualifiedPath));
+                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                            photoBox.Source = bitmap;
+                            PackIcon getIcon = icon;
+                            if (getIcon != null)
+                            {
+                                icon.Visibility = Visibility.Collapsed;
+                            }
 
-                        PackIcon getIcon = icon;
-                        if (getIcon != null)
-                        {
-                            icon.Visibility = Visibility.Collapsed;
                         }
-
+                        
                     }
                     catch
                     {

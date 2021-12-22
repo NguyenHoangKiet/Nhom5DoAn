@@ -44,6 +44,7 @@
     <system:String x:Key="DeadPlace">Place of dead:</system:String>
     <system:String x:Key="lastName2">Last name</system:String>
     <system:String x:Key="firstName2">First name</system:String>
+    <system:String x:Key="tblTitle">Detail Information</system:String>
     
     <!--MainWindow-->
     <system:String x:Key="set">Setup</system:String>
@@ -62,7 +63,7 @@
     <system:String x:Key="themeDark">Dark</system:String>
     <system:String x:Key="themeDefault">Default</system:String>
     <system:String x:Key="aboutgedcom">What is file Gedcom?</system:String>
-
+    <system:String x:Key="btnDelete">Delete this person</system:String>
 
     <system:String x:Key="language">English</system:String>
     <!--FamilyData-->

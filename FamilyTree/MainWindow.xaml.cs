@@ -202,8 +202,10 @@ namespace FamilyTree
                 {
                     family.IsDirty = false;
                 }
-            }
 
+            }
+            App.mainWindow.DetailsControl.Visibility = Visibility.Visible;
+            App.mainWindow.Tree.Visibility = Visibility.Visible;
         }
 
         private void LoadFamily(string fileName)
@@ -283,6 +285,18 @@ namespace FamilyTree
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://en.wikipedia.org/wiki/GEDCOM");
+        }
+        private void btnNew_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem_Click(sender,e);
+        }
+        private void btnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem_Click_1(sender, e);
+        }
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem_Click_2(sender, e);
         }
     }
 }

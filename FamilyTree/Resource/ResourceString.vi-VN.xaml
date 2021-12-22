@@ -43,6 +43,7 @@
     <system:String x:Key="DeadPlace">Nơi mất :</system:String>
     <system:String x:Key="lastName2">Họ</system:String>
     <system:String x:Key="firstName2">Tên</system:String>
+    <system:String x:Key="tblTitle">Thông tin chi tiết</system:String>
     
     <!--MainWindow-->
     <system:String x:Key="set">Xem/Sửa</system:String>
@@ -58,9 +59,10 @@
     <system:String x:Key="about">Về chúng tôi</system:String>
     <system:String x:Key="theme">Giao diện</system:String>
     <system:String x:Key="themeDark">Tối</system:String>
-    <system:String x:Key="themeDefault">Mạc định</system:String>
+    <system:String x:Key="themeDefault">Mặc định</system:String>
     <system:String x:Key="exportGedcom">Xuất tệp gedcom</system:String>
     <system:String x:Key="aboutgedcom">Gedcom là gì ?</system:String>
+    <system:String x:Key="btnDelete">Xóa người này</system:String>
 
     <system:String x:Key="language">Tiếng Việt</system:String>
 

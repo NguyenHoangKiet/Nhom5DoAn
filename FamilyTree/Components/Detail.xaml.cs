@@ -26,7 +26,7 @@ namespace FamilyTree.Components
     public partial class Detail : UserControl, INotifyPropertyChanged
     {
         private string name;
-        string birthDay;
+        DateTime? birthDay;
         string bithPalce;
         string fullName;
 
@@ -34,8 +34,8 @@ namespace FamilyTree.Components
         {
             InitializeComponent();
 
-            this.DataContext = this; 
-
+            this.DataContext = this;
+            
             LoadPerson();
             StarTimer();
         }
@@ -45,8 +45,15 @@ namespace FamilyTree.Components
             if (App.Family.Current != null)
             {
                 PersonName = App.Family.Current.Name;
-                //PersonBirthDay = App.Family.Current.BirthDate.ToString("MM/dd/yyyy");
-                PersonBirthDay = App.Family.Current.BirthDate.ToString();
+                if (PersonBirthDay == null)
+                {
+                    tblbirthdayresult.Text = "Unknown";
+                }
+                else
+                {
+                    PersonBirthDay = App.Family.Current.BirthDate;
+                }
+                
                 PersonBirthPlace = App.Family.Current.BirthPlace;
                 FullName = App.Family.Current.FullName;
                 if (App.Family.Current.Photos != null)
@@ -55,29 +62,21 @@ namespace FamilyTree.Components
                     {
                         foreach (Photo image in App.Family.Current.Photos)
                         {
-                            photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Avatar));
-                            //photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Photos[0].RelativePath)); 
+                            BitmapImage bitmap = new BitmapImage(new Uri(image.FullyQualifiedPath));
+                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                            photoBox.Source = bitmap;
+                            PackIcon getIcon = icon;
+                            if (getIcon != null)
+                            {
+                                icon.Visibility = Visibility.Collapsed;
+                            }
                         }
-                        photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Avatar));
-                        //PhotoCollection photos = App.Family.Current.Photos;
-
-                        //photoBox.Source = App.Family.Current.Photos;
-
-                        PackIcon getIcon = icon;
-                        if (getIcon != null)
-                        {
-                            icon.Visibility = Visibility.Collapsed;
-                        }
-
                     }
                     catch
                     {
 
                     }
-                    //MessageBox.Show(App.Family.Current.Avatar);
-                    //photoBox.Source = new BitmapImage(new Uri(App.Family.Current.Avatar));
                 }
-
             }
         }
 
@@ -122,7 +121,7 @@ namespace FamilyTree.Components
             }
         }
 
-        public string PersonBirthDay
+        public DateTime? PersonBirthDay
         {
             get
             {
@@ -216,11 +215,7 @@ namespace FamilyTree.Components
                     break;
             }
 
-            //if (addRelationship != null)
-            //{
-            //    addRelationship.DataContext = this;
-            //    MessageBox.Show("dd");
-            //}
+            
         }
 
         private void DeletePerson_Click(object sender, RoutedEventArgs e)

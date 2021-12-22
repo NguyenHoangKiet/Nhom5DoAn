@@ -43,6 +43,7 @@
     <system:String x:Key="DeadPlace">死者の場所 :</system:String>
     <system:String x:Key="lastName2">苗字</system:String>
     <system:String x:Key="firstName2">名前</system:String>
+    <system:String x:Key="tblTitle">詳細</system:String>
 
     <!--MainWindow-->
     <system:String x:Key="set">設定</system:String>
@@ -61,7 +62,7 @@
     <system:String x:Key="themeDark">闇</system:String>
     <system:String x:Key="themeDefault">ディフォルト</system:String>
     <system:String x:Key="aboutgedcom">filegedcomとは?</system:String>
-
+    <system:String x:Key="btnDelete">この人を削除する</system:String>
 
 
     <system:String x:Key="language">Japanese</system:String> <!--日本-->

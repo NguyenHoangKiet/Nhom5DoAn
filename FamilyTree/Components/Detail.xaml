@@ -34,7 +34,7 @@
                            Foreground="White"
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium" TextWrapping="WrapWithOverflow"
-                           FontSize="20" RenderTransformOrigin="0.239,0.683" Margin="10,0,-150.4,10.4"></TextBlock>
+                           FontSize="20" RenderTransformOrigin="0.239,0.683" Margin="10,10,-150.4,0"></TextBlock>
                     </Grid>
 
                     <Grid Grid.Column="1">
@@ -49,7 +49,7 @@
                         <RowDefinition Height="200"></RowDefinition>
                         <RowDefinition Height="71*"></RowDefinition>
                         <RowDefinition Height="77*"></RowDefinition>
-                        <RowDefinition Height="74*"></RowDefinition>
+                        <RowDefinition Height="150*"></RowDefinition>
                         <RowDefinition Height="154*"></RowDefinition>
                     </Grid.RowDefinitions>
 
@@ -59,14 +59,14 @@
                             <ColumnDefinition Width="185*"></ColumnDefinition>
                             <ColumnDefinition Width="7.2"/>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="photoBox" Margin="10,0,0,10" HorizontalAlignment="Left" Width="185"/>
+                        <Image x:Name="photoBox" Margin="10,29,0,35" HorizontalAlignment="Left" Width="159"/>
                         <materialDesign:PackIcon
                                     x:Name="icon"
                                     Kind="AccountCircle"
                                     Height="125"
-                                    Width="150"
+                                    Width="116"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Center" Margin="35,31,27.8,34" />
+                                    HorizontalAlignment="Center" Margin="44,30,52.8,35" />
                         <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
                             <StackPanel HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
@@ -77,14 +77,17 @@
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium" TextWrapping="WrapWithOverflow"
                            FontSize="20" Width="228"></TextBlock>
-                                <TextBlock Text="{DynamicResource Birthday}" 
+                                <TextBlock 
+                                    x:Name="tblbirthday"
+                                    Text="{DynamicResource Birthday}" 
                            Foreground="Black"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium" TextWrapping="WrapWithOverflow"
                            FontSize="20" Width="104"/>
-                                <TextBlock Text="{Binding PersonBirthDay}" 
+                                <TextBlock x:Name="tblbirthdayresult"
+                                    Text="{Binding PersonBirthDay, StringFormat='{}{0:dd.MM.yyyy}'}" 
                            Foreground="Black"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
@@ -173,7 +176,7 @@
                         </Grid>
                     </Grid>
 
-                    <Grid Background="{DynamicResource zoneAdd_Detail}" Grid.Row="3" Margin="0,9,-1,0" Height="79" VerticalAlignment="Top" Grid.RowSpan="2">
+                    <Grid Background="{DynamicResource zoneAdd_Detail}" Grid.Row="3" Margin="0,8.8,-1,0" Height="142" VerticalAlignment="Top" Grid.RowSpan="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -193,11 +196,11 @@
                                    FontWeight="Medium"
                                    FontSize="16"
                                    Height="18"
-                                   Width="177" Margin="0,2,0,0"></TextBlock>
+                                   Width="177" Margin="0,0,0,60"></TextBlock>
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Column="1">
-                            <ComboBox x:Name="cbbAdd" FontSize="20" Background="{DynamicResource zoneAdd_Detail}" Margin="24,20,26.6,21.2">
+                            <ComboBox x:Name="cbbAdd" FontSize="20" Background="{DynamicResource zoneAdd_Detail}" Margin="24,20,27,85.4">
 
                                 <ComboBoxItem FontFamily="Fonts/#Dosis"  Content="{DynamicResource father}" FontSize="20" ></ComboBoxItem>
 
@@ -213,59 +216,52 @@
 
                                 <ComboBoxItem FontFamily="Fonts/#Dosis" Content="{DynamicResource  son}" FontSize="20" ></ComboBoxItem>
                             </ComboBox>
-                        </Grid>
-                    </Grid>
+                            <Button Click="btnAdd_Click" x:Name="btnAdd" Background="{DynamicResource btnSave_MoreDetail}" Height="40" Width="114" VerticalAlignment="Bottom" Grid.RowSpan="2" HorizontalAlignment="Center">
+                                <Button.Style>
+                                    <Style>
+                                        <Style.Triggers>
 
-                    <Grid Background="{DynamicResource zoneAdd_Detail}" Grid.Row="4" Margin="0,3.4,-1,0" Height="94" VerticalAlignment="Top">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="21*"/>
-                            <RowDefinition Height="26*"/>
-                        </Grid.RowDefinitions>
-                        <Button Click="btnAdd_Click" x:Name="btnAdd" Background="{DynamicResource btnSave_MoreDetail}" Width="114" Margin="0,21,49.2,40.4" Grid.RowSpan="2" HorizontalAlignment="Right">
-                            <Button.Style>
-                                <Style>
-                                    <Style.Triggers>
-
-                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path=SelectedIndex}" 
+                                            <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path=SelectedIndex}" 
                                         Value = "0">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addFather}"/>
-                                        </DataTrigger>
+                                                <Setter Property = "Button.Content" Value = "{DynamicResource addFather}"/>
+                                            </DataTrigger>
 
-                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                            <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "1">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addMother}"/>
-                                        </DataTrigger>
+                                                <Setter Property = "Button.Content" Value = "{DynamicResource addMother}"/>
+                                            </DataTrigger>
 
-                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                            <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "2">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addSpause}"/>
-                                        </DataTrigger>
+                                                <Setter Property = "Button.Content" Value = "{DynamicResource addSpause}"/>
+                                            </DataTrigger>
 
-                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                            <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "3">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addSister}"/>
-                                        </DataTrigger>
+                                                <Setter Property = "Button.Content" Value = "{DynamicResource addSister}"/>
+                                            </DataTrigger>
 
-                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                            <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "4">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addBrother}"/>
-                                        </DataTrigger>
+                                                <Setter Property = "Button.Content" Value = "{DynamicResource addBrother}"/>
+                                            </DataTrigger>
 
-                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                            <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "5">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addDaught}"/>
-                                        </DataTrigger>
+                                                <Setter Property = "Button.Content" Value = "{DynamicResource addDaught}"/>
+                                            </DataTrigger>
 
-                                        <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
+                                            <DataTrigger Binding = "{Binding ElementName = cbbAdd, Path = SelectedIndex}" 
                                         Value = "6">
-                                            <Setter Property = "Button.Content" Value = "{DynamicResource addSon}"/>
-                                        </DataTrigger>
+                                                <Setter Property = "Button.Content" Value = "{DynamicResource addSon}"/>
+                                            </DataTrigger>
 
-                                    </Style.Triggers>
+                                        </Style.Triggers>
 
-                                </Style>
-                            </Button.Style>
-                        </Button>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>

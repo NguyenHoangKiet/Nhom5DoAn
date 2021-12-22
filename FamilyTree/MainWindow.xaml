@@ -29,7 +29,8 @@
         </Grid.RowDefinitions>
 
         <!--ControlBar-->
-        <Grid Grid.Row="0" Margin="0,0,0,645.4">
+        <Grid Grid.Row="0" Margin="0,0,0,645.4"
+              Background="{DynamicResource controlbar}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
@@ -47,7 +48,7 @@
             Padding="5"
             CornerRadius="3"
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
-            Margin="4,0,0,-14.6" Height="53">
+            Margin="0,0,0,-14.6" Height="53">
                     <StackPanel DockPanel.Dock="Left"  Orientation="Horizontal">
                         <Menu Background="Transparent"
                         IsMainMenu="True" Margin="0,0,0,11.2" HorizontalAlignment="Left" Width="150" >
@@ -85,15 +86,15 @@
                             <Separator />
                         </Menu>
 
-                        <Button x:Name="bnt_New"  Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
+                        <Button x:Name="bnt_New" Click="btnNew_Click" Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
                             <materialDesign:PackIcon Kind="NotePlusOutline"/>
                         </Button>
 
-                        <Button x:Name="bnt_Open"  Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4">
+                        <Button x:Name="bnt_Open" Click="btnOpen_Click" Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4">
                             <materialDesign:PackIcon Kind="FolderOpen"/>
                         </Button >
 
-                        <Button x:Name="bnt_Save"  Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
+                        <Button x:Name="bnt_Save" Click="btnSave_Click" Background="{DynamicResource button}" Margin="0,0,0,11.2" Width="70" Height="32"  BorderThickness="1" Foreground="#DDFFFFFF" Padding="16,4" >
                             <materialDesign:PackIcon Kind="ContentSaveEdit"/>
                         </Button >
                     </StackPanel>
@@ -111,7 +112,7 @@
                     x:Name="TreeBorder" Margin="395,0,0.4,-0.4" Grid.RowSpan="2">
                 <tree:TreeViewer x:Name="Tree" Zoom="1.5" Margin="0,1,-0.2,10.2" />
             </Border>
-            <uc:Detail x:Name="DetailsControl" Margin="0,0,0,176.2" Height="Auto" Width="402" Grid.RowSpan="2" HorizontalAlignment="Left"/>
+            <uc:Detail x:Name="DetailsControl" Margin="0,0,0,0" Height="Auto" Width="402" Grid.RowSpan="2" HorizontalAlignment="Left"/>
         </Grid>
 
     </Grid>

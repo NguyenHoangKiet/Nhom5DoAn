@@ -17,14 +17,17 @@ using MaterialDesignThemes.Wpf;
 
 namespace FamilyTree.Components
 {
+    
     /// <summary>
     /// Interaction logic for NewUser.xaml
     /// </summary>
     public partial class NewUser : Window
     {
+        Person personobj;
         public NewUser()
         {
             InitializeComponent();
+            personobj = new Person();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -49,65 +52,53 @@ namespace FamilyTree.Components
                 gender = Gender.unknown;
             }
 
-            Person newPerson = new Person(tbFirstname.Text != null ? tbFirstname.Text : null, tbLastName.Text != null ? tbLastName.Text : null, gender);
+            if(tbFirstname.Text == null)
+            {
+                personobj.FirstName = null;
+            }
+            if(tbLastName.Text == null)
+            {
+                personobj.LastName = null;
+            }
+      
+            personobj.Gender = gender;
 
             if (tbBirthDay.SelectedDate != null)
             {
-                newPerson.BirthDate = tbBirthDay.SelectedDate;
+                personobj.BirthDate = tbBirthDay.SelectedDate;
             }
 
             if (tbPlaceOfBirth.Text != null)
             {
-                newPerson.BirthPlace = tbPlaceOfBirth.Text;
+                personobj.BirthPlace = tbPlaceOfBirth.Text;
             }
-
-
-            try
-            {
-                if (photoBox.Source != null)
-                {
-                    Photo photo = new Photo(photoBox.Source.ToString());
-
-                    photo.IsAvatar = true;
-
-                    if (photo != null)
-                    {
-                        newPerson.Photos.Add(photo);
-                    }
-                }
-            }
-            catch
-            {
-
-            }
-            FamilyTree.App.Family.Add(newPerson);
-            FamilyTree.App.Family.Current = newPerson;
+            
+            FamilyTree.App.Family.Add(personobj);
+            FamilyTree.App.Family.Current = personobj;
             FamilyTree.App.Family.OnContentChanged();
 
             App.mainWindow.DetailsControl.Visibility = Visibility.Visible;
             App.mainWindow.Tree.Visibility = Visibility.Visible;
             this.Close();
         }
-        string fileAvatar;
+        
         private void btnGetPhoto_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            Microsoft.Win32.OpenFileDialog op = new Microsoft.Win32.OpenFileDialog();
+            op.Title = "Select a picture";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
             {
-                try
+                photoBox.Source = new BitmapImage(new Uri(op.FileName));
+                personobj.Photos.Add(new Photo(op.FileName));
+                personobj.Avatar = op.FileName;
+                PackIcon getIcon = icon;
+                if (getIcon != null)
                 {
-                    PackIcon getIcon = icon;
-                    if (getIcon != null)
-                    {
-                        icon.Visibility = Visibility.Collapsed;
-                    }
+                    icon.Visibility = Visibility.Collapsed;
                 }
-                catch
-                {
-
-                }
-                photoBox.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-                fileAvatar = openFileDialog.FileName;
             }
         }
     }
