@@ -145,5 +145,9 @@ namespace FamilyTree.Components
             }
         }
 
+        private void BtnQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://en.wikipedia.org/wiki/GEDCOM");
+        }
     }
 }

@@ -138,7 +138,7 @@ namespace FamilyTree.Components
                     TextWriter tw = new StreamWriter(fileName, true);
 
                     tw.WriteLine("LANGUAGE_" + curentlang.ToString());
-
+                    tw.WriteLine("THEME_0");
                     tw.Close();
                 }
             }

@@ -56,11 +56,18 @@ namespace FamilyTree.Components
             {
                 personobj.FirstName = null;
             }
+            else
+            {
+                personobj.FirstName = tbFirstname.Text;
+            }
             if(tbLastName.Text == null)
             {
                 personobj.LastName = null;
             }
-      
+            else
+            {
+                personobj.LastName = tbLastName.Text;
+            }
             personobj.Gender = gender;
 
             if (tbBirthDay.SelectedDate != null)
@@ -91,9 +98,12 @@ namespace FamilyTree.Components
               "Portable Network Graphic (*.png)|*.png";
             if (op.ShowDialog() == true)
             {
+                Photo photo = new Photo(op.FileName);
+                photo.IsAvatar = true;
+                personobj.Photos.Add(photo);
                 photoBox.Source = new BitmapImage(new Uri(op.FileName));
-                personobj.Photos.Add(new Photo(op.FileName));
-                personobj.Avatar = op.FileName;
+                
+
                 PackIcon getIcon = icon;
                 if (getIcon != null)
                 {

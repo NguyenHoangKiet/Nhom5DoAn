@@ -39,7 +39,7 @@
 
                     <Grid Grid.Column="1">
                         <Button Click="DeletePerson_Click" Background="{DynamicResource btn_Exit}"
-                        Margin="155,1,0.4,0.6" ToolTip="{DynamicResource about}">X
+                        Margin="155,1,0.4,0.6" ToolTip="{DynamicResource btnDelete}">X
                         </Button>
                     </Grid>
                 </Grid>
@@ -70,22 +70,29 @@
                         <Grid Grid.ColumnSpan="3" Margin="190,0,0,0">
                             <StackPanel HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
-                                <TextBlock Text="{Binding PersonName}" 
+                                <TextBlock 
+                                           Text="{DynamicResource tblName}"
+                                           Foreground="Purple"
+                                           FontSize="20"
+                                           FontWeight="Bold"></TextBlock>
+                                <TextBlock  
+                                        Text="{Binding PersonName}" 
                            Foreground="Black"
-                           HorizontalAlignment="Left"
+                           HorizontalAlignment="Right"
                            VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium" TextWrapping="WrapWithOverflow"
                            FontSize="20" Width="228"></TextBlock>
                                 <TextBlock 
                                     x:Name="tblbirthday"
-                                    Text="{DynamicResource Birthday}" 
-                           Foreground="Black"
+                                    Text="{DynamicResource tblDateofBirth}" 
+                           Foreground="Purple"
+                                    
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
-                           FontWeight="Medium" TextWrapping="WrapWithOverflow"
-                           FontSize="20" Width="104"/>
+                           FontWeight="Bold" TextWrapping="WrapWithOverflow"
+                           FontSize="20" Width="148"/>
                                 <TextBlock x:Name="tblbirthdayresult"
                                     Text="{Binding PersonBirthDay, StringFormat='{}{0:dd.MM.yyyy}'}" 
                            Foreground="Black"
@@ -94,6 +101,11 @@
                            FontFamily="Fonts/#Dosis"
                            FontWeight="Medium" TextWrapping="WrapWithOverflow"
                            FontSize="20" Width="104"/>
+                                <TextBlock 
+                                           Text="{DynamicResource tblplaceOfBirth}"
+                                           Foreground="Purple"
+                                           FontSize="20"
+                                           FontWeight="Bold"></TextBlock>
                                 <TextBlock Text="{Binding PersonBirthPlace}"
                            Foreground="Black"
                            HorizontalAlignment="Left"
@@ -176,7 +188,7 @@
                         </Grid>
                     </Grid>
 
-                    <Grid Background="{DynamicResource zoneAdd_Detail}" Grid.Row="3" Margin="0,8.8,-1,0" Height="142" VerticalAlignment="Top" Grid.RowSpan="2">
+                    <Grid Background="{DynamicResource zoneAdd_Detail}" Grid.Row="2" Margin="0,63.8,0,76.2" Grid.RowSpan="3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -184,23 +196,28 @@
 
                         <Grid Grid.Column="0" HorizontalAlignment="Left"
                       VerticalAlignment="Center">
-                            <StackPanel Orientation="Horizontal" >
+                            <StackPanel Orientation="Horizontal" 
+                                        Height="130">
                                 <materialDesign:PackIcon Kind="PlusCircle"
                                                      Height="20"
                                                      Width="20"/>
                                 <TextBlock Text="{DynamicResource addRelationship}" 
                                    Foreground="Black"
                                    HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
+                                   VerticalAlignment="Top"
                                    FontFamily="Fonts/#Dosis"
                                    FontWeight="Medium"
                                    FontSize="16"
                                    Height="18"
-                                   Width="177" Margin="0,0,0,60"></TextBlock>
+                                   Width="177" Margin="0,1"/>
                             </StackPanel>
                         </Grid>
-                        <Grid Grid.Column="1">
-                            <ComboBox x:Name="cbbAdd" FontSize="20" Background="{DynamicResource zoneAdd_Detail}" Margin="24,20,27,85.4">
+                        <Grid Grid.Column="1" Margin="0,0,0.2,-0.2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="102*"/>
+                                <ColumnDefinition Width="109*"/>
+                            </Grid.ColumnDefinitions>
+                            <ComboBox x:Name="cbbAdd" FontSize="18" Background="{DynamicResource zoneAdd_Detail}" Grid.ColumnSpan="2" Margin="0,60,0.2,0" Height="31" VerticalAlignment="Top">
 
                                 <ComboBoxItem FontFamily="Fonts/#Dosis"  Content="{DynamicResource father}" FontSize="20" ></ComboBoxItem>
 
@@ -216,7 +233,10 @@
 
                                 <ComboBoxItem FontFamily="Fonts/#Dosis" Content="{DynamicResource  son}" FontSize="20" ></ComboBoxItem>
                             </ComboBox>
-                            <Button Click="btnAdd_Click" x:Name="btnAdd" Background="{DynamicResource btnSave_MoreDetail}" Height="40" Width="114" VerticalAlignment="Bottom" Grid.RowSpan="2" HorizontalAlignment="Center">
+                            <Button Click="btnAdd_Click" x:Name="btnAdd" Background="{DynamicResource btnSave_MoreDetail}" 
+                                    Height="40" 
+                                    VerticalAlignment="Bottom"
+                                    Margin="44,0,43.2,106.2" Grid.ColumnSpan="2">
                                 <Button.Style>
                                     <Style>
                                         <Style.Triggers>

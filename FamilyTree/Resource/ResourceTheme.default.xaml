@@ -15,7 +15,7 @@
     <!--MainWD-->
     <SolidColorBrush x:Key="bg_MainWD1">#512DA8</SolidColorBrush>
     <!--Background này ko cần quan tâm-->
-    <SolidColorBrush x:Key="bg_MainWD2">#CDDEFF</SolidColorBrush>
+    <SolidColorBrush x:Key="bg_MainWD2">#8C82FC</SolidColorBrush>
     <!--Background nền vẽ Tree màu trắng-->
 
     <!--Detail-->

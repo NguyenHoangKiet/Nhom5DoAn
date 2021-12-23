@@ -67,7 +67,8 @@
                                     </Grid>
                                     <Grid Grid.Row="1" VerticalAlignment="Bottom"
                       >
-                                        <Button Margin="70,0,70,0"
+                                        <Button Margin="120,0,120,20"
+                                                Height="40"
                                         Click="btnGetPhoto_Click"
                                         Content="{DynamicResource btnImport}"
                                         Background="White"

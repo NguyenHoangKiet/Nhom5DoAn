@@ -45,15 +45,7 @@ namespace FamilyTree.Components
             if (App.Family.Current != null)
             {
                 PersonName = App.Family.Current.Name;
-                if (PersonBirthDay == null)
-                {
-                    tblbirthdayresult.Text = "Unknown";
-                }
-                else
-                {
-                    PersonBirthDay = App.Family.Current.BirthDate;
-                }
-                
+                PersonBirthDay = App.Family.Current.BirthDate;
                 PersonBirthPlace = App.Family.Current.BirthPlace;
                 FullName = App.Family.Current.FullName;
                 if (App.Family.Current.Photos != null)
