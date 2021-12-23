@@ -51,23 +51,12 @@ namespace FamilyTree.Components
             {
                 gender = Gender.unknown;
             }
-
-            if(tbFirstname.Text == null)
-            {
-                personobj.FirstName = null;
-            }
-            else
+            if(!String.IsNullOrEmpty(tbFirstname.Text))
             {
                 personobj.FirstName = tbFirstname.Text;
             }
-            if(tbLastName.Text == null)
-            {
-                personobj.LastName = null;
-            }
-            else
-            {
-                personobj.LastName = tbLastName.Text;
-            }
+            
+            personobj.LastName = tbLastName.Text;
             personobj.Gender = gender;
 
             if (tbBirthDay.SelectedDate != null)
@@ -100,6 +89,7 @@ namespace FamilyTree.Components
             {
                 Photo photo = new Photo(op.FileName);
                 photo.IsAvatar = true;
+
                 personobj.Photos.Add(photo);
                 photoBox.Source = new BitmapImage(new Uri(op.FileName));
                 

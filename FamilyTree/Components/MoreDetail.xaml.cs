@@ -121,7 +121,7 @@ namespace FamilyTree
             {
                 personobj = currentPerson;
 
-                if (currentPerson.FirstName != null)
+                if (currentPerson.FirstName != "Không xác định")
                 {
                     textboxFirstName.Text = currentPerson.FirstName;
                 }

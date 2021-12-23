@@ -147,7 +147,7 @@ namespace FamilyTree.Components
             {
                 MessageBox.Show("error");
             }
-
+            
             App.Family.OnContentChanged(newPerson);
             this.Close();
         }

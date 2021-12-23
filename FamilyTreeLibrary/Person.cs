@@ -14,7 +14,7 @@ namespace FamilyTreeLibrary
         #region Fields and Constants
         private static class Const
         {
-            public const string DefaultFirstName = "Unknown";
+            public const string DefaultFirstName = "Không xác định";
         }
 
         private string id;

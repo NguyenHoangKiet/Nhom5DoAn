@@ -52,15 +52,21 @@ namespace FamilyTree.Components
                 {
                     try
                     {
-                        foreach (Photo image in App.Family.Current.Photos)
                         {
-                            BitmapImage bitmap = new BitmapImage(new Uri(image.FullyQualifiedPath));
-                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                            photoBox.Source = bitmap;
-                            PackIcon getIcon = icon;
-                            if (getIcon != null)
+                            if(App.Family.Current.HasAvatar)
                             {
-                                icon.Visibility = Visibility.Collapsed;
+                                BitmapImage bitmap = new BitmapImage(new Uri(App.Family.Current.Avatar));
+                                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                                photoBox.Source = bitmap;
+                                PackIcon getIcon = icon;
+                                if (getIcon != null)
+                                {
+                                    icon.Visibility = Visibility.Collapsed;
+                                }
+                            }
+                            else
+                            {
+                                photoBox.Source = null;
                             }
                         }
                     }
