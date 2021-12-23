@@ -245,6 +245,9 @@
   <ItemGroup>
     <Resource Include="Components\kisspng-genealogy-family-tree-happy-family-day-child.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Components\263152259_428920178910537_4023036595879688356_n.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

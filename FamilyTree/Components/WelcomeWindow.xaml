@@ -26,7 +26,7 @@
 
         <!--ControlBar-->
         <Grid Grid.Row="0" Background="#673AB7">
-            <uc:ControlBarUC Margin="0,0,0,0" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>
+            <!--<uc:ControlBarUC Margin="0,0,0,0" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>-->
         </Grid>
 
         <!--MainWindow-->
@@ -95,7 +95,7 @@
                        HorizontalAlignment="Left" 
                        Margin="143.8,0,0,-0.2" 
                        Width="853" Grid.ColumnSpan="2"
-                       Source="D:\UIT\Lap trinh truc quang\clone2212_2\263152259_428920178910537_4023036595879688356_n.png" 
+                       Source="263152259_428920178910537_4023036595879688356_n.png" 
                        Stretch="Fill" 
                        Height="555" 
                        VerticalAlignment="Top"/>
