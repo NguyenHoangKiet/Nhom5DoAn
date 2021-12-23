@@ -26,7 +26,7 @@
 
         <!--ControlBar-->
         <Grid Grid.Row="0" Background="#673AB7">
-            <!--<uc:ControlBarUC Margin="0,0,0,0" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>-->
+            <uc:ControlBarUC Margin="0,0,0,0" Tag="{Binding Title, ElementName=WelcomeWindow}"></uc:ControlBarUC>
         </Grid>
 
         <!--MainWindow-->

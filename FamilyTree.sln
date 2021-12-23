@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyTree", "FamilyTree\Fa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyTreeLibrary", "FamilyTreeLibrary\FamilyTreeLibrary.csproj", "{D108023A-6A69-4558-9471-E51BEF6DA935}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup\Setup.vdproj", "{06A16F67-2E8A-420C-8653-73929248751C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +21,6 @@ Global
 		{D108023A-6A69-4558-9471-E51BEF6DA935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D108023A-6A69-4558-9471-E51BEF6DA935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D108023A-6A69-4558-9471-E51BEF6DA935}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06A16F67-2E8A-420C-8653-73929248751C}.Debug|Any CPU.ActiveCfg = Debug
-		{06A16F67-2E8A-420C-8653-73929248751C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
