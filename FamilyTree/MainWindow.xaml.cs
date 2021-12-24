@@ -298,11 +298,6 @@ namespace FamilyTree
         {
             MenuItem_Click_2(sender, e);
         }
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
-        {
-            e.Cancel = true;
-            PromptToSave();
-            base.OnClosing(e);
-        }
+        
     }
 }

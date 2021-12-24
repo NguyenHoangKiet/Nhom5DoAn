@@ -328,9 +328,12 @@ namespace FamilyTree
               "Portable Network Graphic (*.png)|*.png";
             if (op.ShowDialog() == true)
             {
+
                 photoBox.Source = new BitmapImage(new Uri(op.FileName));
-                personobj.Photos.Add(new Photo(op.FileName));
-                personobj.Avatar = op.FileName;
+                Photo photo = new Photo(op.FileName);
+                photo.IsAvatar = true;
+                personobj.Photos.Add(photo);
+                
                 PackIcon getIcon = icon;
                 if (getIcon != null)
                 {

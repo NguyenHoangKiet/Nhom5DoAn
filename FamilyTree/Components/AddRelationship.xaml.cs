@@ -48,7 +48,11 @@ namespace FamilyTree.Components
             }
             else
             {
-                tbFirstname.Text = App.Family.Current.FirstName;
+                if(App.Family.Current.FirstName != "Không xác định")
+                {
+                    tbFirstname.Text = App.Family.Current.FirstName;
+                }
+                
             }
 
             _content = content;
