@@ -21,7 +21,7 @@
     <!--Detail-->
     <SolidColorBrush x:Key="btnAdd_Detail">#02EE5B</SolidColorBrush>
     <!--btn thêm quan hệ-->
-    <SolidColorBrush x:Key="zoneAdd_Detail">#B2E3FA</SolidColorBrush>
+    <SolidColorBrush x:Key="zoneAdd_Detail">#FFFAFA</SolidColorBrush>
     <!--Nền vùng thêm quan hệ-->
     <SolidColorBrush x:Key="bg_Detail">#FFFAFA</SolidColorBrush>
     <!--Nền-->
