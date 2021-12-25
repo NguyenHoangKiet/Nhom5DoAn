@@ -49,7 +49,7 @@ namespace FamilyTree.Components
             }
             else
             {
-                gender = Gender.unknown;
+                gender = Gender.Male;
             }
             if(!String.IsNullOrEmpty(tbFirstname.Text))
             {
